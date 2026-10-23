@@ -81,17 +81,28 @@ export function checkbox({ label, checked = false, onChange }) {
   return { el: el('div', { class: 'sim-check' }, [input, el('label', { for: id, text: label })]), input };
 }
 
+// Skips the first call (the readout drawn while the page loads) and debounces the rest,
+// so screen readers only hear results the user asked for, once dragging stops.
+export function createAnnouncer(write, delayMs = 500) {
+  let first = true;
+  let timer;
+  return (text) => {
+    if (first) {
+      first = false;
+      return;
+    }
+    clearTimeout(timer);
+    timer = setTimeout(() => write(text), delayMs);
+  };
+}
+
 export function liveRegion(delayMs = 500) {
   const node = el('p', { class: 'visually-hidden', 'aria-live': 'polite' });
-  let timer;
   return {
     el: node,
-    announce(text) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        node.textContent = text;
-      }, delayMs);
-    },
+    announce: createAnnouncer((text) => {
+      node.textContent = text;
+    }, delayMs),
   };
 }
 

@@ -51,4 +51,6 @@ export function renderHome(main, progress) {
     }
   });
   draw();
+  // Live only after the first draw, so the total is announced after a reset, not on page load.
+  overall.setAttribute('aria-live', 'polite');
 }
