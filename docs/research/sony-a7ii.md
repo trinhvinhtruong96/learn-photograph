@@ -53,6 +53,7 @@
 - **Firmware**: update to **Ver. 4.01**. Uncompressed RAW needs 2.00 or later. "Focus Standard" AF-point moving needs 4.00 or later. (FW)
 - **ISO AUTO range** is 100–6400 by default. Raise [ISO AUTO Maximum] for night work. (SPEC-IN, HG [108])
 - **Multi Frame NR** (in the [ISO] menu) stacks frames into a JPEG with less noise. It is JPEG only [INFERENCE: HG says it combines images into one; RAW not mentioned].
+- **Dials per mode** (HG PDF, Aperture Priority / Shutter Priority / Manual Exposure pages): **A**: "Select the desired value by turning the front/rear dial." **S**: the same wording, for shutter speed. **M**: "Select the desired aperture value by turning the front dial. Select the desired shutter speed by turning the rear dial." [Dial Setup] (`MENU → (Custom Settings) → [Dial Setup]`) swaps the two dials and only applies in M. Default: front = F/no., rear = SS. In M with [ISO AUTO], the ISO value blinks when no ISO gives a correct exposure. Shutter speeds of 1 s or longer trigger noise reduction that takes as long as the exposure. (https://helpguide.sony.net/ilc/1450/v1/en/print.pdf ; https://helpguide.sony.net/ilc/1450/v1/en/contents/TP0000226610.html)
 
 ## Spec corrections summary
 1. Stage 2 §3: remove "Expand Flexible Spot". It does not exist on the α7 II.
