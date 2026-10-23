@@ -28,10 +28,10 @@ for (const file of files) {
   console.log(`\n${file}`);
   for (const section of sections) {
     const m = analyze(section.units);
-    const problems = checkSection(section.kind, m);
+    const problems = checkSection(m);
     const mark = problems.length ? '✗' : '✓';
     console.log(
-      `  ${mark} ${section.id.padEnd(24)} ${section.kind.padEnd(6)} FRE ${m.fre.toFixed(0).padStart(3)}  grade ${m.grade.toFixed(1).padStart(4)}  avg ${m.avgSentence.toFixed(1).padStart(4)}  max ${String(m.maxSentence).padStart(2)}`,
+      `  ${mark} ${section.id.padEnd(24)} ${section.kind.padEnd(6)} sentences ${String(m.sentences).padStart(3)}  avg ${m.avgSentence.toFixed(1).padStart(4)}  max ${String(m.maxSentence).padStart(2)}`,
     );
     for (const problem of problems) console.log(`      - ${problem}`);
     if (problems.length) failed = true;

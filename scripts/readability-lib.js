@@ -1,10 +1,10 @@
+// Vietnamese text: each space-separated token is one syllable ("tiếng"), so limits count tokens.
+// Flesch-style formulas are English-only and are not used.
 export const TARGETS = {
-  lesson: { fre: 60, grade: 7 },
-  tech: { fre: 50, grade: 9 },
-  avgSentence: 15,
-  maxSentence: 25,
+  avgSentence: 22,
+  maxSentence: 35,
   paragraphSentences: 3,
-  paragraphWords: 60,
+  paragraphWords: 90,
 };
 
 const ENTITIES = {
@@ -34,24 +34,17 @@ function stripTags(html) {
   return decodeEntities(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').replace(/\s+([.,!?;:])/g, '$1').trim();
 }
 
-export function countSyllables(word) {
-  const w = word.toLowerCase().replace(/[^a-z]/g, '');
-  if (!w) return 1; // numbers and notation such as f/2.8 or 1/250
-  if (w.length <= 3) return 1;
-  const trimmed = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '').replace(/^y/, '');
-  const groups = trimmed.match(/[aeiouy]{1,2}/g);
-  return Math.max(1, groups ? groups.length : 0);
-}
+const HAS_TEXT = /[\p{L}\p{N}]/u;
 
 export function splitSentences(text) {
   return text
-    .split(/(?<=[.!?])\s+(?=[^a-z])/)
+    .split(/(?<=[.!?…])\s+(?=[^\p{Ll}])/u)
     .map((s) => s.trim())
-    .filter((s) => /[A-Za-z0-9]/.test(s));
+    .filter((s) => HAS_TEXT.test(s));
 }
 
 export function wordsOf(sentence) {
-  return sentence.split(/\s+/).filter((t) => /[A-Za-z0-9]/.test(t));
+  return sentence.split(/\s+/).filter((t) => HAS_TEXT.test(t));
 }
 
 export function extractUnits(html) {
@@ -87,7 +80,6 @@ export function extractSections(html) {
 export function analyze(units) {
   let sentences = 0;
   let words = 0;
-  let syllables = 0;
   let maxSentence = 0;
   let longest = '';
   const paragraphs = [];
@@ -99,7 +91,6 @@ export function analyze(units) {
       sentences += 1;
       words += w.length;
       unitWords += w.length;
-      syllables += w.reduce((n, word) => n + countSyllables(word), 0);
       if (w.length > maxSentence) {
         maxSentence = w.length;
         longest = sentence;
@@ -107,26 +98,12 @@ export function analyze(units) {
     }
     if (unit.type === 'p') paragraphs.push({ text: unit.text, sentences: parts.length, words: unitWords });
   }
-  const wps = sentences ? words / sentences : 0;
-  const spw = words ? syllables / words : 0;
-  return {
-    sentences,
-    words,
-    fre: sentences ? 206.835 - 1.015 * wps - 84.6 * spw : 0,
-    grade: sentences ? 0.39 * wps + 11.8 * spw - 15.59 : 0,
-    avgSentence: wps,
-    maxSentence,
-    longest,
-    paragraphs,
-  };
+  return { sentences, words, avgSentence: sentences ? words / sentences : 0, maxSentence, longest, paragraphs };
 }
 
-export function checkSection(kind, m) {
+export function checkSection(m) {
   if (m.sentences === 0) return ['no text found'];
-  const target = TARGETS[kind];
   const problems = [];
-  if (m.fre < target.fre) problems.push(`Reading Ease ${m.fre.toFixed(0)} is below ${target.fre}`);
-  if (m.grade > target.grade) problems.push(`Grade ${m.grade.toFixed(1)} is above ${target.grade}`);
   if (m.avgSentence > TARGETS.avgSentence) {
     problems.push(`Average sentence ${m.avgSentence.toFixed(1)} words is above ${TARGETS.avgSentence}`);
   }
