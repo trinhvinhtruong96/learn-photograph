@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Crop between joints, not at the knees, elbows or wrists.">
+  <title>Crop between joints, not at the knees, elbows or wrists.</title>
+  <circle class="i-fill i-line" cx="320" cy="44" r="18"/><path class="i-fill i-line" d="M296 66 H344 L352 140 H332 L326 236 H314 L308 140 H288 Z"/>
+  <path class="i-line" d="M296 70 L270 150 M344 70 L370 150"/>
+  <path class="i-accent-line" d="M180 188 H460 M180 106 H460" stroke-dasharray="6 6" opacity="0.9"/>
+  <path class="i-cool-line" d="M180 166 H460 M180 88 H460" stroke-width="3"/>
+  <text class="i-text" x="470" y="110">avoid: elbows</text>
+  <text class="i-text" x="470" y="192">avoid: knees</text>
+  <text class="i-text-muted" x="170" y="92" text-anchor="end">safer: upper arm</text>
+  <text class="i-text-muted" x="170" y="170" text-anchor="end">safer: mid-thigh</text>
+</svg>

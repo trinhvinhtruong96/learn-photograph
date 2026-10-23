@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="With the 85mm held vertically: about 1.5 m for head and shoulders, 2.5 m for waist-up and 5 m for full body.">
+  <title>With the 85mm held vertically: about 1.5 m for head and shoulders, 2.5 m for waist-up and 5 m for full body.</title>
+  <path class="i-line" d="M20 170 H620"/>
+  <circle class="i-accent" cx="580" cy="72.0" r="15.4"/><rect class="i-accent" x="567.4" y="91.6" width="25.2" height="78.4" rx="7.0"/>
+  <rect class="i-muted i-line" x="460" y="104" width="20" height="32" rx="3"/><path class="i-cool-line" d="M480 120 H560" stroke-dasharray="4 5"/>
+  <rect class="i-muted i-line" x="320" y="104" width="20" height="32" rx="3"/><path class="i-cool-line" d="M340 120 H560" stroke-dasharray="4 5" opacity="0.6"/>
+  <rect class="i-muted i-line" x="90" y="104" width="20" height="32" rx="3"/><path class="i-cool-line" d="M110 120 H560" stroke-dasharray="4 5" opacity="0.35"/>
+  <text class="i-text" x="470" y="196" text-anchor="middle">1.5 m</text>
+  <text class="i-text-muted" x="470" y="214" text-anchor="middle">head and shoulders</text>
+  <text class="i-text" x="330" y="196" text-anchor="middle">2.5 m</text>
+  <text class="i-text-muted" x="330" y="214" text-anchor="middle">waist-up</text>
+  <text class="i-text" x="100" y="196" text-anchor="middle">5 m</text>
+  <text class="i-text-muted" x="100" y="214" text-anchor="middle">full body</text>
+  <text class="i-text-muted" x="320" y="36" text-anchor="middle">camera held horizontally: step back about 1.5 times</text>
+</svg>
