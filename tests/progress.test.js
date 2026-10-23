@@ -108,4 +108,24 @@ describe('progress store', () => {
     expect(store.overallStats().done).toBe(0);
     expect(storage.data.has(PROGRESS_KEY)).toBe(false);
   });
+
+  test('two open pages on the same storage keep each other\'s ticks', () => {
+    const storage = memoryStorage();
+    const pageA = createProgressStore(storage, STAGES);
+    const pageB = createProgressStore(storage, STAGES);
+    pageA.setDone('a', 'a1', true);
+    pageB.setDone('b', 'b1', true);
+    pageA.setDone('a', 'a2', true);
+    expect(JSON.parse(storage.data.get(PROGRESS_KEY))).toEqual({ a: ['a1', 'a2'], b: ['b1'] });
+    expect(pageA.overallStats().done).toBe(3);
+  });
+
+  test('a reset on another page is not undone by a stale page', () => {
+    const storage = memoryStorage();
+    const stalePage = createProgressStore(storage, STAGES);
+    stalePage.setDone('a', 'a1', true);
+    createProgressStore(storage, STAGES).reset();
+    stalePage.setDone('b', 'b2', true);
+    expect(JSON.parse(storage.data.get(PROGRESS_KEY))).toEqual({ b: ['b2'] });
+  });
 });

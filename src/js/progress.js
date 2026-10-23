@@ -2,14 +2,16 @@ export const PROGRESS_KEY = 'lp:progress:v1';
 
 export function createProgressStore(storage, stages) {
   const known = new Map(stages.map((stage) => [stage.id, new Set(stage.assignments.map((a) => a.id))]));
-  let state = load();
+  let state = read() ?? {};
 
-  function load() {
+  // Returns null when storage is missing or unreadable, so the in-memory copy stays in use.
+  function read() {
     let raw = null;
     try {
-      raw = storage ? storage.getItem(PROGRESS_KEY) : null;
+      if (!storage) return null;
+      raw = storage.getItem(PROGRESS_KEY);
     } catch {
-      return {};
+      return null;
     }
     if (!raw) return {};
     let parsed;
@@ -27,6 +29,12 @@ export function createProgressStore(storage, stages) {
       if (kept.length) clean[stageId] = kept;
     }
     return clean;
+  }
+
+  // Another page may have changed progress since this one loaded: always start from storage.
+  function sync() {
+    const fresh = read();
+    if (fresh) state = fresh;
   }
 
   function save() {
@@ -47,12 +55,14 @@ export function createProgressStore(storage, stages) {
 
   return {
     isDone(stageId, assignmentId) {
+      sync();
       return state[stageId]?.includes(assignmentId) ?? false;
     },
     setDone(stageId, assignmentId, done) {
       if (!known.get(stageId)?.has(assignmentId)) {
         throw new Error(`Unknown assignment "${stageId}/${assignmentId}"`);
       }
+      sync();
       const ids = new Set(state[stageId] ?? []);
       if (done) ids.add(assignmentId);
       else ids.delete(assignmentId);
@@ -63,9 +73,11 @@ export function createProgressStore(storage, stages) {
       save();
     },
     stageStats(stageId) {
+      sync();
       return stats(state[stageId]?.length ?? 0, known.get(stageId)?.size ?? 0);
     },
     overallStats() {
+      sync();
       let done = 0;
       let total = 0;
       for (const [stageId, ids] of known) {

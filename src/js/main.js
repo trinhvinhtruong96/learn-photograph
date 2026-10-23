@@ -16,6 +16,10 @@ function getStorage() {
 
 const storage = getStorage();
 const progress = createProgressStore(storage, STAGES);
+// A page restored with the Back button shows old progress; reload it so it reads storage again.
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) window.location.reload();
+});
 const main = document.getElementById('main');
 const stageId = main.dataset.stage;
 const stage = stageId ? getStage(stageId) : undefined;
