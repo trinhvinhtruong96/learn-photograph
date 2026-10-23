@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Focusing and then turning the camera swings the sharp plane, so it can miss the eye.">
+  <title>Focusing and then turning the camera swings the sharp plane, so it can miss the eye.</title>
+  <rect class="i-muted i-line" x="104" y="176" width="32" height="24" rx="4"/>
+  <path class="i-line" d="M120 176 V70"/>
+  <path class="i-accent-line" d="M30 60 H210"/>
+  <circle class="i-text" cx="120" cy="60" r="6"/>
+  <text class="i-text" x="120" y="216" text-anchor="middle">focus here</text>
+  <g transform="rotate(25 420 188)"><rect class="i-muted i-line" x="404" y="176" width="32" height="24" rx="4"/></g>
+  <path class="i-line" d="M420 180 L470.7 71.2"/>
+  <path class="i-accent-line" d="M384.6 31.1 L556.8 111.4"/>
+  <circle class="i-text" cx="420" cy="62" r="6"/>
+  <text class="i-text-muted" x="350" y="90" text-anchor="end">eye now in front</text>
+  <text class="i-text" x="440" y="216" text-anchor="middle">after turning</text>
+</svg>
