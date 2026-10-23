@@ -28,11 +28,23 @@ function createSky(label) {
 }
 
 const stopsText = (v) => (v === 0 ? 'Off' : `${v} ${v === 1 ? 'stop' : 'stops'}`);
+// The 500 rule only causes trails when it allows a clearly longer time than NPF (true at wide apertures).
+const TRAIL_MARGIN = 1.05;
+
+export function starReadout(focal, aperture) {
+  const npf = npfSeconds(focal, aperture);
+  const rule = rule500Seconds(focal);
+  const npfLine = `Stars: the NPF rule says ${formatSeconds(npf)} at ${formatAperture(aperture)}.`;
+  if (rule > npf * TRAIL_MARGIN) {
+    return [npfLine, `The 500 rule says ${formatSeconds(rule)}, ${(rule / npf).toFixed(1)} times longer, so stars smear into short lines.`];
+  }
+  return [npfLine, `The 500 rule says ${formatSeconds(rule)}. At this aperture the NPF time is about the same or longer, so use the shorter one: ${formatSeconds(Math.min(npf, rule))}.`];
+}
 
 export function mount(host) {
   const state = { focal: 35, aperture: 1.4, stops: 2 };
   const npfSky = createSky('Stars at the NPF time: small dots');
-  const ruleSky = createSky('Stars at the 500 rule time: short trails');
+  const ruleSky = createSky('Stars at the 500 rule time');
   const view = el('div', { class: 'sim-panels' }, [
     el('figure', {}, [npfSky.svg, el('figcaption', { text: 'NPF time' })]),
     el('figure', {}, [ruleSky.svg, el('figcaption', { text: '500 rule time' })]),
@@ -59,8 +71,7 @@ export function mount(host) {
     ruleSky.draw(Math.max(0.01, 6 * (rule / npf - 1)));
     const handheld = slowestSafeShutter(handheldLimitSeconds(state.focal, state.stops));
     const lines = [
-      `Stars: the NPF rule says ${formatSeconds(npf)} at ${formatAperture(state.aperture)}.`,
-      `The 500 rule says ${formatSeconds(rule)}, ${(rule / npf).toFixed(1)} times longer, so stars smear into short lines.`,
+      ...starReadout(state.focal, state.aperture),
       `Handheld, still scene, stabilizer ${stopsText(state.stops)}: ${formatShutter(handheld)} or faster.`,
       'People still need 1/60 s to 1/250 s, because the stabilizer cannot stop them moving.',
     ];
