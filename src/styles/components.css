@@ -79,8 +79,11 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
 .i-muted { fill: var(--illus-muted); }
 .i-cool { fill: var(--illus-cool); }
 .i-cool-line { fill: none; stroke: var(--illus-cool); stroke-width: 2; stroke-linecap: round; }
-.i-text { fill: var(--illus-line); font-family: var(--font-body); font-size: 16px; }
-.i-text-muted { fill: var(--muted); font-family: var(--font-body); font-size: 14px; }
+.i-text { fill: var(--illus-line); font-family: var(--font-body); }
+.i-text-muted { fill: var(--muted); font-family: var(--font-body); }
+/* Author CSS beats presentation attributes, so the defaults skip labels that set their own font-size. */
+.i-text:not([font-size]) { font-size: 16px; }
+.i-text-muted:not([font-size]) { font-size: 14px; }
 
 /* Key terms, mistakes, self-check, practice, learn more, pager */
 .terms { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-4); }
