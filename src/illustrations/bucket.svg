@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="A wide bucket fills fast in the rain. A narrow bucket needs more time to collect the same water.">
-  <title>A wide bucket fills fast in the rain. A narrow bucket needs more time to collect the same water.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Trong mưa, xô miệng rộng đầy rất nhanh. Xô miệng hẹp cần nhiều thời gian hơn để hứng cùng lượng nước.">
+  <title>Trong mưa, xô miệng rộng đầy rất nhanh. Xô miệng hẹp cần nhiều thời gian hơn để hứng cùng lượng nước.</title>
   <path class="i-cool-line" d="M60 78 l-6 14"/><path class="i-cool-line" d="M210 29 l-6 14"/><path class="i-cool-line" d="M439 51 l-6 14"/><path class="i-cool-line" d="M231 67 l-6 14"/><path class="i-cool-line" d="M453 52 l-6 14"/><path class="i-cool-line" d="M416 59 l-6 14"/><path class="i-cool-line" d="M485 31 l-6 14"/><path class="i-cool-line" d="M255 64 l-6 14"/><path class="i-cool-line" d="M423 18 l-6 14"/><path class="i-cool-line" d="M416 47 l-6 14"/><path class="i-cool-line" d="M540 71 l-6 14"/><path class="i-cool-line" d="M124 50 l-6 14"/><path class="i-cool-line" d="M540 62 l-6 14"/><path class="i-cool-line" d="M395 54 l-6 14"/><path class="i-cool-line" d="M534 78 l-6 14"/><path class="i-cool-line" d="M254 37 l-6 14"/><path class="i-cool-line" d="M495 37 l-6 14"/><path class="i-cool-line" d="M139 35 l-6 14"/><path class="i-cool-line" d="M283 35 l-6 14"/><path class="i-cool-line" d="M547 53 l-6 14"/><path class="i-cool-line" d="M439 75 l-6 14"/><path class="i-cool-line" d="M90 33 l-6 14"/><path class="i-cool-line" d="M352 50 l-6 14"/><path class="i-cool-line" d="M279 28 l-6 14"/><path class="i-cool-line" d="M533 18 l-6 14"/><path class="i-cool-line" d="M250 38 l-6 14"/><path class="i-cool-line" d="M405 79 l-6 14"/><path class="i-cool-line" d="M328 26 l-6 14"/><path class="i-cool-line" d="M271 34 l-6 14"/><path class="i-cool-line" d="M250 44 l-6 14"/><path class="i-cool-line" d="M233 51 l-6 14"/><path class="i-cool-line" d="M379 30 l-6 14"/><path class="i-cool-line" d="M531 46 l-6 14"/><path class="i-cool-line" d="M509 58 l-6 14"/>
   <path class="i-fill i-line" d="M70 108 H250 L196 150 H124 Z"/>
   <rect class="i-fill i-line" x="100" y="150" width="120" height="70" rx="4"/>
@@ -7,6 +7,6 @@
   <path class="i-fill i-line" d="M455 108 H505 L494 150 H466 Z"/>
   <rect class="i-fill i-line" x="420" y="150" width="120" height="70" rx="4"/>
   <rect class="i-cool" x="422" y="190" width="116" height="28" rx="3"/>
-  <text class="i-text" x="160" y="248" text-anchor="middle">big opening, short time</text>
-  <text class="i-text" x="480" y="248" text-anchor="middle">small opening, long time</text>
+  <text class="i-text" x="160" y="248" text-anchor="middle">miệng rộng, thời gian ngắn</text>
+  <text class="i-text" x="480" y="248" text-anchor="middle">miệng hẹp, thời gian dài</text>
 </svg>

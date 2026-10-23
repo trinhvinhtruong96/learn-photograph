@@ -24,9 +24,9 @@ test('neighbors follow roadmap order', () => {
   expect(stageNeighbors('nope')).toEqual({ prev: null, next: null });
 });
 
-test('week labels use singular for one week', () => {
-  expect(weeksLabel('1–2')).toBe('Weeks 1–2');
-  expect(weeksLabel('11')).toBe('Week 11');
+test('week labels', () => {
+  expect(weeksLabel('1–2')).toBe('Tuần 1–2');
+  expect(weeksLabel('11')).toBe('Tuần 11');
 });
 
 test('unknown stage ids return undefined', () => {

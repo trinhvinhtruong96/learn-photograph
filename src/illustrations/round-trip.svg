@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="From darktable, export a 16-bit TIFF, retouch it in GIMP, then export the finished photo.">
-  <title>From darktable, export a 16-bit TIFF, retouch it in GIMP, then export the finished photo.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="Từ darktable, xuất file TIFF 16-bit, chỉnh sửa chi tiết (retouch) trong GIMP, rồi xuất ảnh hoàn chỉnh.">
+  <title>Từ darktable, xuất file TIFF 16-bit, chỉnh sửa chi tiết (retouch) trong GIMP, rồi xuất ảnh hoàn chỉnh.</title>
   <rect class="i-fill i-line" x="20" y="60" width="140" height="70" rx="8"/>
   <text class="i-text" x="90" y="100" text-anchor="middle">darktable</text>
   <path class="i-accent-line" d="M162 95 H246 M236 87 L248 95 L236 103"/>
@@ -11,5 +11,5 @@
   <rect class="i-fill i-line" x="480" y="50" width="130" height="90" rx="4"/>
   <path class="i-accent" d="M490 130 L530 90 L555 112 L575 96 L600 130 Z"/>
   <circle class="i-accent" cx="585" cy="70" r="9"/>
-  <text class="i-text" x="545" y="170" text-anchor="middle">finished photo</text>
+  <text class="i-text" x="545" y="170" text-anchor="middle">ảnh hoàn chỉnh</text>
 </svg>

@@ -22,7 +22,7 @@ function createSidewalk() {
     zone,
     ...people.map((p) => p.group),
     svgEl('rect', { class: 'd-muted', x: 14, y: 64, width: 30, height: 22, rx: 4 }),
-    svgEl('text', { x: 14, y: 160, text: 'You' }),
+    svgEl('text', { x: 14, y: 160, text: 'Bạn' }),
   );
   return {
     svg,
@@ -44,8 +44,8 @@ export function mount(host) {
   const sidewalk = createSidewalk();
   const readout = readoutBox();
   const live = liveRegion();
-  const aperture = rangeControl({ label: 'Aperture (35mm)', values: aperturesFor(LENSES[35]), value: 8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
-  const focus = rangeControl({ label: 'Manual focus distance', values: FOCUS_MM, value: 3000, format: formatDistance, onInput: (v) => update({ focusMm: v }) });
+  const aperture = rangeControl({ label: 'Khẩu độ (35mm)', values: aperturesFor(LENSES[35]), value: 8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
+  const focus = rangeControl({ label: 'Khoảng cách lấy nét tay', values: FOCUS_MM, value: 3000, format: formatDistance, onInput: (v) => update({ focusMm: v }) });
 
   function update(patch) {
     Object.assign(state, patch);
@@ -53,9 +53,9 @@ export function mount(host) {
     sidewalk.update(dof);
     const inZone = PEOPLE_MM.filter((mm) => mm >= dof.near && mm <= dof.far).length;
     const lines = [
-      `Focus at ${formatDistance(state.focusMm)} with ${formatAperture(state.aperture)}. ${describeSharpZone(dof)}`,
-      `${inZone} of ${PEOPLE_MM.length} people on the sidewalk ${inZone === 1 ? 'is' : 'are'} sharp.`,
-      'Use 1/500 s to freeze people who walk.',
+      `Lấy nét ở ${formatDistance(state.focusMm)} với ${formatAperture(state.aperture)}. ${describeSharpZone(dof)}`,
+      `${inZone}/${PEOPLE_MM.length} người trên vỉa hè nằm trong vùng nét.`,
+      'Dùng 1/500 giây để "đóng băng" người đi bộ.',
     ];
     setReadout(readout, lines);
     live.announce(lines.join(' '));

@@ -1,5 +1,5 @@
 import { LENSES, blurDiscMm, blurPercentOfFrame, sameFramingDistanceMm } from '../photo-math.js';
-import { formatAperture, formatDistance, formatPercent } from '../format.js';
+import { formatAperture, formatDecimal, formatDistance, formatPercent } from '../format.js';
 import { el, svgEl, uid } from '../dom.js';
 import { liveRegion, numberRange, radioGroup, rangeControl, readoutBox, setReadout, simLayout } from './controls.js';
 
@@ -25,16 +25,16 @@ export function compareBackgroundBlur({ subjectMm, behindMm, mode, aperture }) {
 
 // Ratios within 5% of 1 read as "about the same"; below that, the 35mm is the one that blurs more.
 export function blurComparisonText(ratio, behindMm) {
-  if (behindMm === 0) return 'The person stands against the background, so nothing is blurred.';
-  if (ratio > 1.05) return `The 85mm blurs the background ${ratio.toFixed(1)} times more.`;
-  if (ratio < 0.95) return `The 35mm blurs the background ${(1 / ratio).toFixed(1)} times more.`;
-  return 'Both lenses blur the background about the same.';
+  if (behindMm === 0) return 'Người đứng sát hậu cảnh, nên không có gì bị mờ.';
+  if (ratio > 1.05) return `Ống 85mm làm mờ hậu cảnh gấp ${formatDecimal(ratio)} lần.`;
+  if (ratio < 0.95) return `Ống 35mm làm mờ hậu cảnh gấp ${formatDecimal(1 / ratio)} lần.`;
+  return 'Hai ống kính làm mờ hậu cảnh gần như nhau.';
 }
 
 const PANEL_WIDTH = 320;
 const blurPx = (pct) => Math.min(20, ((pct / 100) * PANEL_WIDTH) / 2);
 const BEHIND_MM = [0, 500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 10000, 15000, 20000];
-const behindText = (mm) => (mm === 0 ? 'touching' : formatDistance(mm));
+const behindText = (mm) => (mm === 0 ? 'sát người' : formatDistance(mm));
 
 function createPanel(label) {
   const id = uid('bg');
@@ -74,26 +74,26 @@ function createPanel(label) {
 
 export function mount(host) {
   const state = { subjectMm: 2000, behindMm: 4000, mode: 'spot', aperture: 'wide' };
-  const panel85 = createPanel('View through the 85mm');
-  const panel35 = createPanel('View through the 35mm');
+  const panel85 = createPanel('Khung hình qua ống 85mm');
+  const panel35 = createPanel('Khung hình qua ống 35mm');
   const caption35 = el('figcaption');
   const view = el('div', { class: 'sim-panels' }, [
-    el('figure', {}, [panel85.svg, el('figcaption', { text: '85mm' })]),
+    el('figure', {}, [panel85.svg, el('figcaption', { text: 'Ống 85mm' })]),
     el('figure', {}, [panel35.svg, caption35]),
   ]);
   const readout = readoutBox();
   const live = liveRegion();
-  const subject = rangeControl({ label: 'Person distance (85mm)', values: numberRange(1000, 5000, 250), value: 2000, format: formatDistance, onInput: (v) => update({ subjectMm: v }) });
-  const behind = rangeControl({ label: 'Background behind the person', values: BEHIND_MM, value: 4000, format: behindText, onInput: (v) => update({ behindMm: v }) });
+  const subject = rangeControl({ label: 'Khoảng cách tới người (85mm)', values: numberRange(1000, 5000, 250), value: 2000, format: formatDistance, onInput: (v) => update({ subjectMm: v }) });
+  const behind = rangeControl({ label: 'Hậu cảnh phía sau người', values: BEHIND_MM, value: 4000, format: behindText, onInput: (v) => update({ behindMm: v }) });
   const mode = radioGroup({
-    legend: 'Compare',
-    options: [{ value: 'spot', label: 'Both from the same spot' }, { value: 'framing', label: 'Same framing (35mm steps closer)' }],
+    legend: 'So sánh',
+    options: [{ value: 'spot', label: 'Cả hai đứng cùng một chỗ' }, { value: 'framing', label: 'Cùng khung hình (ống 35mm bước lại gần)' }],
     value: 'spot',
     onChange: (v) => update({ mode: v }),
   });
   const aperture = radioGroup({
-    legend: 'Aperture',
-    options: [{ value: 'wide', label: 'Wide open (f/1.8 and f/1.4)' }, { value: 2.8, label: 'f/2.8' }, { value: 4, label: 'f/4' }, { value: 8, label: 'f/8' }],
+    legend: 'Khẩu độ',
+    options: [{ value: 'wide', label: 'Mở tối đa (f/1.8 và f/1.4)' }, { value: 2.8, label: 'f/2.8' }, { value: 4, label: 'f/4' }, { value: 8, label: 'f/8' }],
     value: 'wide',
     onChange: (v) => update({ aperture: v }),
   });
@@ -103,10 +103,10 @@ export function mount(host) {
     const r = compareBackgroundBlur(state);
     panel85.update({ pct: r.pct85, personScale: 1, backgroundScale: 1 });
     panel35.update({ pct: r.pct35, personScale: r.personScale35, backgroundScale: r.backgroundScale35 });
-    caption35.textContent = `35mm at ${formatDistance(r.s35)}`;
+    caption35.textContent = `Ống 35mm cách ${formatDistance(r.s35)}`;
     const lines = [
-      `85mm at ${formatAperture(r.n85)}: background blur is ${formatPercent(r.pct85)} of the frame width.`,
-      `35mm at ${formatAperture(r.n35)}, ${formatDistance(r.s35)} away: ${formatPercent(r.pct35)}.`,
+      `Ống 85mm ở ${formatAperture(r.n85)}: vệt mờ hậu cảnh rộng bằng ${formatPercent(r.pct85)} bề ngang khung hình.`,
+      `Ống 35mm ở ${formatAperture(r.n35)}, cách ${formatDistance(r.s35)}: ${formatPercent(r.pct35)}.`,
       blurComparisonText(r.ratio, state.behindMm),
     ];
     setReadout(readout, lines);

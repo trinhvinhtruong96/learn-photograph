@@ -9,8 +9,8 @@ export function createThemeToggle(storage) {
   button.type = 'button';
   button.className = 'button button--ghost theme-toggle';
   const sync = () => {
-    button.textContent = currentTheme() === 'light' ? 'Dark theme' : 'Light theme';
-    button.setAttribute('aria-label', currentTheme() === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    button.textContent = currentTheme() === 'light' ? 'Giao diện tối' : 'Giao diện sáng';
+    button.setAttribute('aria-label', currentTheme() === 'light' ? 'Chuyển sang giao diện tối' : 'Chuyển sang giao diện sáng');
   };
   button.addEventListener('click', () => {
     const next = currentTheme() === 'light' ? 'dark' : 'light';

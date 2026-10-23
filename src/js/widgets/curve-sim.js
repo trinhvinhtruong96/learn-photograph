@@ -4,10 +4,10 @@ import { liveRegion, numberRange, rangeControl, readoutBox, setReadout, simLayou
 import { createScene } from './scene.js';
 
 const LEVELS = [
-  { key: 'blacks', label: 'Blacks (output at 0%)', values: numberRange(0, 0.3, 0.01) },
-  { key: 'shadows', label: 'Shadows (output at 25%)', values: numberRange(0, 0.6, 0.01) },
-  { key: 'mids', label: 'Midtones (output at 50%)', values: numberRange(0.2, 0.8, 0.01) },
-  { key: 'highlights', label: 'Highlights (output at 75%)', values: numberRange(0.5, 1, 0.01) },
+  { key: 'blacks', label: 'Điểm đen (đầu ra ở 0%)', values: numberRange(0, 0.3, 0.01) },
+  { key: 'shadows', label: 'Vùng tối (đầu ra ở 25%)', values: numberRange(0, 0.6, 0.01) },
+  { key: 'mids', label: 'Tông trung bình (đầu ra ở 50%)', values: numberRange(0.2, 0.8, 0.01) },
+  { key: 'highlights', label: 'Vùng sáng (đầu ra ở 75%)', values: numberRange(0.5, 1, 0.01) },
 ];
 const percent = (v) => `${Math.round(v * 100)}%`;
 
@@ -27,7 +27,7 @@ function drawCurve(svg, table, points) {
 
 export function mount(host) {
   const levels = { blacks: 0, shadows: 0.25, mids: 0.5, highlights: 0.75 };
-  const scene = createScene({ label: 'Street scene with the tone curve applied' });
+  const scene = createScene({ label: 'Cảnh đường phố sau khi áp đường cong tông màu' });
   const graph = svgEl('svg', { viewBox: '-4 -4 208 208', class: 'sim-diagram', 'aria-hidden': 'true' });
   const readout = readoutBox();
   const live = liveRegion();
@@ -36,7 +36,7 @@ export function mount(host) {
     values: level.values,
     value: levels[level.key],
     format: percent,
-    spoken: (v) => `output ${percent(v)}`,
+    spoken: (v) => `đầu ra ${percent(v)}`,
     onInput: (v) => {
       levels[level.key] = v;
       update();

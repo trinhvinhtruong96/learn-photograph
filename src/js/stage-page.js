@@ -1,4 +1,4 @@
-import { PRACTICE_METHOD, stageNeighbors, weeksLabel } from '../data/roadmap.js';
+import { LEVEL_LABELS, PRACTICE_METHOD, stageNeighbors, weeksLabel } from '../data/roadmap.js';
 import { el, uid } from './dom.js';
 
 const DESKTOP = window.matchMedia('(min-width: 1080px)');
@@ -6,7 +6,7 @@ const DESKTOP = window.matchMedia('(min-width: 1080px)');
 export function progressBlock(stats, label) {
   const id = uid('progress');
   return el('div', { class: 'progress-block' }, [
-    el('label', { for: id, class: 'progress-block__label', text: `${label}: ${stats.done} of ${stats.total}` }),
+    el('label', { for: id, class: 'progress-block__label', text: `${label}: ${stats.done}/${stats.total}` }),
     el('progress', { id, max: stats.total || 1, value: stats.done }),
   ]);
 }
@@ -14,17 +14,17 @@ export function progressBlock(stats, label) {
 export function renderStageHeader(container, stage, stats) {
   container.replaceChildren(
     el('p', { class: 'stage-kicker' }, [
-      el('span', { text: `Stage ${stage.number}` }),
-      el('span', { class: `badge badge--${stage.level.toLowerCase()}`, text: stage.level }),
+      el('span', { text: `Chặng ${stage.number}` }),
+      el('span', { class: `badge badge--${stage.level}`, text: LEVEL_LABELS[stage.level] }),
       el('span', { text: weeksLabel(stage.weeks) }),
     ]),
     el('h1', { text: stage.title }),
     el('p', { class: 'stage-summary', text: stage.summary }),
     el('div', { class: 'stage-learn' }, [
-      el('p', { class: 'stage-learn__label', text: 'What you will learn' }),
+      el('p', { class: 'stage-learn__label', text: 'Bạn sẽ học' }),
       el('ul', {}, stage.learn.map((item) => el('li', { text: item }))),
     ]),
-    progressBlock(stats, 'Practice tasks done'),
+    progressBlock(stats, 'Bài thực hành đã xong'),
   );
 }
 
@@ -40,7 +40,7 @@ export function renderChecklist(container, stage, progress, onChange) {
     return el('li', { class: 'checklist__item' }, [
       el('div', { class: 'checklist__head' }, [input, el('label', { for: id, class: 'checklist__title', text: a.title })]),
       el('p', { id: `${id}-task`, class: 'checklist__task', text: a.task }),
-      el('p', { id: `${id}-check`, class: 'checklist__check' }, [el('span', { class: 'checklist__check-label', text: 'Done when: ' }), a.check]),
+      el('p', { id: `${id}-check`, class: 'checklist__check' }, [el('span', { class: 'checklist__check-label', text: 'Hoàn thành khi: ' }), a.check]),
     ]);
   });
   container.replaceChildren(el('p', { class: 'practice-method', text: PRACTICE_METHOD }), el('ul', { class: 'checklist' }, items));
@@ -59,7 +59,7 @@ export function buildToc(toc, main) {
     return { link: el('a', { href: `#${target.id}`, text: heading.textContent }), heading };
   });
   toc.replaceChildren(
-    el('p', { class: 'toc__title', text: 'On this page' }),
+    el('p', { class: 'toc__title', text: 'Trên trang này' }),
     el('ol', {}, links.map(({ link }) => el('li', {}, [link]))),
   );
   const byHeading = new Map(links.map(({ link, heading }) => [heading, link]));
@@ -74,7 +74,7 @@ export function buildToc(toc, main) {
 }
 
 export function initDrawer(button, toc) {
-  const close = el('button', { type: 'button', class: 'button button--ghost toc__close', text: 'Close' });
+  const close = el('button', { type: 'button', class: 'button button--ghost toc__close', text: 'Đóng' });
   toc.prepend(close);
   const focusables = () => [...toc.querySelectorAll('a, button')].filter((node) => node.offsetParent !== null);
   const open = () => {
@@ -128,12 +128,12 @@ export function initDrawer(button, toc) {
 export function renderPager(nav, stage) {
   const { prev, next } = stageNeighbors(stage.id);
   const link = (target, dir) => el('a', { class: `pager__link pager__link--${dir}`, href: target.path }, [
-    el('span', { class: 'pager__dir', text: dir === 'prev' ? 'Previous stage' : 'Next stage' }),
+    el('span', { class: 'pager__dir', text: dir === 'prev' ? 'Chặng trước' : 'Chặng sau' }),
     el('span', { class: 'pager__title', text: `${target.number}. ${target.title}` }),
   ]);
   const finish = el('a', { class: 'pager__link pager__link--next', href: '/#roadmap' }, [
-    el('span', { class: 'pager__dir', text: 'You finished the roadmap' }),
-    el('span', { class: 'pager__title', text: 'Back to the roadmap' }),
+    el('span', { class: 'pager__dir', text: 'Bạn đã đi hết lộ trình' }),
+    el('span', { class: 'pager__title', text: 'Quay lại lộ trình' }),
   ]);
   nav.replaceChildren(...[prev && link(prev, 'prev'), next ? link(next, 'next') : finish].filter(Boolean));
 }

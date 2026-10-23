@@ -4,20 +4,21 @@ import { liveRegion, numberRange, radioGroup, rangeControl, readoutBox, setReado
 
 export const CAMERA_KELVIN = numberRange(2500, 9900, 100);
 export const SCENE_LIGHTS = [
-  { k: 1850, label: 'Candle (1850 K)' },
-  { k: 2700, label: 'Home bulb (2700 K)' },
-  { k: 3500, label: 'Golden hour (3500 K)' },
-  { k: 5500, label: 'Daylight (5500 K)' },
-  { k: 7000, label: 'Overcast (7000 K)' },
-  { k: 9000, label: 'Shade (9000 K)' },
+  { k: 1850, label: 'Nến (1850 K)' },
+  { k: 2700, label: 'Đèn trong nhà (2700 K)' },
+  { k: 3500, label: 'Giờ vàng (3500 K)' },
+  { k: 5500, label: 'Ánh sáng ban ngày (5500 K)' },
+  { k: 7000, label: 'Trời u ám (7000 K)' },
+  { k: 9000, label: 'Bóng râm (9000 K)' },
 ];
 
+const NAMES = { front: 'Ánh sáng trước', 'forty-five': 'Ánh sáng 45°', side: 'Ánh sáng bên', rim: 'Ánh sáng viền', back: 'Ngược sáng' };
 const DESCRIPTIONS = {
-  'Front light': 'Few shadows. Flat but clean, and kind to skin.',
-  '45° light': 'Shadows shape the face. A classic portrait light.',
-  'Side light': 'Half the face is in shadow. Dramatic.',
-  'Rim light': 'The face is mostly in shadow with a bright edge.',
-  Backlight: 'The face is in shade. Use a reflector or expose for the face.',
+  front: 'Ít bóng đổ. Phẳng nhưng sạch, làm da trông mịn.',
+  'forty-five': 'Bóng đổ tạo khối cho khuôn mặt. Kiểu sáng chân dung kinh điển.',
+  side: 'Nửa khuôn mặt chìm trong bóng tối. Đầy kịch tính.',
+  rim: 'Khuôn mặt gần như trong bóng tối, có một đường viền sáng.',
+  back: 'Khuôn mặt bị tối. Hãy dùng tấm hắt sáng hoặc đo sáng cho khuôn mặt.',
 };
 
 // 0° = light from the camera, 90° = from the right, 180° = from behind.
@@ -27,12 +28,12 @@ export function lightPattern(angleDeg) {
   let side = 'right';
   if (a === 0 || a === 180) side = 'none';
   else if (a > 180) side = 'left';
-  let name = 'Backlight';
-  if (folded <= 20) name = 'Front light';
-  else if (folded <= 60) name = '45° light';
-  else if (folded <= 120) name = 'Side light';
-  else if (folded <= 160) name = 'Rim light';
-  return { name, folded, side, lit: (1 + Math.cos((folded * Math.PI) / 180)) / 2 };
+  let id = 'back';
+  if (folded <= 20) id = 'front';
+  else if (folded <= 60) id = 'forty-five';
+  else if (folded <= 120) id = 'side';
+  else if (folded <= 160) id = 'rim';
+  return { id, folded, side, lit: (1 + Math.cos((folded * Math.PI) / 180)) / 2 };
 }
 
 // Mired difference: positive when the camera assumes warmer light than the scene has (photo turns blue).
@@ -48,7 +49,7 @@ const clamp01 = (v) => Math.min(1, Math.max(0, v));
 
 function createFace() {
   const id = uid('face');
-  const svg = svgEl('svg', { viewBox: '0 0 400 340', role: 'img', 'aria-label': 'A face lit from the chosen direction' });
+  const svg = svgEl('svg', { viewBox: '0 0 400 340', role: 'img', 'aria-label': 'Khuôn mặt được chiếu sáng từ hướng đã chọn' });
   svg.innerHTML = `
     <defs>
       <linearGradient id="${id}-shade" data-shade x1="1" y1="0" x2="0" y2="0">
@@ -93,7 +94,7 @@ function createTopView() {
     svgEl('circle', { class: 'd-muted', cx: 100, cy: 100, r: 22 }),
     svgEl('path', { class: 'd-muted', d: 'M94 120 L100 132 L106 120 Z' }),
     svgEl('rect', { class: 'd-muted', x: 88, y: 184, width: 24, height: 14, rx: 3 }),
-    svgEl('text', { x: 118, y: 196, text: 'Camera' }),
+    svgEl('text', { x: 118, y: 196, text: 'Máy ảnh' }),
     lamp,
   );
   return {
@@ -108,7 +109,7 @@ function createTopView() {
 
 function createSwatch() {
   const id = uid('wb');
-  const svg = svgEl('svg', { viewBox: '0 0 400 200', role: 'img', 'aria-label': 'A white card, a grey card, a blue mug and a plant, as the camera records them' });
+  const svg = svgEl('svg', { viewBox: '0 0 400 200', role: 'img', 'aria-label': 'Thẻ trắng, thẻ xám, cốc xanh và chậu cây, theo màu máy ảnh ghi lại' });
   svg.innerHTML = `
     <defs><filter id="${id}-wb" color-interpolation-filters="sRGB"><feComponentTransfer data-wb><feFuncR type="linear" slope="1"/><feFuncG type="linear" slope="1"/><feFuncB type="linear" slope="1"/></feComponentTransfer></filter></defs>
     <g filter="url(#${id}-wb)">
@@ -132,10 +133,10 @@ function createSwatch() {
 }
 
 function castText(cast, sceneK, cameraK) {
-  if (cast.cast === 'neutral') return `Camera at ${formatKelvin(cameraK)} matches the light: white looks white.`;
-  if (cast.cast === 'blue') return `Camera at ${formatKelvin(cameraK)} in ${formatKelvin(sceneK)} light: the photo looks too blue. Set a higher number to warm it up.`;
-  if (sceneK < CAMERA_KELVIN[0] && cameraK === CAMERA_KELVIN[0]) return 'Your camera stops at 2500 K, so candlelight stays warm. Fix the rest in darktable.';
-  return `Camera at ${formatKelvin(cameraK)} in ${formatKelvin(sceneK)} light: the photo looks too orange. Set a lower number to cool it down.`;
+  if (cast.cast === 'neutral') return `Máy đặt ${formatKelvin(cameraK)} khớp với ánh sáng: màu trắng trông trắng.`;
+  if (cast.cast === 'blue') return `Máy đặt ${formatKelvin(cameraK)} dưới ánh sáng ${formatKelvin(sceneK)}: ảnh bị ám xanh. Hãy đặt số cao hơn để ảnh ấm lại.`;
+  if (sceneK < CAMERA_KELVIN[0] && cameraK === CAMERA_KELVIN[0]) return 'Máy chỉ xuống được 2500 K, nên ánh nến vẫn còn ấm. Phần còn lại hãy sửa trong darktable.';
+  return `Máy đặt ${formatKelvin(cameraK)} dưới ánh sáng ${formatKelvin(sceneK)}: ảnh bị ám cam. Hãy đặt số thấp hơn để ảnh bớt ám cam, mát hơn.`;
 }
 
 export function mount(host) {
@@ -145,10 +146,10 @@ export function mount(host) {
   const swatch = createSwatch();
   const readout = readoutBox();
   const live = liveRegion();
-  const angle = rangeControl({ label: 'Light direction', values: numberRange(0, 345, 15), value: 45, format: (v) => `${v}°`, spoken: (v) => `${v} degrees`, onInput: (v) => { state.angle = v; update(); } });
-  const quality = radioGroup({ legend: 'Light quality', options: [{ value: 'hard', label: 'Hard (small source)' }, { value: 'soft', label: 'Soft (big source)' }], value: 'hard', onChange: (v) => { state.soft = v === 'soft'; update(); } });
-  const sceneLight = radioGroup({ legend: 'Light in the scene', options: SCENE_LIGHTS.map((s) => ({ value: s.k, label: s.label })), value: 9000, onChange: (v) => { state.sceneK = v; update(); } });
-  const camera = rangeControl({ label: 'Camera white balance', values: CAMERA_KELVIN, value: 5500, format: formatKelvin, spoken: (v) => `${v} kelvin`, onInput: (v) => { state.cameraK = v; update(); } });
+  const angle = rangeControl({ label: 'Hướng sáng', values: numberRange(0, 345, 15), value: 45, format: (v) => `${v}°`, spoken: (v) => `${v} độ`, onInput: (v) => { state.angle = v; update(); } });
+  const quality = radioGroup({ legend: 'Chất lượng ánh sáng', options: [{ value: 'hard', label: 'Cứng (nguồn nhỏ)' }, { value: 'soft', label: 'Mềm (nguồn lớn)' }], value: 'hard', onChange: (v) => { state.soft = v === 'soft'; update(); } });
+  const sceneLight = radioGroup({ legend: 'Ánh sáng của cảnh', options: SCENE_LIGHTS.map((s) => ({ value: s.k, label: s.label })), value: 9000, onChange: (v) => { state.sceneK = v; update(); } });
+  const camera = rangeControl({ label: 'Cân bằng trắng của máy', values: CAMERA_KELVIN, value: 5500, format: formatKelvin, spoken: (v) => `${v} kelvin`, onInput: (v) => { state.cameraK = v; update(); } });
 
   function update() {
     const pattern = lightPattern(state.angle);
@@ -157,8 +158,8 @@ export function mount(host) {
     const cast = whiteBalanceCast(state.sceneK, state.cameraK);
     swatch.setTint(cast.tint);
     const lines = [
-      `${pattern.name}: ${DESCRIPTIONS[pattern.name]}`,
-      state.soft ? 'Soft light: gentle shadow edges.' : 'Hard light: crisp shadow edges.',
+      `${NAMES[pattern.id]}: ${DESCRIPTIONS[pattern.id]}`,
+      state.soft ? 'Ánh sáng mềm: mép bóng dịu.' : 'Ánh sáng cứng: mép bóng sắc.',
       castText(cast, state.sceneK, state.cameraK),
     ];
     setReadout(readout, lines);

@@ -15,7 +15,7 @@ test('values outside 0 to 1 are clamped', () => {
   expect(Math.max(...table)).toBe(1);
 });
 test('describes contrast and matte looks', () => {
-  expect(describeCurve(CURVE_PRESETS.contrast)).toContain('more contrast');
+  expect(describeCurve(CURVE_PRESETS.contrast)).toContain('tăng tương phản');
   expect(describeCurve(CURVE_PRESETS.matte)).toContain('matte');
-  expect(describeCurve(CURVE_PRESETS.linear)).toContain('normal');
+  expect(describeCurve(CURVE_PRESETS.linear)).toContain('bình thường');
 });

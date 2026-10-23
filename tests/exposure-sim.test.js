@@ -11,7 +11,7 @@ test('A mode in bright sun at f/1.4 and ISO 25600 pins 1/8000 s and stays too br
   const r = computeExposure({ ...base, sceneEv: 15, mode: 'A', aperture: 1.4, iso: 25600 });
   expect(r.shutter).toBe(1 / 8000);
   expect(r.clamped).toBe('fast');
-  expect(r.verdict).toBe('too bright');
+  expect(r.verdict).toBe('too-bright');
   expect(Number.isFinite(r.offset)).toBe(true);
 });
 

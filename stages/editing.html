@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="vi" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Editing workflow (darktable) · Learn Photography</title>
-    <meta name="description" content="Turn RAW files into finished photos in darktable." />
+    <title>Quy trình chỉnh ảnh (darktable) · Học Nhiếp Ảnh</title>
+    <meta name="description" content="Biến file RAW thành ảnh hoàn chỉnh trong darktable." />
     <script>
       try {
         const saved = localStorage.getItem('lp:theme');
@@ -17,306 +17,306 @@
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Chuyển đến nội dung</a>
     <header id="site-header" class="site-header"></header>
     <div class="layout layout--stage">
-      <nav id="toc" class="toc" aria-label="On this page"></nav>
+      <nav id="toc" class="toc" aria-label="Trên trang này"></nav>
       <main id="main" class="stage" data-stage="editing" tabindex="-1">
         <div id="stage-header" class="stage-header"></div>
 
         <section class="lesson" id="raw" data-read="lesson">
-          <h2>RAW files keep everything</h2>
+          <h2>File RAW giữ lại mọi thứ</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A RAW file keeps all the light data, and darktable never changes it.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>File RAW giữ toàn bộ dữ liệu ánh sáng, và darktable không bao giờ thay đổi nó.</p>
           </div>
-          <p>A <dfn>RAW</dfn> file holds everything the sensor recorded. It looks flat at first because nothing has been processed yet.</p>
-          <p>Your original file never changes in darktable. The app saves your edits in a small <dfn>sidecar</dfn> file next to it, such as DSC01234.ARW.xmp.</p>
-          <p>Back up the sidecar files together with the RAW files. Without them, your edits are gone.</p>
+          <p>File <dfn>RAW</dfn> chứa mọi thứ cảm biến đã ghi lại. Lúc đầu nó trông nhạt vì chưa được xử lý gì.</p>
+          <p>File gốc của bạn không bao giờ bị thay đổi trong darktable. Phần mềm lưu các chỉnh sửa vào một <dfn>tệp đi kèm (sidecar)</dfn> nhỏ nằm cạnh nó, ví dụ DSC01234.ARW.xmp.</p>
+          <p>Hãy sao lưu tệp đi kèm cùng với file RAW. Thiếu chúng, mọi chỉnh sửa của bạn sẽ mất.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a recipe card stored next to raw ingredients. The ingredients stay untouched. The card says how to cook them.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến tờ công thức nấu ăn đặt cạnh nguyên liệu tươi. Nguyên liệu vẫn để nguyên. Tờ công thức ghi cách nấu chúng.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You edit a sunset photo in three different ways. The RAW file stays the same, and you can go back to the original at any time.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn chỉnh một ảnh hoàng hôn theo ba cách khác nhau. File RAW vẫn y nguyên, và bạn có thể quay về bản gốc bất cứ lúc nào.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Edits save automatically to the .xmp file. You never press a save button for edits.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Chỉnh sửa tự động lưu vào file .xmp. Bạn không cần bấm nút lưu cho các chỉnh sửa.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Open one RAW file in darktable, change the exposure, and close it. Find the .xmp file next to the RAW in your folder.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Mở một file RAW trong darktable, đổi phơi sáng (module exposure) rồi đóng lại. Tìm file .xmp nằm cạnh file RAW trong thư mục.</p>
           </div>
         </section>
         <section class="lesson" id="organize" data-read="lesson">
-          <h2>Organize and cull</h2>
+          <h2>Sắp xếp và lọc ảnh</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Put photos in dated folders, then keep only the best ones.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Cất ảnh vào thư mục theo ngày, rồi chỉ giữ lại những tấm đẹp nhất.</p>
           </div>
-          <p>Copy each shoot into a folder named by date and event, such as 2026/2026-10-25_market. Then add the folder to darktable.</p>
-          <p><dfn>Culling</dfn> means picking the best photos and rejecting the rest. First reject the clear misses. Then give stars to the ones you like.</p>
+          <p>Chép mỗi buổi chụp vào một thư mục đặt tên theo ngày và sự kiện, ví dụ 2026/2026-10-25_market. Sau đó thêm thư mục vào darktable.</p>
+          <p><dfn>Lọc ảnh (culling)</dfn> là chọn ra ảnh đẹp nhất và loại phần còn lại. Trước tiên loại những tấm hỏng rõ ràng. Sau đó gắn sao cho những tấm bạn thích.</p>
           <figure class="illus">
             <div data-illus="culling-funnel"></div>
-            <figcaption>Reject first, then star the best.</figcaption>
+            <figcaption>Loại trước, rồi gắn sao cho tấm đẹp nhất.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of picking fruit at a market. First you drop the bruised ones. Then you choose the best of the rest.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc chọn trái cây ở chợ. Trước tiên bạn bỏ những quả bị dập. Sau đó bạn chọn quả ngon nhất trong số còn lại.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>From 200 photos of a market, you reject 120 blurry or dull frames. You give 3 stars to 10 of the rest. Those 10 are your edit.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Từ 200 tấm chụp ở chợ, bạn loại 120 tấm mờ hoặc nhạt nhẽo. Bạn gắn 3 sao cho 10 tấm trong số còn lại. 10 tấm đó là bộ ảnh bạn sẽ chỉnh.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>In the lighttable, use <b class="ui">import › add to library</b>. Hover over a thumbnail and press <b class="ui">0</b> to <b class="ui">5</b> for stars and <b class="ui">R</b> to reject. <b class="ui">F1</b> to <b class="ui">F5</b> add color labels.</p><p>Culling mode is <b class="ui">X</b> (fixed) or <b class="ui">Ctrl+X</b> (dynamic). Hold <b class="ui">W</b> for a full preview.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Trong lighttable, dùng <b class="ui">import › add to library</b>. Rê chuột lên ảnh thu nhỏ rồi bấm <b class="ui">0</b> đến <b class="ui">5</b> để gắn sao, bấm <b class="ui">R</b> để loại. Phím <b class="ui">F1</b> đến <b class="ui">F5</b> gắn nhãn màu.</p><p>Chế độ lọc ảnh là <b class="ui">X</b> (cố định) hoặc <b class="ui">Ctrl+X</b> (động). Giữ <b class="ui">W</b> để xem ảnh toàn màn hình.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Import your last shoot. Reject the misses with R, then star your top 10.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Nhập buổi chụp gần nhất. Loại tấm hỏng bằng phím R, rồi gắn sao cho 10 tấm đẹp nhất.</p>
           </div>
         </section>
         <section class="lesson" id="setup" data-read="lesson">
-          <h2>Set up darktable once</h2>
+          <h2>Cài đặt darktable một lần</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Check one setting so darktable starts every RAW file the modern way.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Kiểm tra một thiết lập để darktable mở mọi file RAW theo cách hiện đại.</p>
           </div>
-          <p>darktable 5.6 starts each RAW file with a few modules already on. The setting that controls this is called the pixel workflow.</p>
-          <p>Keep the default: "scene-referred (sigmoid)". The darktable manual's getting-started page still shows an older module called filmic rgb. This course uses sigmoid.</p>
+          <p>Phần mềm darktable 5.6 mở mỗi file RAW với vài module đã bật sẵn. Thiết lập điều khiển việc này gọi là pixel workflow.</p>
+          <p>Hãy giữ mặc định: "scene-referred (sigmoid)". Trang hướng dẫn nhập môn của darktable vẫn nói về một module cũ hơn tên là filmic rgb. Khóa học này dùng sigmoid.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of setting up a new kitchen once. After that, every meal starts from the same tidy counter.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc sắp xếp căn bếp mới một lần. Sau đó, bữa ăn nào cũng bắt đầu từ một mặt bàn gọn gàng như nhau.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You open a RAW file and it already looks brighter and has contrast. That is the default workflow doing its job.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn mở một file RAW và nó đã sáng hơn, có độ tương phản. Đó là quy trình mặc định đang phát huy tác dụng.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Open preferences, then <b class="ui">processing</b>. Check that <b class="ui">auto-apply pixel workflow defaults</b> is set to "scene-referred (sigmoid)".</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Mở preferences, rồi vào <b class="ui">processing</b>. Kiểm tra <b class="ui">auto-apply pixel workflow defaults</b> đang đặt là "scene-referred (sigmoid)".</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Open darktable preferences and confirm the pixel workflow setting.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Mở preferences của darktable và xác nhận thiết lập pixel workflow.</p>
           </div>
         </section>
         <section class="lesson" id="basic-edit" data-read="lesson">
-          <h2>The basic edit, in order</h2>
+          <h2>Chỉnh ảnh cơ bản, theo thứ tự</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Work through the same nine modules, in the same order, on every photo.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Với mọi bức ảnh, hãy đi qua cùng chín module theo cùng một thứ tự.</p>
           </div>
-          <p>A fixed order keeps you from going in circles. The order inside darktable is fixed anyway. This list is the order you work in.</p>
+          <p>Thứ tự cố định giúp bạn không chỉnh lòng vòng. Thứ tự xử lý bên trong darktable vốn đã cố định. Danh sách này là thứ tự bạn thao tác.</p>
           <ol>
-            <li><b class="ui">lens correction</b>: turn it on first. Fixing dark corners changes the brightness.</li>
-            <li><b class="ui">exposure</b>: set the overall brightness. The module already adds +0.7 EV, like a camera JPEG. Press <b class="ui">Ctrl+B</b> for color assessment mode while you judge it.</li>
-            <li><b class="ui">sigmoid</b>: sets the contrast and keeps the brightest and darkest parts under control.</li>
-            <li><b class="ui">color calibration</b>: fixes white balance, if needed.</li>
-            <li><b class="ui">color balance rgb</b>: start from the preset <b class="ui">basic colorfulness</b>, then adjust global vibrance.</li>
-            <li><b class="ui">denoise (profiled)</b>: removes noise with a profile made for the α7 II.</li>
-            <li><b class="ui">local contrast</b> or <b class="ui">diffuse or sharpen</b>: brings back crisp detail.</li>
-            <li><b class="ui">rotate and perspective</b> and <b class="ui">crop</b>: straighten the horizon and trim the edges.</li>
-            <li><b class="ui">retouch</b>: removes dust spots and small distractions.</li>
+            <li><b class="ui">lens correction</b>: bật module này đầu tiên. Sửa góc tối sẽ làm thay đổi độ sáng.</li>
+            <li><b class="ui">exposure</b>: chỉnh độ sáng tổng thể. Module này đã cộng sẵn +0,7 EV, giống ảnh JPEG của máy. Bấm <b class="ui">Ctrl+B</b> để vào chế độ đánh giá màu khi bạn xem xét.</li>
+            <li><b class="ui">sigmoid</b>: đặt độ tương phản và giữ phần sáng nhất, tối nhất trong tầm kiểm soát.</li>
+            <li><b class="ui">color calibration</b>: sửa cân bằng trắng nếu cần.</li>
+            <li><b class="ui">color balance rgb</b>: bắt đầu từ preset <b class="ui">basic colorfulness</b>, rồi chỉnh global vibrance.</li>
+            <li><b class="ui">denoise (profiled)</b>: khử nhiễu hạt bằng hồ sơ làm riêng cho α7 II.</li>
+            <li><b class="ui">local contrast</b> hoặc <b class="ui">diffuse or sharpen</b>: lấy lại chi tiết sắc nét.</li>
+            <li><b class="ui">rotate and perspective</b> và <b class="ui">crop</b>: cân lại đường chân trời và cắt bớt mép ảnh.</li>
+            <li><b class="ui">retouch</b>: xóa vết bụi và các chi tiết nhỏ gây rối mắt.</li>
           </ol>
           <figure class="illus">
             <div data-illus="edit-pipeline"></div>
-            <figcaption>The working order for a basic edit.</figcaption>
+            <figcaption>Thứ tự thao tác khi chỉnh ảnh cơ bản.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of getting dressed. Socks go on before shoes. Lens correction goes on before exposure for the same reason: each step depends on the one before.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc mặc quần áo. Đi tất trước rồi mới đi giày. Module lens correction đi trước module exposure cũng vì lý do đó: mỗi bước dựa vào bước trước.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>An underexposed sunset street. Lens correction lifts the dark corners, and exposure +1 EV brings back the street. Sigmoid adds punch.</p><p>Color calibration warms the light a little, and color balance rgb adds color. Denoise cleans the sky, local contrast adds crispness, and a small rotation fixes the tilted horizon.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một con phố lúc hoàng hôn bị thiếu sáng. Module lens correction làm sáng các góc tối, và exposure +1 EV lấy lại con phố. Module sigmoid làm ảnh có lực hơn.</p><p>Module color calibration làm ánh sáng ấm hơn một chút, và color balance rgb thêm màu. Khử nhiễu làm sạch bầu trời, local contrast thêm độ sắc, và xoay nhẹ sửa đường chân trời bị nghiêng.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Open a photo in the darkroom and work down the list from step 1 to step 9. Skip a step only when the photo does not need it.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Mở ảnh trong darkroom và làm lần lượt từ bước 1 đến bước 9. Chỉ bỏ qua một bước khi ảnh không cần đến nó.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Edit one photo using all nine steps in order. Take note of which step changed it most.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chỉnh một ảnh qua đủ chín bước theo thứ tự. Ghi lại bước nào làm ảnh thay đổi nhiều nhất.</p>
           </div>
         </section>
         <section class="lesson" id="compare" data-read="lesson">
-          <h2>Compare before and after</h2>
+          <h2>So sánh trước và sau</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A snapshot lets you compare your edit with an earlier version.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Ảnh lưu trạng thái giúp bạn so sánh bản chỉnh với một phiên bản trước đó.</p>
           </div>
-          <p>After a while, your eyes get used to an edit. A side-by-side comparison shows if it really looks better.</p>
-          <p>A <dfn>snapshot</dfn> saves the current look. The <dfn>history stack</dfn> lists every edit in order, so you can step back.</p>
+          <p>Nhìn lâu, mắt bạn sẽ quen với bản chỉnh. Đặt hai bản cạnh nhau sẽ cho thấy nó có thật sự đẹp hơn không.</p>
+          <p><dfn>Ảnh lưu trạng thái (snapshot)</dfn> lưu lại diện mạo hiện tại. <dfn>Lịch sử chỉnh sửa (history stack)</dfn> liệt kê mọi chỉnh sửa theo thứ tự, nên bạn có thể lùi lại.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a before and after photo in a magazine. Side by side, the change is obvious.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến ảnh trước và sau trên tạp chí. Đặt cạnh nhau, sự khác biệt hiện ra rõ ràng.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You push the colors hard. In a split view next to the snapshot, the skin looks orange. You pull color balance rgb back a little.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn đẩy màu quá mạnh. Khi chia đôi màn hình cạnh ảnh lưu trạng thái, làn da trông ngả cam. Bạn giảm color balance rgb lại một chút.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>In the <b class="ui">snapshots</b> module, click <b class="ui">take snapshot</b>. Then click the snapshot for a split view. Click an older item in the <b class="ui">history stack</b> to see that step.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Trong module <b class="ui">snapshots</b>, bấm <b class="ui">take snapshot</b>. Sau đó bấm vào ảnh lưu trạng thái để xem chia đôi. Bấm một mục cũ hơn trong <b class="ui">history stack</b> để xem bước đó.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Take a snapshot before you edit. When you finish, compare the two in split view.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Tạo một ảnh lưu trạng thái trước khi chỉnh. Khi xong, so sánh hai bản ở chế độ chia đôi.</p>
           </div>
         </section>
         <section class="lesson" id="edit-a-set" data-read="lesson">
-          <h2>Edit a whole set</h2>
+          <h2>Chỉnh cả một bộ ảnh</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Copy the edit from one photo and paste it onto the others.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Sao chép chỉnh sửa từ một ảnh rồi dán sang các ảnh khác.</p>
           </div>
-          <p>Photos from one shoot often share the same light. Edit one, then copy its edits to the rest.</p>
-          <p>Plain copy skips white balance and lens correction, because those can differ per photo. Selective copy lets you choose exactly which modules to paste.</p>
+          <p>Ảnh trong một buổi chụp thường có cùng ánh sáng. Chỉnh một tấm, rồi chép chỉnh sửa sang những tấm còn lại.</p>
+          <p>Sao chép thường bỏ qua cân bằng trắng và sửa ống kính, vì hai thứ này có thể khác nhau ở từng ảnh. Sao chép chọn lọc cho bạn chọn đúng module nào sẽ được dán.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a stamp. Carve it once, then press it on every page.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến con dấu. Khắc một lần, rồi đóng lên mọi trang.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>Ten photos from one market at dusk: edit the best one, copy it, and paste onto the other nine. Then fine-tune exposure on each.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Mười tấm chụp ở một khu chợ lúc chạng vạng: chỉnh tấm đẹp nhất, sao chép rồi dán sang chín tấm kia. Sau đó tinh chỉnh phơi sáng cho từng tấm.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Use <b class="ui">Ctrl+C</b> and <b class="ui">Ctrl+V</b> to copy and paste all edits. Use <b class="ui">Ctrl+Shift+C</b> and <b class="ui">Ctrl+Shift+V</b> to pick modules.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Dùng <b class="ui">Ctrl+C</b> và <b class="ui">Ctrl+V</b> để chép và dán mọi chỉnh sửa. Dùng <b class="ui">Ctrl+Shift+C</b> và <b class="ui">Ctrl+Shift+V</b> để chọn module.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Copy your best edit onto 5 photos from the same shoot.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chép bản chỉnh đẹp nhất của bạn sang 5 ảnh cùng buổi chụp.</p>
           </div>
         </section>
         <section class="lesson" id="export" data-read="lesson">
-          <h2>Export for web and print</h2>
+          <h2>Xuất ảnh cho web và để in</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Export makes a finished JPEG and leaves your RAW untouched.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Xuất ảnh (export) tạo ra một file JPEG hoàn chỉnh và để nguyên file RAW.</p>
           </div>
-          <p>The web needs small files in the sRGB color space. Print needs the full size.</p>
-          <p>A web size of 2048 pixels on the long side looks sharp on phones and laptops. Quality 90 keeps files small with no visible loss.</p>
+          <p>Web cần file nhỏ trong không gian màu sRGB. In ảnh cần kích thước đầy đủ.</p>
+          <p>Kích thước web 2048 pixel ở cạnh dài trông sắc nét trên điện thoại và laptop. Chất lượng 90 giữ file nhỏ mà không thấy giảm chất lượng.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of printing a document as a PDF. The original stays editable. The PDF is the copy you share.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc lưu một tài liệu thành PDF. Bản gốc vẫn chỉnh sửa được. File PDF là bản bạn gửi đi.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You share 10 travel photos online: JPEG, sRGB, quality 90, 2048 pixels. For a big print, you export the same photos at full size.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn chia sẻ 10 ảnh du lịch lên mạng: JPEG, sRGB, chất lượng 90, 2048 pixel. Để in khổ lớn, bạn xuất cùng những ảnh đó ở kích thước đầy đủ.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>In the <b class="ui">export</b> module: <b class="ui">file format</b> JPEG, <b class="ui">quality</b> 90, <b class="ui">set size</b> in pixels with <b class="ui">max size</b> 2048 × 2048, <b class="ui">profile</b> sRGB. For full size, set max size to 0 × 0.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Trong module <b class="ui">export</b>: <b class="ui">file format</b> JPEG, <b class="ui">quality</b> 90, <b class="ui">set size</b> theo pixel với <b class="ui">max size</b> 2048 × 2048, <b class="ui">profile</b> sRGB. Để xuất đủ cỡ, đặt max size là 0 × 0.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Export your 10 best photos for the web and open them on your phone.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Xuất 10 ảnh đẹp nhất cho web và mở chúng trên điện thoại.</p>
           </div>
         </section>
         <section class="lesson" id="backup" data-read="lesson">
-          <h2>Back up with the 3-2-1 rule</h2>
+          <h2>Sao lưu theo quy tắc 3-2-1</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Keep 3 copies of your photos, on 2 kinds of storage, with 1 copy somewhere else.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Giữ 3 bản sao ảnh, trên 2 loại ổ lưu trữ, với 1 bản ở nơi khác.</p>
           </div>
-          <p>Drives fail and laptops get stolen. A backup plan protects years of work.</p>
-          <p>The 3-2-1 rule: 3 copies, on 2 kinds of storage, with 1 copy off-site. Include the .xmp sidecar files.</p>
+          <p>Ổ cứng có thể hỏng và laptop có thể bị mất cắp. Một kế hoạch sao lưu bảo vệ công sức nhiều năm.</p>
+          <p>Quy tắc 3-2-1 (3-2-1 rule): 3 bản sao, trên 2 loại ổ lưu trữ, với 1 bản để ở nơi khác. Nhớ sao lưu cả tệp đi kèm .xmp.</p>
           <figure class="illus">
             <div data-illus="backup-321"></div>
-            <figcaption>Three copies, two kinds of storage, one off-site.</figcaption>
+            <figcaption>Ba bản sao, hai loại ổ lưu trữ, một bản ở nơi khác.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of spare house keys. You keep one in your pocket, one at home and one with a friend.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến chìa khóa nhà dự phòng. Bạn giữ một chiếc trong túi, một chiếc ở nhà và một chiếc gửi bạn bè.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>Your photos live on the laptop, on an external drive, and in a cloud folder. If the laptop dies, you lose nothing.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Ảnh của bạn nằm trên laptop, trên ổ cứng rời và trong một thư mục đám mây. Nếu laptop hỏng, bạn không mất gì cả.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Back up the whole photo folder, not only darktable. The library and the .xmp files hold your edits.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Hãy sao lưu cả thư mục ảnh, không chỉ riêng darktable. Thư viện và các file .xmp chứa chỉnh sửa của bạn.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Copy your photo folder to an external drive today.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Hôm nay hãy chép thư mục ảnh sang một ổ cứng rời.</p>
           </div>
         </section>
         <section class="key-terms" id="key-terms" data-read="tech">
-          <h2>Key terms</h2>
+          <h2>Thuật ngữ chính</h2>
           <dl class="terms">
-            <dt><dfn>RAW</dfn></dt><dd>The full data from the sensor, before processing.</dd>
-            <dt><dfn>Sidecar (XMP)</dfn></dt><dd>A small file next to the photo that stores your edits.</dd>
-            <dt><dfn>Module</dfn></dt><dd>One editing tool in darktable.</dd>
-            <dt><dfn>History stack</dfn></dt><dd>The list of edits you made, in order.</dd>
-            <dt><dfn>Snapshot</dfn></dt><dd>A saved state you can compare against.</dd>
-            <dt><dfn>Culling</dfn></dt><dd>Picking the best photos and rejecting the rest.</dd>
-            <dt><dfn>sRGB</dfn></dt><dd>The standard color space for screens and the web.</dd>
+            <dt><dfn>RAW</dfn></dt><dd>Toàn bộ dữ liệu từ cảm biến, trước khi xử lý.</dd>
+            <dt><dfn>Tệp đi kèm (XMP)</dfn></dt><dd>File nhỏ nằm cạnh ảnh, lưu các chỉnh sửa của bạn.</dd>
+            <dt><dfn>Module</dfn></dt><dd>Một công cụ chỉnh ảnh trong darktable.</dd>
+            <dt><dfn>Lịch sử chỉnh sửa</dfn></dt><dd>Danh sách các chỉnh sửa bạn đã làm, theo thứ tự.</dd>
+            <dt><dfn>Ảnh lưu trạng thái (snapshot)</dfn></dt><dd>Một trạng thái đã lưu để bạn so sánh.</dd>
+            <dt><dfn>Lọc ảnh</dfn></dt><dd>Chọn ra ảnh đẹp nhất và loại phần còn lại.</dd>
+            <dt><dfn>sRGB</dfn></dt><dd>Không gian màu chuẩn cho màn hình và web.</dd>
           </dl>
         </section>
         <section class="simulator wide" id="simulator">
-          <h2>Step through a basic edit</h2>
-          <p>Press Next step to apply one darktable module at a time. Drag the divider to compare the RAW file with the edit.</p>
+          <h2>Đi từng bước qua một lần chỉnh cơ bản</h2>
+          <p>Bấm nút "Bước tiếp theo" để áp dụng lần lượt từng module darktable. Kéo thanh chia để so sánh file RAW với bản đã chỉnh.</p>
           <div data-widget="edit-steps"></div>
         </section>
         <section class="warmup" id="warm-up" data-read="lesson">
-          <h2>Warm-up</h2>
-          <p>Shoot one portrait by a window at 45°. Check that the nearest eye is sharp at 100%.</p>
+          <h2>Khởi động</h2>
+          <p>Chụp một tấm chân dung cạnh cửa sổ với ánh sáng 45°. Phóng to 100% để kiểm tra mắt gần máy có nét không.</p>
         </section>
 
         <section class="practice" id="practice">
-          <h2>Practice</h2>
+          <h2>Thực hành</h2>
           <div data-checklist></div>
         </section>
 
         <section class="mistakes" id="mistakes" data-read="lesson">
-          <h2>Common mistakes</h2>
+          <h2>Lỗi thường gặp</h2>
           <ul class="mistakes__list">
-            <li><p class="mistake">Thinking JPEG is better because RAW looks flat.</p><p class="fix">RAW is unprocessed. Editing gives it life and keeps all the data.</p></li>
-            <li><p class="mistake">Worrying that editing changes the original.</p><p class="fix">darktable keeps edits in the .xmp sidecar.</p></li>
-            <li><p class="mistake">Expecting RAW to rescue a pure white sky.</p><p class="fix">Fully white areas hold no detail. Protect highlights when you shoot.</p></li>
-            <li><p class="mistake">Sharpening to fix missed focus.</p><p class="fix">Sharpening cannot create detail that was never captured.</p></li>
-            <li><p class="mistake">Exporting Adobe RGB for the web.</p><p class="fix">Use sRGB for screens and the web.</p></li>
+            <li><p class="mistake">Nghĩ JPEG tốt hơn vì RAW trông nhạt.</p><p class="fix">RAW chưa được xử lý. Chỉnh sửa làm ảnh có sức sống và vẫn giữ đủ dữ liệu.</p></li>
+            <li><p class="mistake">Lo rằng chỉnh sửa sẽ thay đổi file gốc.</p><p class="fix">Phần mềm darktable lưu chỉnh sửa trong tệp đi kèm .xmp.</p></li>
+            <li><p class="mistake">Mong RAW cứu được bầu trời trắng xóa.</p><p class="fix">Vùng trắng hoàn toàn không còn chi tiết. Khi chụp, hãy giữ chi tiết vùng sáng, đừng để cháy sáng.</p></li>
+            <li><p class="mistake">Làm nét để cứu ảnh bị trượt nét.</p><p class="fix">Làm nét không thể tạo ra chi tiết chưa từng được ghi lại.</p></li>
+            <li><p class="mistake">Xuất ảnh Adobe RGB cho web.</p><p class="fix">Hãy dùng sRGB cho màn hình và web.</p></li>
           </ul>
         </section>
         <section class="self-check" id="self-check" data-read="lesson">
-          <h2>Self-check</h2>
+          <h2>Tự kiểm tra</h2>
           <details class="quiz">
-            <summary>Which module do you turn on first, and why?</summary>
-            <p>lens correction, because fixing dark corners changes the brightness.</p>
+            <summary>Bạn bật module nào đầu tiên, và vì sao?</summary>
+            <p>Module lens correction, vì sửa góc tối sẽ làm thay đổi độ sáng.</p>
           </details>
           <details class="quiz">
-            <summary>What does Ctrl+Shift+V do?</summary>
-            <p>It pastes only the modules you choose.</p>
+            <summary>Ctrl+Shift+V dùng để làm gì?</summary>
+            <p>Nó chỉ dán những module bạn chọn.</p>
           </details>
           <details class="quiz">
-            <summary>Where are your edits stored?</summary>
-            <p>In the .xmp sidecar next to the RAW file.</p>
+            <summary>Chỉnh sửa của bạn được lưu ở đâu?</summary>
+            <p>Trong tệp đi kèm .xmp nằm cạnh file RAW.</p>
           </details>
           <details class="quiz">
-            <summary>Which export settings suit the web?</summary>
-            <p>JPEG, sRGB, quality 90, max size 2048 × 2048.</p>
+            <summary>Thiết lập xuất ảnh nào hợp với web?</summary>
+            <p>JPEG, sRGB, chất lượng 90, max size 2048 × 2048.</p>
           </details>
           <details class="quiz">
-            <summary>Your camera was on Daylight under orange lamps. Can you still fix it?</summary>
-            <p>Yes. Set white balance in color calibration, because the RAW file keeps the data.</p>
+            <summary>Máy đặt Daylight dưới đèn vàng cam. Bạn còn sửa được không?</summary>
+            <p>Được. Chỉnh cân bằng trắng trong color calibration, vì file RAW vẫn giữ dữ liệu.</p>
           </details>
         </section>
         <section class="learn-more" id="learn-more">
-          <h2>Learn more</h2>
+          <h2>Tìm hiểu thêm</h2>
           <ul>
-            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/workflow/process/">darktable 5.6 manual: Process</a></li>
-            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/sidecar-files/sidecar/">darktable 5.6 manual: Sidecar files</a></li>
-            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/import/">darktable 5.6 manual: Import</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/workflow/process/">Hướng dẫn darktable 5.6: Xử lý ảnh (tiếng Anh)</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/sidecar-files/sidecar/">Hướng dẫn darktable 5.6: Tệp đi kèm (tiếng Anh)</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/import/">Hướng dẫn darktable 5.6: Nhập ảnh (tiếng Anh)</a></li>
           </ul>
         </section>
 
-        <nav id="stage-pager" class="pager wide" aria-label="Stages"></nav>
+        <nav id="stage-pager" class="pager wide" aria-label="Các chặng"></nav>
       </main>
     </div>
     <footer id="site-footer" class="site-footer"></footer>

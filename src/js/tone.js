@@ -1,8 +1,8 @@
 export const CURVE_PRESETS = {
-  linear: { label: 'Straight line', blacks: 0, shadows: 0.25, mids: 0.5, highlights: 0.75 },
-  contrast: { label: 'S-curve', blacks: 0, shadows: 0.18, mids: 0.5, highlights: 0.82 },
-  matte: { label: 'Matte', blacks: 0.12, shadows: 0.3, mids: 0.52, highlights: 0.78 },
-  shadows: { label: 'Open shadows', blacks: 0, shadows: 0.35, mids: 0.56, highlights: 0.78 },
+  linear: { label: 'Đường thẳng', blacks: 0, shadows: 0.25, mids: 0.5, highlights: 0.75 },
+  contrast: { label: 'Đường cong chữ S', blacks: 0, shadows: 0.18, mids: 0.5, highlights: 0.82 },
+  matte: { label: 'Mờ lì (matte)', blacks: 0.12, shadows: 0.3, mids: 0.52, highlights: 0.78 },
+  shadows: { label: 'Mở vùng tối', blacks: 0, shadows: 0.35, mids: 0.56, highlights: 0.78 },
 };
 
 export function curvePoints({ blacks, shadows, mids, highlights }) {
@@ -29,11 +29,11 @@ export function describeCurve(levels) {
   const table = curveTable(curvePoints(levels), 17);
   const midSlope = (table[10] - table[6]) / 0.25;
   const parts = [];
-  if (midSlope > 1.1) parts.push('more contrast in the midtones');
-  else if (midSlope < 0.9) parts.push('less contrast in the midtones');
-  else parts.push('normal midtone contrast');
-  if (levels.blacks >= 0.05) parts.push('lifted blacks give a matte look');
-  if (levels.mids > 0.53) parts.push('the photo is brighter overall');
-  else if (levels.mids < 0.47) parts.push('the photo is darker overall');
-  return `Result: ${parts.join(', ')}.`;
+  if (midSlope > 1.1) parts.push('tăng tương phản ở tông trung bình');
+  else if (midSlope < 0.9) parts.push('giảm tương phản ở tông trung bình');
+  else parts.push('tương phản tông trung bình bình thường');
+  if (levels.blacks >= 0.05) parts.push('điểm đen được nâng lên cho vẻ mờ lì (matte)');
+  if (levels.mids > 0.53) parts.push('nhìn chung ảnh sáng hơn');
+  else if (levels.mids < 0.47) parts.push('nhìn chung ảnh tối hơn');
+  return `Kết quả: ${parts.join(', ')}.`;
 }

@@ -1,15 +1,15 @@
 import { ISOS, LENSES, SHAKE_TOLERANCE, SHUTTERS, aperturesFor, autoShutter, blurDiscMm, blurPercentOfFrame, handheldLimitSeconds, settingsEv } from '../photo-math.js';
-import { formatAperture, formatEv, formatIso, formatShutter, shutterSpoken } from '../format.js';
+import { formatAperture, formatEv, formatIso, formatShutter } from '../format.js';
 import { svgEl } from '../dom.js';
 import { liveRegion, radioGroup, rangeControl, readoutBox, setReadout, simLayout } from './controls.js';
 import { SCENE_WIDTH, createScene } from './scene.js';
 
 export const SCENES = [
-  { ev: 15, label: 'Bright sun (EV 15)' },
-  { ev: 13, label: 'Cloudy bright (EV 13)' },
-  { ev: 12, label: 'Open shade (EV 12)' },
-  { ev: 5, label: 'Home at night (EV 5)' },
-  { ev: 4, label: 'Dim street at night (EV 4)' },
+  { ev: 15, label: 'Nắng gắt (EV 15)' },
+  { ev: 13, label: 'Trời mây sáng (EV 13)' },
+  { ev: 12, label: 'Bóng râm mở (EV 12)' },
+  { ev: 5, label: 'Trong nhà buổi tối (EV 5)' },
+  { ev: 4, label: 'Phố tối ban đêm (EV 4)' },
 ];
 
 const SUBJECT_MM = 3000;
@@ -22,11 +22,13 @@ const MAX_MOTION_BLUR_PX = 60;
 const BINS = 32;
 const BASE_HISTOGRAM = Array.from({ length: BINS }, (_, i) => Math.exp(-((i - 12) ** 2) / 50) + 0.35 * Math.exp(-((i - 24) ** 2) / 18));
 
+const VERDICT_TEXT = { correct: 'đúng sáng', 'a-bit-bright': 'hơi sáng', 'too-bright': 'quá sáng', 'a-bit-dark': 'hơi tối', 'too-dark': 'quá tối' };
+
 export function verdictFor(offset) {
   const size = Math.abs(offset);
   if (size < 0.35) return 'correct';
-  if (offset > 0) return size <= 1.5 ? 'a bit bright' : 'too bright';
-  return size <= 1.5 ? 'a bit dark' : 'too dark';
+  if (offset > 0) return size <= 1.5 ? 'a-bit-bright' : 'too-bright';
+  return size <= 1.5 ? 'a-bit-dark' : 'too-dark';
 }
 
 // Illustrative histogram: 8 stops across 32 bins; tones pushed past an edge pile up there (clipping).
@@ -76,12 +78,12 @@ export function mount(host) {
   const readout = readoutBox();
   const live = liveRegion();
 
-  const aperture = rangeControl({ label: 'Aperture', values: aperturesFor(LENSES[35]), value: state.aperture, format: formatAperture, onInput: (v) => update({ aperture: v }) });
-  const shutter = rangeControl({ label: 'Shutter speed', values: [...SHUTTERS].reverse(), value: state.shutter, format: formatShutter, spoken: shutterSpoken, onInput: (v) => update({ shutter: v }) });
+  const aperture = rangeControl({ label: 'Khẩu độ', values: aperturesFor(LENSES[35]), value: state.aperture, format: formatAperture, onInput: (v) => update({ aperture: v }) });
+  const shutter = rangeControl({ label: 'Tốc độ màn trập', values: [...SHUTTERS].reverse(), value: state.shutter, format: formatShutter, onInput: (v) => update({ shutter: v }) });
   const iso = rangeControl({ label: 'ISO', values: ISOS, value: state.iso, format: formatIso, onInput: (v) => update({ iso: v }) });
-  const sceneChoice = radioGroup({ legend: 'Light in scene (EV100)', options: SCENES.map((s) => ({ value: s.ev, label: s.label })), value: state.sceneEv, onChange: (v) => update({ sceneEv: v }) });
+  const sceneChoice = radioGroup({ legend: 'Ánh sáng của cảnh (EV100)', options: SCENES.map((s) => ({ value: s.ev, label: s.label })), value: state.sceneEv, onChange: (v) => update({ sceneEv: v }) });
   const lens = radioGroup({
-    legend: 'Lens',
+    legend: 'Ống kính',
     options: [{ value: 35, label: LENSES[35].label }, { value: 85, label: LENSES[85].label }],
     value: state.focal,
     onChange: (v) => {
@@ -90,8 +92,8 @@ export function mount(host) {
     },
   });
   const mode = radioGroup({
-    legend: 'Mode',
-    options: [{ value: 'M', label: 'M: you set all three' }, { value: 'A', label: 'A: the camera sets the shutter' }],
+    legend: 'Chế độ',
+    options: [{ value: 'M', label: 'M: bạn tự chỉnh cả ba' }, { value: 'A', label: 'A: máy tự chọn tốc độ' }],
     value: state.mode,
     onChange: (v) => update({ mode: v, shutter: shutter.value }),
   });
@@ -106,11 +108,11 @@ export function mount(host) {
     scene.setMotionBlur(r.motionBlurPx);
     scene.setGrain(r.grain * 0.6);
     drawHistogram(histogram, r.histogram);
-    const lines = [`Exposure ${formatEv(r.offset)}: ${r.verdict}.`];
-    if (state.mode === 'A') lines.push(`The camera picked ${formatShutter(r.shutter)}.`);
-    if (r.clamped === 'fast') lines.push('Even 1/8000 s lets in too much light. Close the aperture or lower the ISO.');
-    if (r.clamped === 'slow') lines.push('Even 30 s is not enough light. Open the aperture or raise the ISO.');
-    if (r.shake) lines.push(`${formatShutter(r.shutter)} is slow for the ${state.focal}mm by hand. Use a tripod or a faster shutter speed.`);
+    const lines = [`Phơi sáng ${formatEv(r.offset)}: ${VERDICT_TEXT[r.verdict]}.`];
+    if (state.mode === 'A') lines.push(`Máy đã chọn ${formatShutter(r.shutter)}.`);
+    if (r.clamped === 'fast') lines.push('Ngay cả ở 1/8000 giây, ảnh vẫn nhận quá nhiều sáng. Hãy khép khẩu hoặc hạ ISO.');
+    if (r.clamped === 'slow') lines.push('Ngay cả ở 30 giây, ảnh vẫn không nhận đủ sáng. Hãy mở khẩu hoặc tăng ISO.');
+    if (r.shake) lines.push(`${formatShutter(r.shutter)} là quá chậm để cầm tay với ống ${state.focal}mm. Hãy dùng chân máy hoặc tốc độ nhanh hơn.`);
     setReadout(readout, lines);
     live.announce(lines.join(' '));
   }

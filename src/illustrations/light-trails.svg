@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Car lights become long streaks on a tripod at ISO 100, f/8 to f/11, for 5 to 30 seconds.">
-  <title>Car lights become long streaks on a tripod at ISO 100, f/8 to f/11, for 5 to 30 seconds.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Đèn xe thành những vệt dài khi chụp trên chân máy ở ISO 100, f/8 đến f/11, trong 5 đến 30 giây.">
+  <title>Đèn xe thành những vệt dài khi chụp trên chân máy ở ISO 100, f/8 đến f/11, trong 5 đến 30 giây.</title>
   <rect x="0" y="0" width="640" height="150" fill="#1b2a52"/>
   <path d="M0 150 V80 H60 V40 H110 V90 H170 V30 H230 V100 H300 V60 H360 V150 Z" fill="#141c33"/>
   <path d="M640 150 V70 H590 V50 H540 V110 H480 V40 H420 V150 Z" fill="#141c33"/>
@@ -8,5 +8,5 @@
   <path d="M0 182 C200 176 440 176 640 182" stroke="#ff7a6b" stroke-width="3" fill="none"/>
   <path d="M0 196 C220 190 420 190 640 196" stroke="#fff6dd" stroke-width="4" fill="none"/>
   <path d="M0 202 C220 196 420 196 640 202" stroke="#ffe7a8" stroke-width="3" fill="none"/>
-  <text class="i-text" x="320" y="24" text-anchor="middle" style="fill:#f4f1e8">tripod, ISO 100, f/8 to f/11, 5 to 30 s</text>
+  <text class="i-text" x="320" y="24" text-anchor="middle" style="fill:#f4f1e8">chân máy, ISO 100, f/8 đến f/11, 5 đến 30 giây</text>
 </svg>

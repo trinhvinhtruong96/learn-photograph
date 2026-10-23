@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Only one distance is truly sharp. Sharpness fades gradually in front of and behind it.">
-  <title>Only one distance is truly sharp. Sharpness fades gradually in front of and behind it.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Chỉ một khoảng cách thật sự nét. Độ nét giảm dần ở phía trước và phía sau nó.">
+  <title>Chỉ một khoảng cách thật sự nét. Độ nét giảm dần ở phía trước và phía sau nó.</title>
   <path class="i-line" d="M20 170 H620"/>
   <rect class="i-accent" x="250" y="40" width="20" height="130" opacity="0.12"/><rect class="i-accent" x="270" y="40" width="20" height="130" opacity="0.25"/><rect class="i-accent" x="290" y="40" width="80" height="130" opacity="0.45"/><rect class="i-accent" x="370" y="40" width="20" height="130" opacity="0.25"/><rect class="i-accent" x="390" y="40" width="20" height="130" opacity="0.12"/>
   <rect class="i-muted i-line" x="30" y="128" width="40" height="28" rx="4"/>
   <rect class="i-muted i-line" x="70" y="134" width="14" height="16"/>
   <circle class="i-accent" cx="330" cy="100.0" r="11.0"/><rect class="i-accent" x="321.0" y="114.0" width="18.0" height="56.0" rx="5.0"/>
-  <text class="i-text" x="330" y="30" text-anchor="middle">sharp</text>
-  <text class="i-text-muted" x="200" y="100" text-anchor="middle">softer</text>
-  <text class="i-text-muted" x="460" y="100" text-anchor="middle">softer</text>
+  <text class="i-text" x="330" y="30" text-anchor="middle">nét</text>
+  <text class="i-text-muted" x="200" y="100" text-anchor="middle">mờ dần</text>
+  <text class="i-text-muted" x="460" y="100" text-anchor="middle">mờ dần</text>
 </svg>

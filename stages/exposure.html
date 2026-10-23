@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="vi" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exposure: control light · Learn Photography</title>
-    <meta name="description" content="Learn how aperture, shutter speed and ISO make a photo bright or dark." />
+    <title>Phơi sáng: kiểm soát ánh sáng · Học Nhiếp Ảnh</title>
+    <meta name="description" content="Hiểu cách khẩu độ, tốc độ màn trập và ISO làm ảnh sáng hay tối." />
     <script>
       try {
         const saved = localStorage.getItem('lp:theme');
@@ -17,378 +17,378 @@
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Chuyển đến nội dung</a>
     <header id="site-header" class="site-header"></header>
     <div class="layout layout--stage">
-      <nav id="toc" class="toc" aria-label="On this page"></nav>
+      <nav id="toc" class="toc" aria-label="Trên trang này"></nav>
       <main id="main" class="stage" data-stage="exposure" tabindex="-1">
         <div id="stage-header" class="stage-header"></div>
 
         <section class="lesson" id="start-here" data-read="lesson">
-          <h2>A camera collects light</h2>
+          <h2>Máy ảnh thu nhận ánh sáng</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A photo is light that your camera collects for a short time.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Một bức ảnh là ánh sáng mà máy ảnh thu lại trong một khoảnh khắc ngắn.</p>
           </div>
-          <p>Light enters through the lens. It passes the <dfn>aperture</dfn>, a hole that can open wide or close down. Then the <dfn>shutter</dfn> opens for a moment and the sensor records the light.</p>
-          <p><dfn>Exposure</dfn> means how much light the photo collects. Too little light gives a dark photo. Too much gives a bright, washed-out photo.</p>
+          <p>Ánh sáng đi vào qua ống kính (lens). Nó đi qua <dfn>khẩu độ</dfn> (aperture), một cái lỗ có thể mở rộng hoặc khép nhỏ. Sau đó <dfn>màn trập</dfn> (shutter) mở ra trong chốc lát và cảm biến ghi lại ánh sáng.</p>
+          <p><dfn>Phơi sáng</dfn> (exposure) là lượng ánh sáng mà bức ảnh thu được. Quá ít ánh sáng thì ảnh tối. Quá nhiều thì ảnh sáng chói và bạc màu.</p>
           <figure class="illus">
             <div data-illus="camera-light-path"></div>
-            <figcaption>Light travels through the lens, the aperture and the open shutter to the sensor.</figcaption>
+            <figcaption>Ánh sáng đi qua ống kính, khẩu độ và màn trập đang mở để đến cảm biến.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a bucket in the rain. A wide bucket fills fast. A narrow one needs more time.</p>
-            <p>Wait too long and the bucket overflows. In a photo, that overflow is a pure white area with no detail.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một cái xô hứng mưa. Xô miệng rộng đầy rất nhanh. Xô miệng hẹp cần nhiều thời gian hơn.</p>
+            <p>Chờ quá lâu thì xô sẽ tràn. Trong ảnh, phần tràn đó là một vùng trắng xóa, không còn chút chi tiết nào.</p>
             <figure class="illus">
               <div data-illus="bucket"></div>
-              <figcaption>The size of the opening and the time it stays open decide how much light you collect.</figcaption>
+              <figcaption>Miệng mở to hay nhỏ và mở trong bao lâu sẽ quyết định bạn thu được bao nhiêu ánh sáng.</figcaption>
             </figure>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You shoot one street three times. At 1/1000 s it is too dark, and at 1/250 s it looks right. At 1/30 s the sky turns pure white.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn chụp một con phố ba lần. Ở 1/1000 giây ảnh quá tối, còn ở 1/250 giây thì vừa đẹp. Ở 1/30 giây, bầu trời thành trắng xóa.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
+            <span class="callout-label">Trên máy α7 II</span>
             <ol>
-              <li>Hold the camera with your left hand under the lens. Keep your elbows in.</li>
-              <li>Turn the mode dial to <b class="ui">A</b> (Aperture Priority).</li>
-              <li>Press the shutter button halfway to focus. Press it all the way to take the photo.</li>
-              <li>Save RAW files for darktable: <b class="ui">MENU › Camera Settings › Quality › RAW</b>.</li>
-              <li>Show the histogram: <b class="ui">MENU › Custom Settings › DISP Button › Monitor</b>. Tick <b class="ui">Histogram</b> and press <b class="ui">Enter</b>.</li>
-              <li>Do the same under <b class="ui">DISP Button › Finder</b> for the viewfinder.</li>
-              <li>The NP-FW50 battery lasts about 270 shots with the viewfinder. Carry 2 spares.</li>
+              <li>Cầm máy với tay trái đỡ dưới ống kính. Giữ hai khuỷu tay sát người.</li>
+              <li>Xoay vòng chọn chế độ sang <b class="ui">A</b> (ưu tiên khẩu độ).</li>
+              <li>Nhấn nửa nút chụp để lấy nét (focus). Nhấn hết nút để chụp ảnh.</li>
+              <li>Lưu file RAW để chỉnh trong darktable: <b class="ui">MENU › Camera Settings › Quality › RAW</b>.</li>
+              <li>Hiện biểu đồ histogram: <b class="ui">MENU › Custom Settings › DISP Button › Monitor</b>. Đánh dấu <b class="ui">Histogram</b> rồi nhấn <b class="ui">Enter</b>.</li>
+              <li>Làm tương tự trong <b class="ui">DISP Button › Finder</b> để hiện trong kính ngắm.</li>
+              <li>Pin NP-FW50 chụp được khoảng 270 ảnh khi dùng kính ngắm. Hãy mang theo 2 pin dự phòng.</li>
             </ol>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Set up your camera with the steps above. Then take 10 photos of things near you in A mode.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Cài đặt máy theo các bước trên. Sau đó chụp 10 ảnh những thứ quanh bạn ở chế độ A.</p>
           </div>
         </section>
 
         <section class="lesson" id="stops" data-read="lesson">
-          <h2>Stops double or halve the light</h2>
+          <h2>Mỗi stop gấp đôi hoặc giảm một nửa ánh sáng</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A stop is a step that doubles or halves the light.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Một stop là một bước làm ánh sáng tăng gấp đôi hoặc giảm một nửa.</p>
           </div>
-          <p>Photographers count light in <dfn>stops</dfn>. One stop more means twice the light. One stop less means half the light.</p>
-          <p>Aperture, shutter speed and ISO all move in stops. So you can trade one for another and keep the same brightness.</p>
+          <p>Nhiếp ảnh gia đếm ánh sáng bằng <dfn>stop</dfn> (một bước sáng). Thêm một stop là gấp đôi ánh sáng. Bớt một stop là chỉ còn một nửa.</p>
+          <p>Khẩu độ, tốc độ màn trập (shutter speed) và ISO đều thay đổi theo stop. Vì vậy bạn có thể đổi thông số này lấy thông số kia mà ảnh vẫn sáng như cũ.</p>
           <figure class="illus">
             <div data-illus="stops-staircase"></div>
-            <figcaption>Each step up doubles the light. Each step down halves it.</figcaption>
+            <figcaption>Mỗi bậc đi lên làm ánh sáng gấp đôi. Mỗi bậc đi xuống làm ánh sáng giảm một nửa.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a staircase where every step up doubles the light. Every step down halves it. You can climb with any of the three settings.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy hình dung một cầu thang, mỗi bậc đi lên làm ánh sáng gấp đôi. Mỗi bậc đi xuống làm ánh sáng giảm một nửa. Bạn có thể leo bằng bất kỳ thông số nào trong ba thông số.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>Going from f/4 to f/5.6 halves the light. Going from 1/250 s to 1/125 s doubles it. Going from ISO 400 to ISO 800 doubles the brightness.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Từ f/4 sang f/5.6, ánh sáng giảm một nửa. Từ 1/250 giây sang 1/125 giây, ánh sáng tăng gấp đôi. Từ ISO 400 lên ISO 800, độ sáng tăng gấp đôi.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>The exposure compensation dial on top moves in 1/3 stops. Three clicks make one stop.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Vòng bù trừ phơi sáng (exposure compensation dial) trên nóc máy đi theo từng bước 1/3 stop. Ba nấc là một stop.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Take one photo. Turn the exposure compensation dial three clicks up and shoot again. The second photo is twice as bright.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chụp một tấm ảnh. Xoay vòng bù trừ phơi sáng lên ba nấc rồi chụp lại. Ảnh thứ hai sáng gấp đôi ảnh đầu.</p>
           </div>
         </section>
 
         <section class="lesson" id="aperture" data-read="lesson">
-          <h2>Aperture controls light and blur</h2>
+          <h2>Khẩu độ điều khiển ánh sáng và độ mờ nền</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>The aperture is a hole in your lens. Its size sets the light and the background blur.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Khẩu độ là một cái lỗ trong ống kính. Độ lớn của lỗ quyết định lượng ánh sáng và độ mờ của hậu cảnh.</p>
           </div>
-          <p>The aperture is a hole inside your lens. You set its size with the <dfn>f-number</dfn>. A small number, like f/1.8, means a big hole.</p>
-          <p>A big hole lets in more light and blurs the background. A big number, like f/8, means a small hole. You get less light, but more of the scene is sharp.</p>
+          <p>Khẩu độ là một cái lỗ bên trong ống kính. Bạn chỉnh độ lớn của lỗ bằng <dfn>số f</dfn> (f-number). Số nhỏ, như f/1.8, nghĩa là lỗ lớn.</p>
+          <p>Lỗ lớn cho nhiều ánh sáng vào và làm mờ hậu cảnh. Số lớn, như f/8, nghĩa là lỗ nhỏ. Bạn nhận ít ánh sáng hơn, nhưng phần nét trong cảnh sẽ nhiều hơn.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Read the f-number as a fraction. f/2 is a half. f/8 is an eighth. A half is bigger than an eighth, so f/2 is the bigger hole.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy đọc số f như một phân số. Số f/2 là một nửa, còn f/8 là một phần tám. Một nửa lớn hơn một phần tám, nên f/2 là lỗ lớn hơn.</p>
             <figure class="illus">
               <div data-illus="fraction-pie"></div>
-              <figcaption>f/2 is a half and f/8 is an eighth, so f/2 is the bigger opening.</figcaption>
+              <figcaption>Số f/2 là một nửa và f/8 là một phần tám, nên f/2 mở lớn hơn.</figcaption>
             </figure>
           </div>
           <figure class="illus">
             <div data-illus="f-number-fraction"></div>
-            <figcaption>Smaller f-number, bigger hole. Each full stop to the right lets in half the light.</figcaption>
+            <figcaption>Số f càng nhỏ, lỗ càng lớn. Mỗi stop nguyên sang phải chỉ cho vào một nửa ánh sáng.</figcaption>
           </figure>
-          <p>The full stops on your lenses are f/1.4, 2, 2.8, 4, 5.6, 8, 11 and 16. Each step to the right lets in half the light.</p>
+          <p>Các stop nguyên trên ống kính của bạn là f/1.4, 2, 2.8, 4, 5.6, 8, 11 và 16. Mỗi bước sang phải chỉ cho vào một nửa ánh sáng.</p>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A portrait with the 85mm at f/1.8: the face is sharp and the background turns into soft shapes. A group photo with the 35mm at f/8: every face is sharp.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Chụp chân dung bằng ống 85mm ở f/1.8: khuôn mặt nét, hậu cảnh tan thành những mảng mềm mại. Chụp ảnh nhóm bằng ống 35mm ở f/8: khuôn mặt nào cũng nét.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>Turn the mode dial to <b class="ui">A</b> (Aperture Priority). Turn the front or rear dial to change the f-number. The camera picks the shutter speed for you.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Xoay vòng chọn chế độ sang <b class="ui">A</b> (ưu tiên khẩu độ). Xoay vòng xoay trước hoặc sau để đổi số f. Máy sẽ tự chọn tốc độ màn trập cho bạn.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Put a cup on a table with a busy background. Shoot it at f/1.4, f/4 and f/16 with the 35mm. Compare the backgrounds.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Đặt một cái cốc lên bàn, phía sau có nhiều đồ vật. Chụp nó ở f/1.4, f/4 và f/16 bằng ống 35mm. So sánh hậu cảnh của ba ảnh.</p>
           </div>
         </section>
 
         <section class="lesson" id="shutter-speed" data-read="lesson">
-          <h2>Shutter speed freezes or blurs motion</h2>
+          <h2>Tốc độ màn trập đóng băng hoặc làm nhòe chuyển động</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Shutter speed is how long the sensor collects light.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Tốc độ màn trập là khoảng thời gian cảm biến thu ánh sáng.</p>
           </div>
-          <p><dfn>Shutter speed</dfn> is the time the shutter stays open. A fast speed like 1/1000 s freezes motion. A slow speed like 1/8 s lets moving things blur.</p>
-          <p>Slow speeds also let in more light. Each time you double the time, you double the light.</p>
+          <p><dfn>Tốc độ màn trập</dfn> là thời gian màn trập mở. Tốc độ nhanh như 1/1000 giây sẽ đóng băng chuyển động. Tốc độ chậm như 1/8 giây làm vật đang chuyển động bị nhòe.</p>
+          <p>Tốc độ chậm cũng cho vào nhiều ánh sáng hơn. Mỗi lần tăng gấp đôi thời gian, bạn có gấp đôi ánh sáng.</p>
           <figure class="illus">
             <div data-illus="shutter-motion"></div>
-            <figcaption>The same runner at three shutter speeds.</figcaption>
+            <figcaption>Cùng một người chạy, chụp ở ba tốc độ màn trập.</figcaption>
           </figure>
-          <p>Use these speeds as a start:</p>
+          <p>Bạn có thể bắt đầu với các tốc độ sau:</p>
           <ul>
-            <li>A person standing still: 1/125 s.</li>
-            <li>A person walking: 1/250 s.</li>
-            <li>Kids playing: 1/500 s.</li>
-            <li>Running or sports: 1/1000 s or faster.</li>
-            <li>Frozen water splashes: 1/1000 s or faster.</li>
-            <li>Silky water: from 1/2 s. It gets smoother at 1 to 2 s and very smooth at 5 to 10 s, on a tripod.</li>
+            <li>Người đứng yên: 1/125 giây.</li>
+            <li>Người đi bộ: 1/250 giây.</li>
+            <li>Trẻ em đang chơi: 1/500 giây.</li>
+            <li>Chạy hoặc thể thao: 1/1000 giây hoặc nhanh hơn.</li>
+            <li>Đóng băng tia nước bắn: 1/1000 giây hoặc nhanh hơn.</li>
+            <li>Nước mượt như lụa: từ 1/2 giây. Nước mượt hơn ở 1 đến 2 giây và rất mượt ở 5 đến 10 giây, khi đặt máy trên chân máy (tripod).</li>
           </ul>
-          <p>Your hands shake a little. A safe start is 1 divided by the focal length.</p>
-          <p>With the 35mm, use 1/40 s or faster. With the 85mm, use 1/100 s or faster.</p>
-          <p>Your camera has <dfn>in-body image stabilization (IBIS)</dfn>. Sony rates it at 4.5 stops. In real use, plan on 2 to 3 stops for still subjects.</p>
-          <p>That means about 1/8 s with the 35mm and 1/20 s with the 85mm. IBIS cancels your shake. It does not stop a person who moves.</p>
+          <p>Tay bạn luôn rung một chút. Mức an toàn để bắt đầu là 1 chia cho tiêu cự (focal length).</p>
+          <p>Với ống 35mm, hãy dùng 1/40 giây hoặc nhanh hơn. Với ống 85mm, hãy dùng 1/100 giây hoặc nhanh hơn.</p>
+          <p>Máy của bạn có <dfn>chống rung trên cảm biến (IBIS)</dfn>. Sony công bố mức 4,5 stop. Khi dùng thực tế, hãy chỉ tính 2 đến 3 stop với chủ thể đứng yên.</p>
+          <p>Tức là khoảng 1/8 giây với ống 35mm và 1/20 giây với ống 85mm. IBIS bù lại rung tay của bạn. Nó không giữ yên được người đang cử động.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Point a laser pointer at a far wall. A tiny hand shake moves the dot a lot. A longer lens works the same way, so it shows more shake.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy chiếu bút laser lên một bức tường ở xa. Tay chỉ rung rất nhẹ mà chấm sáng đã dịch đi nhiều. Ống kính tiêu cự dài cũng vậy, nên nó lộ rung tay rõ hơn.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A friend walks past a café. At 1/250 s their legs are sharp. At 1/30 s their legs blur, but the café stays sharp.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một người bạn đi ngang qua quán cà phê. Ở 1/250 giây, chân bạn ấy nét. Ở 1/30 giây, chân bị nhòe nhưng quán cà phê vẫn nét.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>Turn the mode dial to <b class="ui">S</b> (Shutter Priority). Turn the front or rear dial to set the speed. <b class="ui">SteadyShot</b> is On by default.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Xoay vòng chọn chế độ sang <b class="ui">S</b> (ưu tiên tốc độ). Xoay vòng xoay trước hoặc sau để đặt tốc độ. Chức năng <b class="ui">SteadyShot</b> mặc định đã bật sẵn.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Find moving water or traffic. Shoot it at 1/1000 s, 1/60 s and 1/8 s. Compare the motion.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Tìm nước đang chảy hoặc dòng xe cộ. Chụp ở 1/1000 giây, 1/60 giây và 1/8 giây. So sánh chuyển động trong ba ảnh.</p>
           </div>
         </section>
 
         <section class="lesson" id="iso" data-read="lesson">
-          <h2>ISO brightens what you captured</h2>
+          <h2>ISO làm sáng những gì đã thu được</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>ISO makes the photo brighter after the light is captured.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>ISO làm ảnh sáng hơn sau khi ánh sáng đã được thu lại.</p>
           </div>
-          <p>Your sensor has one sensitivity. <dfn>ISO</dfn> brightens what the sensor captured, like turning up the volume.</p>
-          <p>Turning up the volume also makes the hiss louder. In photos, that hiss is <dfn>noise</dfn>: grainy specks in dark areas.</p>
-          <p>Noise mostly comes from too little light. ISO only makes it easier to see. Still, raising ISO in the camera beats brightening a dark photo later.</p>
+          <p>Cảm biến của bạn chỉ có một độ nhạy. <dfn>ISO</dfn> làm sáng những gì cảm biến đã thu, giống như vặn to âm lượng.</p>
+          <p>Vặn to âm lượng thì tiếng rè cũng to hơn. Trong ảnh, tiếng rè đó là <dfn>nhiễu hạt</dfn> (noise): những đốm lấm tấm ở vùng tối.</p>
+          <p>Nhiễu hạt chủ yếu sinh ra do thiếu sáng. ISO chỉ làm nó dễ thấy hơn. Dù vậy, tăng ISO ngay trên máy vẫn tốt hơn là làm sáng một ảnh tối về sau.</p>
           <figure class="illus">
             <div data-illus="iso-volume"></div>
-            <figcaption>Higher ISO brightens the photo and makes grain easier to see.</figcaption>
+            <figcaption>ISO cao hơn làm ảnh sáng hơn và nhiễu hạt dễ thấy hơn.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a radio with a weak signal. Turning up the volume makes the music louder, and the hiss too. A stronger signal is the real cure, and in photos that means more light.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một chiếc radio bắt sóng yếu. Vặn to âm lượng thì nhạc to hơn, nhưng tiếng rè cũng to theo. Cách chữa thật sự là sóng mạnh hơn, và trong ảnh, điều đó nghĩa là thêm ánh sáng.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A dim party, about EV 4 in the simulator: 35mm, f/1.4, 1/125 s, ISO 1600. The wide aperture and a safe shutter speed come first. ISO fills the gap.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một bữa tiệc thiếu sáng, khoảng EV 4 (giá trị phơi sáng) trong trình mô phỏng: ống 35mm, f/1.4, 1/125 giây, ISO 1600. Khẩu độ mở lớn và tốc độ màn trập an toàn được ưu tiên trước. ISO bù vào phần còn thiếu.</p>
           </div>
-          <p>ISO 50 is an extra setting. It holds less detail in bright and dark areas, so start at ISO 100.</p>
+          <p>ISO 50 là một mức mở rộng. Mức này giữ ít chi tiết hơn ở vùng sáng và vùng tối, nên hãy bắt đầu ở ISO 100.</p>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>Set ISO with <b class="ui">MENU › Camera Settings › ISO</b>. <b class="ui">ISO AUTO</b> lets the camera pick between ISO 100 and 6400. For night work, raise the limit with <b class="ui">ISO AUTO Maximum</b>.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Đặt ISO trong <b class="ui">MENU › Camera Settings › ISO</b>. Chế độ <b class="ui">ISO AUTO</b> để máy tự chọn từ ISO 100 đến 6400. Khi chụp đêm, hãy nâng giới hạn trong <b class="ui">ISO AUTO Maximum</b>.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>In a dim room, shoot one scene at ISO 100, 1600 and 25600. Look at the dark areas at 100% on your computer.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Trong một căn phòng tối, chụp cùng một cảnh ở ISO 100, 1600 và 25600. Phóng to 100% trên máy tính và xem các vùng tối.</p>
           </div>
         </section>
 
         <section class="lesson" id="together" data-read="lesson">
-          <h2>Three settings work together</h2>
+          <h2>Ba thông số phối hợp với nhau</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Aperture and shutter speed let light in, and ISO brightens it.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Khẩu độ và tốc độ màn trập cho ánh sáng đi vào, còn ISO làm ảnh sáng thêm.</p>
           </div>
-          <p>You can reach the same brightness in many ways. Open the aperture one stop and use a shutter speed one stop faster. The photo stays just as bright.</p>
-          <p>In open shade at ISO 100, these three give the same brightness:</p>
+          <p>Bạn có thể đạt cùng một độ sáng bằng nhiều cách. Mở khẩu độ thêm một stop và dùng tốc độ màn trập nhanh hơn một stop. Ảnh vẫn sáng y như cũ.</p>
+          <p>Trong bóng râm mở (open shade) ở ISO 100, ba cặp thông số này cho cùng một độ sáng:</p>
           <ul>
-            <li>f/2.8 at 1/500 s</li>
-            <li>f/4 at 1/250 s</li>
-            <li>f/5.6 at 1/125 s</li>
+            <li>f/2.8 ở 1/500 giây</li>
+            <li>f/4 ở 1/250 giây</li>
+            <li>f/5.6 ở 1/125 giây</li>
           </ul>
-          <p>What changes is the look. f/2.8 blurs the background more. 1/500 s freezes more motion.</p>
+          <p>Điều thay đổi là vẻ ngoài của bức ảnh. Ở f/2.8, hậu cảnh mờ hơn. Ở 1/500 giây, chuyển động được đóng băng tốt hơn.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Back to the bucket in the rain. A wide opening for a short time collects the same water as a narrow opening for a long time.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Quay lại với cái xô hứng mưa. Miệng rộng trong thời gian ngắn hứng được lượng nước bằng miệng hẹp trong thời gian dài.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>On a sunny day, try the Sunny 16 rule. Set the shutter speed to 1 divided by your ISO. Then pick the aperture from this list:</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Vào ngày nắng, hãy thử quy tắc Sunny 16. Đặt tốc độ màn trập bằng 1 chia cho ISO của bạn. Sau đó chọn khẩu độ theo danh sách này:</p>
             <ul>
-              <li>Snow or sand: f/22</li>
-              <li>Bright sun: f/16</li>
-              <li>Light overcast: f/11</li>
-              <li>Overcast: f/8</li>
-              <li>Heavy overcast: f/5.6</li>
-              <li>Open shade or sunset: f/4</li>
+              <li>Tuyết hoặc cát: f/22</li>
+              <li>Nắng gắt: f/16</li>
+              <li>Trời hơi u ám: f/11</li>
+              <li>Trời u ám: f/8</li>
+              <li>Trời u ám dày: f/5.6</li>
+              <li>Bóng râm mở hoặc hoàng hôn: f/4</li>
             </ul>
-            <p>At ISO 100 in bright sun, that gives f/16 at 1/125 s.</p>
+            <p>Ở ISO 100 dưới nắng gắt, bạn sẽ có f/16 ở 1/125 giây.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>In <b class="ui">M</b> (Manual Exposure), the front dial sets the aperture. The rear dial sets the shutter speed.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Ở chế độ <b class="ui">M</b> (chỉnh tay), vòng xoay trước đặt khẩu độ. Vòng xoay sau đặt tốc độ màn trập.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>On a sunny day, set M, ISO 100, f/16 and 1/125 s. Shoot without looking at the meter. Then check the histogram.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Vào ngày nắng, đặt chế độ M, ISO 100, f/16 và 1/125 giây. Chụp mà không nhìn thước đo sáng. Sau đó kiểm tra biểu đồ histogram.</p>
           </div>
         </section>
 
         <section class="lesson" id="modes-metering" data-read="lesson">
-          <h2>Modes, metering and the histogram</h2>
+          <h2>Chế độ chụp, đo sáng và biểu đồ histogram</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Let the camera measure the light, then check the histogram and correct it.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Để máy đo ánh sáng, rồi xem biểu đồ histogram và chỉnh lại cho đúng.</p>
           </div>
-          <p>In A mode you pick the aperture and the camera picks the shutter speed. Many pros work this way. It is fast and keeps you in control of the look.</p>
-          <p>When you need a fixed shutter speed, use M with ISO AUTO. You set the aperture and the speed, and the camera picks the ISO.</p>
-          <p><dfn>Metering</dfn> is how the camera measures light. It has three modes: Multi, Center and Spot. Start with Multi.</p>
-          <p>The meter tries to make every scene mid-grey. So snow comes out grey, and a black cat comes out grey too. Fix it with the exposure compensation dial: about +1 for snow and about −1 for the black cat.</p>
-          <p>The dial goes from −3 to +3. The menu allows ±5, but only when the dial sits at 0. In M mode, the dial only works with ISO AUTO.</p>
-          <p>The <dfn>histogram</dfn> is a graph of the tones in your photo. Dark tones sit on the left and bright tones on the right. There is no perfect shape.</p>
-          <p>The one thing to avoid is a tall spike at the right edge. That spike means <dfn>clipping</dfn>: pure white areas with no detail left. RAW cannot bring them back.</p>
+          <p>Ở chế độ A, bạn chọn khẩu độ còn máy chọn tốc độ màn trập. Nhiều người chụp chuyên nghiệp làm theo cách này. Cách này nhanh và vẫn để bạn quyết định vẻ ngoài của ảnh.</p>
+          <p>Khi cần giữ cố định tốc độ màn trập, hãy dùng chế độ M kèm ISO AUTO. Bạn đặt khẩu độ và tốc độ, còn máy chọn ISO.</p>
+          <p><dfn>Đo sáng</dfn> (metering) là cách máy đo ánh sáng. Máy có ba chế độ đo sáng: Multi, Center và Spot. Hãy bắt đầu với Multi.</p>
+          <p>Máy đo sáng luôn cố làm mọi cảnh thành màu xám trung tính. Vì vậy tuyết ra màu xám, và một con mèo đen cũng ra màu xám. Hãy sửa bằng vòng bù trừ phơi sáng: khoảng +1 cho tuyết và khoảng −1 cho mèo đen.</p>
+          <p>Vòng bù trừ chỉnh được từ −3 đến +3. Trong menu bạn chỉnh được ±5, nhưng chỉ khi vòng đang ở 0. Ở chế độ M, vòng chỉ có tác dụng khi bật ISO AUTO.</p>
+          <p><dfn>Biểu đồ histogram</dfn> là đồ thị cho thấy các tông sáng tối trong ảnh. Tông tối nằm bên trái, tông sáng nằm bên phải. Không có hình dạng nào là hoàn hảo.</p>
+          <p>Điều duy nhất cần tránh là một cột cao vọt ở sát mép phải. Cột đó báo hiệu <dfn>cháy sáng</dfn> (clipping): những vùng trắng xóa không còn chi tiết. File RAW cũng không cứu lại được.</p>
           <figure class="illus">
             <div data-illus="histogram-shapes"></div>
-            <figcaption>Watch the right edge. A spike there means lost detail.</figcaption>
+            <figcaption>Hãy để ý mép phải. Một cột cao ở đó nghĩa là ảnh đã mất chi tiết.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of the bucket again. A spike at the right edge is a bucket that overflowed. The water that spilled is gone.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ lại cái xô hứng mưa. Cột cao ở mép phải là chiếc xô đã tràn. Nước tràn ra ngoài thì mất luôn.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You shoot a white dress in the sun. The histogram shows a spike at the right edge. Turn the dial to −1 and shoot again, and now the lace shows detail.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn chụp một chiếc váy trắng dưới nắng. Biểu đồ histogram có một cột cao ở mép phải. Xoay vòng bù trừ về −1 rồi chụp lại, giờ phần ren đã hiện rõ chi tiết.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">On your α7 II</span>
-            <p>Pick the mode with <b class="ui">MENU › Camera Settings › Metering Mode</b>: <b class="ui">Multi</b>, <b class="ui">Center</b> or <b class="ui">Spot</b>. For a live warning, set <b class="ui">MENU › Custom Settings › Zebra</b> to <b class="ui">100+</b>. Stripes then mark the very brightest areas.</p>
+            <span class="callout-label">Trên máy α7 II</span>
+            <p>Chọn chế độ đo sáng trong <b class="ui">MENU › Camera Settings › Metering Mode</b>: <b class="ui">Multi</b>, <b class="ui">Center</b> hoặc <b class="ui">Spot</b>. Để được cảnh báo ngay khi chụp, đặt <b class="ui">MENU › Custom Settings › Zebra</b> thành <b class="ui">100+</b>. Khi đó các sọc vằn sẽ đánh dấu những vùng sáng nhất.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Shoot 10 photos in A mode. After each one, read the histogram and fix the brightness with the dial.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chụp 10 ảnh ở chế độ A. Sau mỗi ảnh, đọc biểu đồ histogram và chỉnh độ sáng bằng vòng bù trừ phơi sáng.</p>
           </div>
         </section>
 
         <section class="lesson" id="review-loop" data-read="lesson">
-          <h2>Review every shoot in darktable</h2>
+          <h2>Xem lại mỗi buổi chụp trong darktable</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>After every practice shoot, look at your photos full size on a computer.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Sau mỗi buổi tập chụp, hãy xem ảnh ở kích thước đầy đủ trên máy tính.</p>
           </div>
-          <p>The camera screen is small, and it looks different in sun and in the dark. A computer shows sharpness and brightness much better. This quick review is how you learn from each shoot.</p>
+          <p>Màn hình máy ảnh nhỏ, lại trông khác nhau dưới nắng và trong bóng tối. Máy tính cho thấy độ nét và độ sáng rõ hơn nhiều. Buổi xem lại nhanh này giúp bạn rút kinh nghiệm sau mỗi lần chụp.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a coach watching a replay. You see what really happened, not what you remember.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy hình dung một huấn luyện viên xem lại băng trận đấu. Bạn thấy điều thật sự đã xảy ra, chứ không phải điều bạn nhớ.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You think your portrait is sharp. At full size you see soft eyes, and the settings show 1/30 s. Next time you use 1/125 s.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn tưởng ảnh chân dung của mình đã nét. Xem ở kích thước đầy đủ, bạn thấy mắt bị mềm, và thông số ghi 1/30 giây. Lần sau bạn dùng 1/125 giây.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
+            <span class="callout-label">Trong darktable</span>
             <ol>
-              <li>Copy the photos into a folder named by date, such as 2026/2026-10-25_market.</li>
-              <li>Open darktable. In the <b class="ui">import</b> module, use <b class="ui">add to library</b> on that folder.</li>
-              <li>Hover over a photo and hold <b class="ui">W</b> to see it full size.</li>
-              <li>Read the settings in the <b class="ui">image information</b> module.</li>
-              <li>Write one line per photo: setting, result, why.</li>
+              <li>Chép ảnh vào một thư mục đặt tên theo ngày, ví dụ 2026/2026-10-25_cho.</li>
+              <li>Mở darktable. Trong module <b class="ui">import</b>, dùng <b class="ui">add to library</b> cho thư mục đó.</li>
+              <li>Rê chuột lên một ảnh và giữ phím <b class="ui">W</b> để xem ở kích thước đầy đủ.</li>
+              <li>Xem thông số chụp trong module <b class="ui">image information</b>.</li>
+              <li>Ghi một dòng cho mỗi ảnh: thông số, kết quả, lý do.</li>
             </ol>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Review today's photos this way. It takes about 15 minutes.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Xem lại ảnh hôm nay theo cách này. Việc này mất khoảng 15 phút.</p>
           </div>
         </section>
 
         <section class="key-terms" id="key-terms" data-read="tech">
-          <h2>Key terms</h2>
+          <h2>Thuật ngữ chính</h2>
           <dl class="terms">
-            <dt><dfn>Exposure</dfn></dt><dd>How much light the photo collects.</dd>
-            <dt><dfn>Stop</dfn></dt><dd>A step that doubles or halves the light.</dd>
-            <dt><dfn>Aperture</dfn></dt><dd>The adjustable hole in the lens.</dd>
-            <dt><dfn>F-number</dfn></dt><dd>The aperture size as a fraction. Small number, big hole.</dd>
-            <dt><dfn>Shutter speed</dfn></dt><dd>How long the sensor collects light.</dd>
-            <dt><dfn>ISO</dfn></dt><dd>How much the camera brightens the light it captured.</dd>
-            <dt><dfn>Noise</dfn></dt><dd>Grainy specks, mostly from too little light.</dd>
-            <dt><dfn>EV (exposure value)</dfn></dt><dd>A number for how much light a scene has.</dd>
-            <dt><dfn>Histogram</dfn></dt><dd>A graph of the dark to bright tones in your photo.</dd>
-            <dt><dfn>Clipping</dfn></dt><dd>Pure white or black areas with no detail left.</dd>
-            <dt><dfn>Metering</dfn></dt><dd>How the camera measures light to pick settings.</dd>
+            <dt><dfn>Phơi sáng</dfn></dt><dd>Lượng ánh sáng mà bức ảnh thu được.</dd>
+            <dt><dfn>Stop</dfn></dt><dd>Một bước làm ánh sáng tăng gấp đôi hoặc giảm một nửa.</dd>
+            <dt><dfn>Khẩu độ</dfn></dt><dd>Cái lỗ chỉnh được độ lớn bên trong ống kính.</dd>
+            <dt><dfn>Số f</dfn></dt><dd>Độ lớn của khẩu độ, viết dưới dạng phân số. Số nhỏ thì lỗ lớn.</dd>
+            <dt><dfn>Tốc độ màn trập</dfn></dt><dd>Thời gian cảm biến thu ánh sáng.</dd>
+            <dt><dfn>ISO</dfn></dt><dd>Mức máy làm sáng phần ánh sáng đã thu được.</dd>
+            <dt><dfn>Nhiễu hạt</dfn></dt><dd>Những đốm lấm tấm, chủ yếu do thiếu sáng.</dd>
+            <dt><dfn>EV (giá trị phơi sáng)</dfn></dt><dd>Con số cho biết một cảnh có bao nhiêu ánh sáng.</dd>
+            <dt><dfn>Biểu đồ histogram</dfn></dt><dd>Đồ thị các tông từ tối đến sáng trong ảnh.</dd>
+            <dt><dfn>Cháy sáng</dfn></dt><dd>Vùng trắng xóa không còn chi tiết. Vùng tối đen kịt cũng mất chi tiết theo cách tương tự.</dd>
+            <dt><dfn>Đo sáng</dfn></dt><dd>Cách máy đo ánh sáng để chọn thông số.</dd>
           </dl>
         </section>
 
         <section class="simulator wide" id="simulator">
-          <h2>Play with exposure</h2>
-          <p>Pick a scene and a lens. Change one setting at a time and watch the photo, the histogram and the warnings. Switch to A mode to see which shutter speed the camera picks.</p>
+          <h2>Thử nghiệm với phơi sáng</h2>
+          <p>Chọn một cảnh và một ống kính. Mỗi lần chỉ đổi một thông số, rồi xem ảnh, biểu đồ histogram và các cảnh báo. Chuyển sang chế độ A để xem máy chọn tốc độ màn trập nào.</p>
           <div data-widget="exposure-sim"></div>
         </section>
 
         <section class="practice" id="practice">
-          <h2>Practice</h2>
+          <h2>Thực hành</h2>
           <div data-checklist></div>
         </section>
 
         <section class="mistakes" id="mistakes" data-read="lesson">
-          <h2>Common mistakes</h2>
+          <h2>Lỗi thường gặp</h2>
           <ul class="mistakes__list">
-            <li><p class="mistake">Thinking f/8 is a bigger hole than f/2.</p><p class="fix">The f-number is a fraction. f/2 is a half and f/8 is an eighth.</p></li>
-            <li><p class="mistake">Judging brightness on the camera screen.</p><p class="fix">Screens look different in sun and in the dark. Check the histogram.</p></li>
-            <li><p class="mistake">Using a slow shutter for people who move.</p><p class="fix">Use 1/250 s or faster for people who walk.</p></li>
-            <li><p class="mistake">Thinking real photographers only use M.</p><p class="fix">A mode with the exposure dial is a fast, pro way to work.</p></li>
-            <li><p class="mistake">Fearing high ISO.</p><p class="fix">Too little light makes noise. A blurry photo is worse than a grainy one.</p></li>
-            <li><p class="mistake">Shooting JPEG only.</p><p class="fix">Shoot RAW so you can fix white balance and exposure later.</p></li>
+            <li><p class="mistake">Nghĩ rằng f/8 là lỗ lớn hơn f/2.</p><p class="fix">Số f là một phân số. Số f/2 là một nửa, còn f/8 là một phần tám.</p></li>
+            <li><p class="mistake">Đánh giá độ sáng bằng màn hình máy ảnh.</p><p class="fix">Màn hình trông khác nhau dưới nắng và trong bóng tối. Hãy kiểm tra biểu đồ histogram.</p></li>
+            <li><p class="mistake">Dùng tốc độ màn trập chậm khi chụp người đang cử động.</p><p class="fix">Dùng 1/250 giây hoặc nhanh hơn cho người đang đi bộ.</p></li>
+            <li><p class="mistake">Nghĩ rằng dân chuyên nghiệp chỉ dùng chế độ M.</p><p class="fix">Chế độ A kèm vòng bù trừ phơi sáng là cách làm nhanh và chuyên nghiệp.</p></li>
+            <li><p class="mistake">Sợ dùng ISO cao.</p><p class="fix">Thiếu sáng mới gây ra nhiễu hạt. Ảnh bị nhòe còn tệ hơn ảnh bị nhiễu hạt.</p></li>
+            <li><p class="mistake">Chỉ chụp JPEG.</p><p class="fix">Hãy chụp RAW để sau này còn chỉnh được cân bằng trắng (white balance) và phơi sáng.</p></li>
           </ul>
         </section>
 
         <section class="self-check" id="self-check" data-read="lesson">
-          <h2>Self-check</h2>
+          <h2>Tự kiểm tra</h2>
           <details class="quiz">
-            <summary>Your photo is too dark. Which two settings let in more light?</summary>
-            <p>A smaller f-number or a slower shutter speed. Raising ISO brightens too, but it adds no light.</p>
+            <summary>Ảnh của bạn quá tối. Hai thông số nào cho thêm ánh sáng vào?</summary>
+            <p>Số f nhỏ hơn hoặc tốc độ màn trập chậm hơn. Tăng ISO cũng làm ảnh sáng hơn, nhưng không thêm chút ánh sáng nào.</p>
           </details>
           <details class="quiz">
-            <summary>You go from f/4 to f/5.6. How much light do you lose?</summary>
-            <p>One stop: half the light.</p>
+            <summary>Bạn chuyển từ f/4 sang f/5.6. Bạn mất bao nhiêu ánh sáng?</summary>
+            <p>Một stop: chỉ còn một nửa ánh sáng.</p>
           </details>
           <details class="quiz">
-            <summary>Which is the bigger hole: f/2 or f/8?</summary>
-            <p>f/2. A smaller f-number means a bigger hole.</p>
+            <summary>Lỗ nào lớn hơn: f/2 hay f/8?</summary>
+            <p>Lỗ f/2. Số f càng nhỏ thì lỗ càng lớn.</p>
           </details>
           <details class="quiz">
-            <summary>Snow looks grey in your photo. What do you do?</summary>
-            <p>Turn the exposure compensation dial to about +1.</p>
+            <summary>Tuyết trong ảnh trông bị xám. Bạn làm gì?</summary>
+            <p>Xoay vòng bù trừ phơi sáng lên khoảng +1.</p>
           </details>
           <details class="quiz">
-            <summary>Your histogram has a tall spike at the right edge. What does it mean?</summary>
-            <p>Highlights are clipped. Those white areas have no detail, so lower the exposure.</p>
+            <summary>Biểu đồ histogram có một cột cao ở mép phải. Điều đó nghĩa là gì?</summary>
+            <p>Vùng sáng đã bị cháy. Những vùng trắng đó không còn chi tiết, nên hãy giảm phơi sáng.</p>
           </details>
         </section>
 
         <section class="learn-more" id="learn-more">
-          <h2>Learn more</h2>
+          <h2>Tìm hiểu thêm</h2>
           <ul>
-            <li><a href="https://helpguide.sony.net/ilc/1450/v1/en/index.html">Sony α7 II Help Guide</a></li>
-            <li><a href="https://www.cambridgeincolour.com/tutorials/camera-exposure.htm">Cambridge in Colour: Camera exposure</a></li>
-            <li><a href="https://photographylife.com/what-is-iso-in-photography">Photography Life: What is ISO</a></li>
-            <li><a href="https://www.cambridgeincolour.com/tutorials/histograms1.htm">Cambridge in Colour: Histograms</a></li>
+            <li><a href="https://helpguide.sony.net/ilc/1450/v1/en/index.html">Hướng dẫn sử dụng Sony α7 II (tiếng Anh)</a></li>
+            <li><a href="https://www.cambridgeincolour.com/tutorials/camera-exposure.htm">Cambridge in Colour: Phơi sáng trong máy ảnh (tiếng Anh)</a></li>
+            <li><a href="https://photographylife.com/what-is-iso-in-photography">Photography Life: ISO là gì (tiếng Anh)</a></li>
+            <li><a href="https://www.cambridgeincolour.com/tutorials/histograms1.htm">Cambridge in Colour: Biểu đồ histogram (tiếng Anh)</a></li>
           </ul>
         </section>
 
-        <nav id="stage-pager" class="pager wide" aria-label="Stages"></nav>
+        <nav id="stage-pager" class="pager wide" aria-label="Các chặng"></nav>
       </main>
     </div>
     <footer id="site-footer" class="site-footer"></footer>

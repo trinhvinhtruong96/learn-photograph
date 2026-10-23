@@ -5,16 +5,16 @@ import { createScene } from './scene.js';
 
 // Working order from docs/research/darktable-5.6.md, section A.
 export const EDIT_STEPS = [
-  { module: 'Start: the RAW file', note: 'A RAW file looks flat, a bit dark and tilted. That is normal.' },
-  { module: 'lens correction', note: 'Fixes dark corners first, because that changes the brightness.', fixes: 'vignette' },
-  { module: 'exposure', note: 'Sets the overall brightness.', fixes: 'exposure' },
-  { module: 'sigmoid', note: 'Adds contrast and keeps the brightest and darkest parts under control.', fixes: 'curve' },
-  { module: 'color calibration', note: 'Fixes white balance so white looks white.', fixes: 'tint' },
-  { module: 'color balance rgb', note: 'Adds color with the basic colorfulness preset.', fixes: 'saturation' },
-  { module: 'denoise (profiled)', note: 'Removes noise with a profile made for the α7 II.', fixes: 'grain' },
-  { module: 'local contrast', note: 'Brings back crisp detail.', fixes: 'softness' },
-  { module: 'rotate and perspective', note: 'Straightens the horizon. Then crop trims the edges.', fixes: 'rotation' },
-  { module: 'retouch', note: 'Removes a dust spot from the sky.', fixes: 'dust' },
+  { module: 'Bắt đầu: file RAW', note: 'File RAW trông nhạt, hơi tối và hơi nghiêng. Điều đó là bình thường.' },
+  { module: 'lens correction', note: 'Sửa các góc tối trước, vì việc này làm thay đổi độ sáng.', fixes: 'vignette' },
+  { module: 'exposure', note: 'Đặt độ sáng tổng thể.', fixes: 'exposure' },
+  { module: 'sigmoid', note: 'Thêm tương phản và giữ vùng sáng nhất, tối nhất trong tầm kiểm soát.', fixes: 'curve' },
+  { module: 'color calibration', note: 'Sửa cân bằng trắng để màu trắng trông trắng.', fixes: 'tint' },
+  { module: 'color balance rgb', note: 'Thêm màu bằng preset basic colorfulness.', fixes: 'saturation' },
+  { module: 'denoise (profiled)', note: 'Giảm nhiễu hạt bằng profile làm riêng cho α7 II.', fixes: 'grain' },
+  { module: 'local contrast', note: 'Lấy lại chi tiết sắc nét.', fixes: 'softness' },
+  { module: 'rotate and perspective', note: 'Làm thẳng đường chân trời. Sau đó crop cắt gọn mép ảnh.', fixes: 'rotation' },
+  { module: 'retouch', note: 'Xóa một vết bụi trên bầu trời.', fixes: 'dust' },
 ];
 
 export const RAW_LOOK = {
@@ -61,15 +61,15 @@ function applyEdit(scene, s) {
 
 export function mount(host) {
   let step = 0;
-  const before = createScene({ label: 'Before: the unedited RAW file' });
-  const after = createScene({ label: 'After: the photo at the current editing step' });
+  const before = createScene({ label: 'Trước: file RAW chưa chỉnh' });
+  const after = createScene({ label: 'Sau: ảnh ở bước chỉnh hiện tại' });
   applyEdit(before, RAW_LOOK);
   const afterLayer = el('div', { class: 'compare__after' }, [after.svg]);
   const divider = el('div', { class: 'compare__divider', 'aria-hidden': 'true' });
   const compare = el('div', { class: 'compare' }, [before.svg, afterLayer, divider]);
   const list = el('ol', { class: 'edit-steps' }, EDIT_STEPS.map((s) => el('li', {}, [el('b', { class: 'ui', text: s.module })])));
-  const prev = el('button', { type: 'button', class: 'button button--ghost', text: 'Previous step' });
-  const next = el('button', { type: 'button', class: 'button', text: 'Next step' });
+  const prev = el('button', { type: 'button', class: 'button button--ghost', text: 'Bước trước' });
+  const next = el('button', { type: 'button', class: 'button', text: 'Bước tiếp theo' });
   const readout = readoutBox();
   const live = liveRegion(300);
 
@@ -78,11 +78,11 @@ export function mount(host) {
     divider.style.left = `${percent}%`;
   };
   const split = rangeControl({
-    label: 'Before and after divider',
+    label: 'Đường chia trước và sau',
     values: numberRange(0, 100, 5),
     value: 50,
-    format: (v) => `${v}% before`,
-    spoken: (v) => `${v} percent before`,
+    format: (v) => `${v}% ảnh trước`,
+    spoken: (v) => `${v} phần trăm ảnh trước`,
     onInput: setSplit,
   });
 
@@ -94,7 +94,7 @@ export function mount(host) {
       else li.removeAttribute('aria-current');
     });
     const current = EDIT_STEPS[step];
-    const lines = [`Step ${step + 1} of ${EDIT_STEPS.length}: ${current.module}.`, current.note];
+    const lines = [`Bước ${step + 1}/${EDIT_STEPS.length}: ${current.module}.`, current.note];
     setReadout(readout, lines);
     live.announce(lines.join(' '));
   }

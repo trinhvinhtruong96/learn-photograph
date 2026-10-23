@@ -60,7 +60,7 @@ function createSideView() {
 
 function createPreview() {
   const id = uid('dof');
-  const svg = svgEl('svg', { viewBox: '0 0 640 300', role: 'img', 'aria-label': 'Preview: a flower in front, a person in focus, trees behind' });
+  const svg = svgEl('svg', { viewBox: '0 0 640 300', role: 'img', 'aria-label': 'Xem trước: bông hoa ở gần, người ở vùng nét, hàng cây phía sau' });
   svg.innerHTML = `
     <defs>
       <filter id="${id}-fg" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur data-fg stdDeviation="0"/></filter>
@@ -102,10 +102,10 @@ export function mount(host) {
   const preview = createPreview();
   const readout = readoutBox();
   const live = liveRegion();
-  const aperture = rangeControl({ label: 'Aperture', values: aperturesFor(LENSES[85]), value: 1.8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
-  const distance = rangeControl({ label: 'Focus distance', values: DISTANCES_MM, value: 2000, format: formatDistance, onInput: (v) => update({ subjectMm: v }) });
+  const aperture = rangeControl({ label: 'Khẩu độ', values: aperturesFor(LENSES[85]), value: 1.8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
+  const distance = rangeControl({ label: 'Khoảng cách lấy nét', values: DISTANCES_MM, value: 2000, format: formatDistance, onInput: (v) => update({ subjectMm: v }) });
   const lens = radioGroup({
-    legend: 'Lens',
+    legend: 'Ống kính',
     options: [{ value: 35, label: LENSES[35].label }, { value: 85, label: LENSES[85].label }],
     value: 85,
     onChange: (v) => {
@@ -122,7 +122,7 @@ export function mount(host) {
       blurPx(state.focal, state.aperture, state.subjectMm, state.subjectMm * 0.5),
       blurPx(state.focal, state.aperture, state.subjectMm, state.subjectMm * 4),
     );
-    const lines = [describeSharpZone(dof), describeDepth(dof), `Hyperfocal distance: ${formatDistance(dof.hyperfocal)}.`];
+    const lines = [describeSharpZone(dof), describeDepth(dof), `Khoảng cách siêu nét: ${formatDistance(dof.hyperfocal)}.`];
     setReadout(readout, lines);
     live.announce(lines.join(' '));
   }

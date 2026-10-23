@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="vi" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Advanced editing (darktable and GIMP) · Learn Photography</title>
-    <meta name="description" content="Edit parts of a photo, grade color and retouch in darktable and GIMP." />
+    <title>Chỉnh ảnh nâng cao (darktable và GIMP) · Học Nhiếp Ảnh</title>
+    <meta name="description" content="Chỉnh từng vùng ảnh, chỉnh màu và chỉnh sửa chi tiết (retouch) trong darktable và GIMP." />
     <script>
       try {
         const saved = localStorage.getItem('lp:theme');
@@ -17,458 +17,458 @@
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Chuyển đến nội dung</a>
     <header id="site-header" class="site-header"></header>
     <div class="layout layout--stage">
-      <nav id="toc" class="toc" aria-label="On this page"></nav>
+      <nav id="toc" class="toc" aria-label="Trên trang này"></nav>
       <main id="main" class="stage" data-stage="advanced-editing" tabindex="-1">
         <div id="stage-header" class="stage-header"></div>
 
         <section class="lesson" id="masks" data-read="lesson">
-          <h2>Masks edit part of a photo</h2>
+          <h2>Mặt nạ giúp chỉnh một phần ảnh</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A mask limits an edit to one part of the photo.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Mặt nạ chỉ cho phép một chỉnh sửa tác động lên một phần của ảnh.</p>
           </div>
-          <p>Most edits change the whole photo. A <dfn>mask</dfn> limits an edit to one area, such as the sky or a face.</p>
-          <p>Drawn masks are shapes you draw: brush, circle, ellipse, path and gradient. Parametric masks pick pixels by brightness or color, such as everything bright.</p>
-          <p>Soft edges hide the change. A <dfn>feather</dfn> blends the mask edge into the rest of the photo.</p>
+          <p>Hầu hết các chỉnh sửa đều thay đổi cả bức ảnh. <dfn>Mặt nạ (mask)</dfn> giới hạn chỉnh sửa trong một vùng, ví dụ bầu trời hay khuôn mặt.</p>
+          <p>Mặt nạ vẽ (drawn mask) là các hình bạn tự vẽ: cọ, hình tròn, hình elip, đường path và dải chuyển (gradient). Mặt nạ tham số (parametric mask) chọn điểm ảnh theo độ sáng hoặc màu, ví dụ mọi vùng sáng.</p>
+          <p>Viền mềm giúp giấu đi chỗ chỉnh. <dfn>Làm mềm viền (feather)</dfn> hòa mép mặt nạ vào phần còn lại của ảnh.</p>
           <figure class="illus">
             <div data-illus="mask-types"></div>
-            <figcaption>Brush, shape, gradient and brightness masks.</figcaption>
+            <figcaption>Mặt nạ cọ, hình khối, dải chuyển và theo độ sáng.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of painter's tape. You tape off the window frame and paint only the wall.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến băng dính của thợ sơn. Bạn dán kín khung cửa sổ rồi chỉ sơn bức tường.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A bright sky over a dark town: add a gradient mask on the sky in the exposure module and lower it by −0.7 EV. The town stays as it was.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Trời sáng phía trên một thị trấn tối: thêm mặt nạ dải chuyển lên bầu trời trong module exposure và giảm −0,7 EV. Thị trấn vẫn giữ nguyên.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>In a module, open the masks section and pick a drawn shape. Combine several with <b class="ui">combine masks</b>. Soften the edge with <b class="ui">feathering radius</b> and <b class="ui">blurring radius</b>.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Trong một module, mở phần mặt nạ và chọn một hình vẽ. Ghép nhiều hình bằng <b class="ui">combine masks</b>. Làm mềm mép bằng <b class="ui">feathering radius</b> và <b class="ui">blurring radius</b>.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Darken only the sky in one landscape photo with a gradient mask.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Làm tối riêng bầu trời trong một ảnh phong cảnh bằng mặt nạ dải chuyển.</p>
           </div>
         </section>
         <section class="lesson" id="ai-mask" data-read="lesson">
-          <h2>AI object mask (optional)</h2>
+          <h2>Mặt nạ đối tượng bằng AI (không bắt buộc)</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>In darktable 5.6, an AI mask can select a person or object with a few clicks.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Trong darktable 5.6, mặt nạ AI có thể chọn một người hay một vật chỉ với vài cú nhấp.</p>
           </div>
-          <p>darktable 5.6 added an AI object mask. You click on a person or object, and it draws the mask for you.</p>
-          <p>It is off by default. You turn on the AI features in preferences and download a model first.</p>
+          <p>Bản darktable 5.6 có thêm mặt nạ đối tượng bằng AI. Bạn nhấp vào một người hoặc một vật, và phần mềm tự vẽ mặt nạ cho bạn.</p>
+          <p>Tính năng này mặc định bị tắt. Trước tiên bạn cần bật các tính năng AI trong phần cài đặt (preferences) và tải một mô hình về.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a helper who cuts out a shape for you. You point, and they trace the outline.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một người phụ cắt hình giúp bạn. Bạn chỉ tay, và họ đồ theo đường viền.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A person in front of a busy café: click on them, and the mask covers only the person. Lift them by +0.3 EV so they stand out.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một người đứng trước quán cà phê đông đúc: nhấp vào họ, mặt nạ chỉ phủ lên người đó. Tăng +0,3 EV để họ nổi bật.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Click to add an area, <b class="ui">Shift+click</b> to exclude an area, and right-click to apply. The result becomes path shapes you can still edit.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Nhấp để thêm vùng, <b class="ui">Shift+click</b> để loại bớt vùng, và nhấp chuột phải để áp dụng. Kết quả thành các hình path mà bạn vẫn sửa được.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>If you want to try AI tools, turn them on in preferences and select one person in a photo.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Nếu muốn thử công cụ AI, hãy bật chúng trong phần cài đặt và chọn một người trong ảnh.</p>
           </div>
         </section>
         <section class="lesson" id="tone-equalizer" data-read="lesson">
-          <h2>Tone equalizer: dodge and burn by brightness</h2>
+          <h2>Tone equalizer: làm sáng và làm tối theo độ sáng</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>The tone equalizer lifts or lowers parts of the photo by how bright they are.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Module tone equalizer nâng hoặc hạ từng phần của ảnh tùy theo độ sáng của phần đó.</p>
           </div>
-          <p><dfn>Dodge and burn</dfn> means brightening and darkening small areas. The tone equalizer does this by brightness zones.</p>
-          <p>Lift the darkest zone and the shadows open up. Lower the brightest zone and the sky calms down. Everything else stays the same.</p>
+          <p><dfn>Làm sáng và làm tối cục bộ (dodge and burn)</dfn> nghĩa là làm sáng hoặc làm tối những vùng nhỏ. Module tone equalizer làm việc này theo từng vùng độ sáng.</p>
+          <p>Nâng vùng tối nhất thì vùng tối được mở ra. Hạ vùng sáng nhất thì bầu trời dịu lại. Mọi thứ khác vẫn giữ nguyên.</p>
           <figure class="illus">
             <div data-illus="tone-zones"></div>
-            <figcaption>Each zone of brightness can be lifted or lowered on its own.</figcaption>
+            <figcaption>Mỗi vùng độ sáng có thể được nâng hoặc hạ riêng.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a mixing desk with one slider for each brightness level. You turn up the quiet parts without touching the loud ones.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến bàn trộn âm thanh có một cần gạt cho mỗi mức sáng. Bạn tăng phần nhỏ tiếng mà không đụng đến phần to tiếng.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A backlit face is too dark against a bright sky. Hover over the face and scroll up: the face lifts by +1 EV and the sky stays put.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Khuôn mặt ngược sáng quá tối so với bầu trời sáng. Đưa chuột lên mặt và cuộn lên: mặt sáng thêm +1 EV, còn bầu trời giữ nguyên.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>The module has the tabs <b class="ui">simple</b>, <b class="ui">advanced</b> and <b class="ui">masking</b>. Hover over the image and scroll the mouse wheel to lift or lower the zone under the cursor.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Module này có các thẻ <b class="ui">simple</b>, <b class="ui">advanced</b> và <b class="ui">masking</b>. Đưa chuột lên ảnh và cuộn bánh xe chuột để nâng hoặc hạ vùng nằm dưới con trỏ.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Open a photo with dark shadows. Lift them with the tone equalizer by hovering and scrolling.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Mở một ảnh có vùng tối sâu. Nâng vùng tối bằng tone equalizer, chỉ cần đưa chuột lên và cuộn.</p>
           </div>
         </section>
         <section class="lesson" id="curves" data-read="lesson">
-          <h2>Curves shape contrast</h2>
+          <h2>Đường cong tạo độ tương phản</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A curve maps dark, middle and bright tones to new values.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Đường cong chuyển các tông tối, trung bình và sáng sang giá trị mới.</p>
           </div>
-          <p>A <dfn>curve</dfn> is a graph. Left is dark, right is bright. Moving a point up brightens those tones, and moving it down darkens them.</p>
-          <p>An S-shaped curve darkens shadows and brightens highlights, which adds contrast. Lifting the black end gives a faded, matte look.</p>
+          <p><dfn>Đường cong (curve)</dfn> là một biểu đồ. Bên trái là tối, bên phải là sáng. Kéo một điểm lên thì các tông đó sáng hơn, kéo xuống thì chúng tối đi.</p>
+          <p>Đường cong hình chữ S làm tối vùng tối và làm sáng vùng sáng, nhờ vậy tăng tương phản. Nâng đầu đen lên sẽ cho ảnh vẻ bạc màu, mờ lì (matte).</p>
           <figure class="illus">
             <div data-illus="s-curve"></div>
-            <figcaption>Straight line, S-curve and matte curve.</figcaption>
+            <figcaption>Đường thẳng, đường cong chữ S và đường cong matte.</figcaption>
           </figure>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a dimmer for each kind of tone. The curve tells every tone how bright to become.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một núm chỉnh độ sáng đèn cho mỗi loại tông. Đường cong cho mỗi tông biết nó cần sáng đến mức nào.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A flat landscape on a hazy day: a gentle S-curve gives it punch. A portrait for a soft mood: lift the black end a little for matte shadows.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Ảnh phong cảnh nhạt nhòa trong ngày mù sương: một đường cong chữ S nhẹ giúp ảnh có lực hơn. Ảnh chân dung cần không khí nhẹ nhàng: nâng đầu đen một chút để vùng tối mờ lì.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Use the <b class="ui">rgb curve</b> module for creative curves. Click on the line to add a point, and drag it up or down.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Dùng module <b class="ui">rgb curve</b> cho các đường cong sáng tạo. Nhấp lên đường để thêm điểm, rồi kéo lên hoặc xuống.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Try an S-curve on one photo and a matte curve on another. Compare them with a snapshot.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Thử đường cong chữ S trên một ảnh và đường cong matte trên ảnh khác. So sánh chúng bằng ảnh lưu trạng thái (snapshot).</p>
           </div>
         </section>
         <section class="lesson" id="color-grading" data-read="lesson">
-          <h2>Grade color with color balance rgb</h2>
+          <h2>Chỉnh màu với color balance rgb</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Color grading gives shadows and highlights their own color.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Chỉnh màu theo vùng sáng tối là tô cho vùng tối và vùng sáng mỗi vùng một màu riêng.</p>
           </div>
-          <p>First set overall color with global vibrance and chroma. The darktable manual suggests beginners start there.</p>
-          <p><dfn>Color grading</dfn> then gives the shadows and highlights their own tint. Warm highlights with cool shadows is a classic film look.</p>
+          <p>Trước hết, chỉnh màu chung bằng vibrance và chroma toàn cục. Sách hướng dẫn của darktable khuyên người mới bắt đầu từ đây.</p>
+          <p>Sau đó, <dfn>chỉnh màu theo vùng sáng tối (color grading)</dfn> tô cho vùng tối và vùng sáng mỗi vùng một sắc màu riêng. Vùng sáng ấm cùng vùng tối lạnh là kiểu màu phim kinh điển.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of lighting a stage with two colored lamps. One warms the bright parts, the other cools the dark parts.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một sân khấu được chiếu bằng hai đèn màu. Một đèn làm ấm phần sáng, đèn kia làm lạnh phần tối.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A street at golden hour: add a little orange to the highlights and a little teal to the shadows. Check that skin still looks natural.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một con phố lúc giờ vàng: thêm chút cam vào vùng sáng và chút xanh mòng két vào vùng tối. Kiểm tra xem da người vẫn trông tự nhiên.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Open <b class="ui">color balance rgb</b>. Use global vibrance first. Then open the <b class="ui">4 ways</b> tab: <b class="ui">shadows lift</b>, <b class="ui">highlights gain</b>, <b class="ui">power</b> and <b class="ui">global offset</b>.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Mở <b class="ui">color balance rgb</b>. Dùng vibrance toàn cục trước. Sau đó mở thẻ <b class="ui">4 ways</b>: <b class="ui">shadows lift</b>, <b class="ui">highlights gain</b>, <b class="ui">power</b> và <b class="ui">global offset</b>.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Grade one photo with warm highlights and cool shadows. Keep the change small.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chỉnh màu một ảnh với vùng sáng ấm và vùng tối lạnh. Chỉ thay đổi một chút thôi.</p>
           </div>
         </section>
         <section class="lesson" id="styles" data-read="lesson">
-          <h2>Styles give a set one look</h2>
+          <h2>Style giúp cả bộ ảnh có chung một vẻ</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>A style saves your edit so a whole set can share one look.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Style lưu lại cách chỉnh của bạn để cả bộ ảnh có chung một vẻ.</p>
           </div>
-          <p>A <dfn>preset</dfn> saves the settings of one module. A <dfn>style</dfn> saves several modules at once.</p>
-          <p>Make a style from your best edit. Apply it to a whole set, then fine-tune each photo.</p>
+          <p><dfn>Preset</dfn> lưu cài đặt của một module. <dfn>Style</dfn> lưu nhiều module cùng lúc.</p>
+          <p>Tạo một style từ ảnh bạn chỉnh đẹp nhất. Áp dụng nó cho cả bộ, rồi tinh chỉnh từng ảnh.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a recipe you write down after a great meal. Next time, you cook the same dish in minutes.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến công thức nấu ăn bạn ghi lại sau một bữa ngon. Lần sau, bạn nấu lại món đó chỉ trong vài phút.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>Six photos from a trip to Hội An: build a style from the best edit and apply it to all six. They now look like one series.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Sáu ảnh từ chuyến đi Hội An: tạo style từ ảnh chỉnh đẹp nhất và áp cho cả sáu. Giờ chúng trông như một loạt ảnh.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Create a style in the lighttable <b class="ui">styles</b> module or from the <b class="ui">history stack</b>. Apply a style by double-clicking its name.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Tạo style trong module <b class="ui">styles</b> ở lighttable hoặc từ <b class="ui">history stack</b>. Áp dụng style bằng cách nhấp đúp vào tên của nó.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Create one style from your favorite edit and apply it to 6 photos.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Tạo một style từ ảnh bạn chỉnh ưng nhất và áp nó cho 6 ảnh.</p>
           </div>
         </section>
         <section class="lesson" id="noise-lens" data-read="lesson">
-          <h2>Clean noise and fix lines</h2>
+          <h2>Khử nhiễu hạt và sửa đường thẳng</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Clean high-ISO noise and straighten leaning lines.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Khử nhiễu hạt do ISO cao và dựng thẳng các đường bị nghiêng.</p>
           </div>
-          <p>For high-ISO photos, use <b class="ui">denoise (profiled)</b>. The program has a noise profile made for the α7 II.</p>
-          <p>Version 5.6 also has <b class="ui">neural restore</b>, an optional AI raw denoise. It writes a new DNG file and needs the AI features turned on.</p>
-          <p>Leaning buildings can be straightened with <b class="ui">rotate and perspective</b>.</p>
+          <p>Với ảnh ISO cao, hãy dùng <b class="ui">denoise (profiled)</b>. Phần mềm có sẵn hồ sơ nhiễu hạt dành riêng cho máy α7 II.</p>
+          <p>Bản 5.6 còn có <b class="ui">neural restore</b>, một công cụ khử nhiễu RAW bằng AI không bắt buộc. Nó tạo ra một file DNG mới và cần bật các tính năng AI.</p>
+          <p>Các tòa nhà bị nghiêng có thể được dựng thẳng bằng <b class="ui">rotate and perspective</b>.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of cleaning a window before you look through it. Remove the noise first, then judge the details.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc lau cửa kính trước khi nhìn qua. Khử nhiễu trước, rồi mới đánh giá chi tiết.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A night street at ISO 6400 looks grainy. Denoise (profiled) smooths the sky and keeps the edges of signs crisp.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Ảnh phố đêm ở ISO 6400 trông lấm tấm hạt. Denoise (profiled) làm mịn bầu trời mà vẫn giữ mép biển hiệu sắc nét.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Look at the photo at 100% while you change noise settings. At small sizes you cannot judge noise.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Xem ảnh ở 100% khi bạn chỉnh các thông số nhiễu hạt. Ở kích thước nhỏ, bạn không đánh giá được nhiễu hạt.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Denoise one high-ISO photo and compare it at 100% with a snapshot.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Khử nhiễu một ảnh ISO cao và so sánh ở 100% bằng ảnh lưu trạng thái.</p>
           </div>
         </section>
         <section class="lesson" id="hdr-panorama" data-read="lesson">
-          <h2>HDR and panoramas</h2>
+          <h2>HDR và ảnh toàn cảnh (panorama)</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Merge a bracket into one HDR photo, and use Hugin for panoramas.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Ghép một bộ ảnh bù trừ thành một ảnh HDR, và dùng Hugin để ghép ảnh toàn cảnh.</p>
           </div>
-          <p><dfn>HDR</dfn> merges several exposures of one scene into one photo with detail in both the sky and the shadows. Shoot the bracket in RAW, on a tripod.</p>
-          <p>Neither darktable nor GIMP can stitch a panorama. The free tool Hugin does that, if you want to try it.</p>
+          <p><dfn>HDR</dfn> ghép nhiều lần phơi sáng của cùng một cảnh thành một ảnh có chi tiết cả ở bầu trời lẫn vùng tối. Hãy chụp bộ ảnh bù trừ (bracketing) bằng RAW, trên chân máy.</p>
+          <p>Cả darktable lẫn GIMP đều không ghép được ảnh toàn cảnh. Công cụ miễn phí Hugin làm được việc đó, nếu bạn muốn thử.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of taking three notes from one lecture and combining them into one complete page.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến ba bản ghi chép từ cùng một buổi giảng, gộp lại thành một trang đầy đủ.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A temple doorway with a bright sky outside: three frames at −2, 0 and +2 EV merge into one photo where both look right.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Cửa một ngôi chùa với bầu trời sáng bên ngoài: ba khung hình ở −2, 0 và +2 EV ghép thành một ảnh mà cả cửa chùa lẫn bầu trời đều đúng sáng.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In darktable</span>
-            <p>Select the bracket in the lighttable. In the <b class="ui">selected image[s]</b> module, click <b class="ui">create HDR</b>. A new DNG file is added to the library.</p>
+            <span class="callout-label">Trong darktable</span>
+            <p>Chọn bộ ảnh bù trừ trong lighttable. Trong module <b class="ui">selected image[s]</b>, nhấp <b class="ui">create HDR</b>. Một file DNG mới được thêm vào thư viện.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Shoot a 3-frame bracket on a tripod and merge it with create HDR.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chụp một bộ bù trừ 3 khung hình trên chân máy và ghép bằng create HDR.</p>
           </div>
         </section>
         <section class="lesson" id="round-trip" data-read="lesson">
-          <h2>From darktable to GIMP and back</h2>
+          <h2>Từ darktable sang GIMP và quay lại</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Export a 16-bit TIFF from darktable, retouch it in GIMP, then export the result.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Xuất file TIFF 16-bit từ darktable, chỉnh sửa chi tiết (retouch) trong GIMP, rồi xuất kết quả.</p>
           </div>
-          <p>Use darktable for overall edits. Use GIMP for pixel work like removing spots. A 16-bit TIFF keeps the most detail between the two programs.</p>
-          <p>In GIMP, Save keeps an editable .xcf file with layers. Export makes the finished JPEG.</p>
+          <p>Dùng darktable cho các chỉnh sửa tổng thể. Dùng GIMP cho việc sửa từng điểm ảnh như xóa vết. File TIFF 16-bit giữ nhiều chi tiết nhất khi chuyển giữa hai phần mềm.</p>
+          <p>Trong GIMP, Save lưu file .xcf có các lớp để sửa tiếp. Export tạo ra file JPEG hoàn chỉnh.</p>
           <figure class="illus">
             <div data-illus="round-trip"></div>
-            <figcaption>darktable, then GIMP, then the finished photo.</figcaption>
+            <figcaption>darktable, rồi GIMP, rồi đến ảnh hoàn chỉnh.</figcaption>
           </figure>
           <ol>
-            <li>In darktable, export with <b class="ui">file format</b> TIFF and bit depth 16 bit, at full size.</li>
-            <li>In GIMP, open the .tif file. If GIMP asks about the color profile, keep it.</li>
-            <li>Check <b class="ui">Image › Encoding</b>: it should show 16-bit integer.</li>
-            <li>Duplicate the layer and retouch the copy.</li>
-            <li>Use <b class="ui">File › Export As</b> (<b class="ui">Shift+Ctrl+E</b>) and save as JPEG with quality 90. GIMP starts at 85.</li>
+            <li>Trong darktable, xuất ảnh với <b class="ui">file format</b> TIFF và độ sâu bit 16 bit, ở kích thước đầy đủ.</li>
+            <li>Trong GIMP, mở file .tif. Nếu GIMP hỏi về hồ sơ màu, hãy giữ nguyên nó.</li>
+            <li>Kiểm tra <b class="ui">Image › Encoding</b>: mục này phải hiện 16-bit integer.</li>
+            <li>Nhân đôi lớp và chỉnh sửa trên bản sao.</li>
+            <li>Dùng <b class="ui">File › Export As</b> (<b class="ui">Shift+Ctrl+E</b>) và lưu thành JPEG với chất lượng 90. Mặc định GIMP để 85.</li>
           </ol>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a car going from the paint shop to the detail shop. Each place does what it is best at.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến chiếc xe đi từ xưởng sơn sang tiệm chăm sóc xe. Mỗi nơi làm tốt nhất việc của mình.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A portrait edited in darktable still has two blemishes. Export a TIFF, fix them in GIMP, and export the final JPEG.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một ảnh chân dung đã chỉnh trong darktable vẫn còn hai vết mụn. Xuất file TIFF, sửa chúng trong GIMP, rồi xuất JPEG cuối cùng.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In GIMP</span>
-            <p><b class="ui">Save</b> writes .xcf only. Use <b class="ui">Export As</b> for JPEG or TIFF.</p>
+            <span class="callout-label">Trong GIMP</span>
+            <p><b class="ui">Save</b> chỉ ghi file .xcf. Dùng <b class="ui">Export As</b> để có JPEG hoặc TIFF.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Send one photo through the full round trip and compare the final JPEG with the darktable export.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Đưa một ảnh đi hết vòng này và so sánh file JPEG cuối với file xuất từ darktable.</p>
           </div>
         </section>
         <section class="lesson" id="heal-clone" data-read="lesson">
-          <h2>Heal and clone spots away</h2>
+          <h2>Xóa vết bằng Heal và Clone</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Heal and Clone copy clean pixels over spots and dust.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Heal và Clone chép điểm ảnh sạch đè lên vết bẩn và bụi.</p>
           </div>
-          <p>Heal copies texture from a clean area and blends it into the spot. Clone copies pixels exactly, which works better on edges and lines.</p>
-          <p>GIMP has no automatic content-aware remove. You pick the source by hand.</p>
+          <p>Heal chép kết cấu từ một vùng sạch và hòa nó vào chỗ vết. Clone chép điểm ảnh y nguyên, nên hợp hơn với mép và đường thẳng.</p>
+          <p>GIMP không có chức năng xóa tự động theo nội dung. Bạn phải tự chọn vùng nguồn.</p>
           <ol>
-            <li>Duplicate the layer first.</li>
-            <li>Press <b class="ui">H</b> for Heal. Use a soft brush a little larger than the spot.</li>
-            <li><b class="ui">Ctrl+click</b> on clean skin or sky next to the spot, at the same brightness.</li>
-            <li>Click once on the spot. Take a new source often, and work at 100% zoom.</li>
-            <li>On an edge, such as a roofline, use Clone (<b class="ui">C</b>) with Alignment set to Aligned.</li>
+            <li>Nhân đôi lớp trước tiên.</li>
+            <li>Nhấn <b class="ui">H</b> để chọn Heal. Dùng cọ mềm lớn hơn vết một chút.</li>
+            <li><b class="ui">Ctrl+click</b> lên vùng da hoặc trời sạch cạnh vết, có cùng độ sáng.</li>
+            <li>Nhấp một lần lên vết. Thường xuyên lấy nguồn mới, và làm việc ở mức phóng 100%.</li>
+            <li>Ở chỗ có mép, ví dụ đường mái nhà, dùng Clone (<b class="ui">C</b>) với Alignment đặt là Aligned.</li>
           </ol>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of patching a hole in a shirt with cloth from inside the hem. The patch matches because it is the same fabric.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến việc vá lỗ thủng trên áo bằng mảnh vải lấy từ mép gấu bên trong. Miếng vá khớp vì cùng một loại vải.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A landscape at f/11 shows three dark dots in the sky. They are sensor dust. Heal each one with clean sky next to it.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một ảnh phong cảnh chụp ở f/11 có ba chấm đen trên trời. Đó là bụi cảm biến. Dùng Heal xóa từng chấm bằng vùng trời sạch ngay cạnh.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In GIMP</span>
-            <p>Use <b class="ui">Heal</b> (<b class="ui">H</b>) for skin and sky, and <b class="ui">Clone</b> (<b class="ui">C</b>) for lines. Toggle the copy layer to compare before and after.</p>
+            <span class="callout-label">Trong GIMP</span>
+            <p>Dùng <b class="ui">Heal</b> (<b class="ui">H</b>) cho da và trời, và <b class="ui">Clone</b> (<b class="ui">C</b>) cho đường thẳng. Bật tắt lớp bản sao để so sánh trước và sau.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Remove 5 spots from one photo with Heal. Compare before and after.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Xóa 5 vết trên một ảnh bằng Heal. So sánh trước và sau.</p>
           </div>
         </section>
         <section class="lesson" id="skin" data-read="lesson">
-          <h2>Retouch skin and keep the texture</h2>
+          <h2>Chỉnh sửa chi tiết da mà vẫn giữ kết cấu</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Smooth only the blotches and leave the fine pores alone.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Chỉ làm mịn các mảng loang lổ và để nguyên lỗ chân lông nhỏ.</p>
           </div>
-          <p>Real skin has pores. If you blur everything, skin looks like plastic.</p>
-          <p>Wavelet decompose splits the photo into layers by detail size. The finest layer holds the pores. Middle layers hold blotches and uneven tone.</p>
+          <p>Da thật có lỗ chân lông. Nếu bạn làm mờ hết, da sẽ trông như nhựa.</p>
+          <p>Wavelet decompose tách ảnh thành các lớp theo kích thước chi tiết. Lớp chi tiết nhỏ nhất chứa lỗ chân lông. Các lớp giữa chứa mảng loang lổ và tông da không đều.</p>
           <figure class="illus">
             <div data-illus="frequency-separation"></div>
-            <figcaption>Keep the fine layer, smooth the middle layers.</figcaption>
+            <figcaption>Giữ lớp chi tiết nhỏ, làm mịn các lớp giữa.</figcaption>
           </figure>
           <ol>
-            <li>Remove blemishes first with Heal.</li>
-            <li>Run <b class="ui">Filters › Enhance › Wavelet decompose</b> with 5 scales and a layer group.</li>
-            <li>Leave scales 1 and 2 alone. They hold the skin texture.</li>
-            <li>On scale 3 or 4, heal or paint softly at 10 to 20% opacity. Avoid eyes, lips, brows and hair.</li>
-            <li>Lower the group opacity if the effect looks too strong.</li>
+            <li>Xóa mụn và vết trước bằng Heal.</li>
+            <li>Chạy <b class="ui">Filters › Enhance › Wavelet decompose</b> với 5 scale và một nhóm lớp.</li>
+            <li>Để nguyên scale 1 và 2. Chúng chứa kết cấu da.</li>
+            <li>Trên scale 3 hoặc 4, dùng Heal hoặc tô nhẹ ở độ mờ đục 10 đến 20%. Tránh mắt, môi, lông mày và tóc.</li>
+            <li>Giảm độ mờ đục của nhóm nếu hiệu ứng trông quá mạnh.</li>
           </ol>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a song with bass and treble. You turn down a boomy bass note but keep the crisp treble.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một bài hát có âm trầm và âm cao. Bạn giảm một nốt trầm bị ù nhưng vẫn giữ âm cao trong trẻo.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A close portrait shows red blotches on one cheek. Smooth them on scale 3, and the pores on scale 1 stay sharp.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một ảnh chân dung cận cảnh có mảng đỏ trên một bên má. Làm mịn chúng trên scale 3, và lỗ chân lông trên scale 1 vẫn sắc nét.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In GIMP</span>
-            <p>Compare with the group visible and hidden. If you can no longer see pores at 100%, you went too far.</p>
+            <span class="callout-label">Trong GIMP</span>
+            <p>So sánh khi bật và tắt nhóm lớp. Nếu ở 100% bạn không còn thấy lỗ chân lông, bạn đã làm quá tay.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Retouch one portrait with Wavelet decompose. Check at 100% that pores are still visible.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Chỉnh sửa chi tiết một ảnh chân dung bằng Wavelet decompose. Kiểm tra ở 100% rằng lỗ chân lông vẫn còn thấy rõ.</p>
           </div>
         </section>
         <section class="lesson" id="dodge-burn" data-read="lesson">
-          <h2>Dodge and burn in GIMP</h2>
+          <h2>Làm sáng và làm tối cục bộ trong GIMP</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Paint light and shadow onto a gray layer to shape a face or a scene.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Tô sáng và tối lên một lớp xám để tạo khối cho khuôn mặt hay khung cảnh.</p>
           </div>
-          <p>Dodge means lighten and burn means darken. In GIMP you can do both on a separate layer, so you never touch the photo itself.</p>
-          <p>Fill a new layer with 50% gray and set its mode to Soft light or Overlay. The gray disappears. Painting white lightens, and painting black darkens.</p>
+          <p>Dodge là làm sáng, còn burn là làm tối. Trong GIMP, bạn làm cả hai trên một lớp riêng, nên không bao giờ đụng vào ảnh gốc.</p>
+          <p>Tô đầy một lớp mới bằng màu xám 50% và đặt chế độ hòa trộn là Soft light hoặc Overlay. Màu xám sẽ biến mất. Tô trắng sẽ làm sáng, còn tô đen sẽ làm tối.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of a painter adding highlights and shadows to a portrait. You do the same with a soft brush.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến một họa sĩ thêm chỗ sáng và bóng đổ cho bức chân dung. Bạn làm y như vậy bằng một cọ mềm.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>A portrait looks flat. Paint white at low opacity on the cheekbones and black under the jaw. The face gains shape.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Một ảnh chân dung trông phẳng. Tô trắng ở độ mờ đục thấp lên gò má và tô đen dưới quai hàm. Khuôn mặt có khối hơn.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In GIMP</span>
-            <p>For the layer method, use <b class="ui">Layer › New Layer</b>, fill it with 50% gray and set <b class="ui">Soft light</b> or <b class="ui">Overlay</b>. For the tool, press <b class="ui">Shift+D</b> for <b class="ui">Dodge / Burn</b> and hold <b class="ui">Ctrl</b> to switch.</p>
+            <span class="callout-label">Trong GIMP</span>
+            <p>Với cách dùng lớp, chọn <b class="ui">Layer › New Layer</b>, tô đầy màu xám 50% và đặt <b class="ui">Soft light</b> hoặc <b class="ui">Overlay</b>. Với công cụ, nhấn <b class="ui">Shift+D</b> để chọn <b class="ui">Dodge / Burn</b> và giữ <b class="ui">Ctrl</b> để chuyển đổi.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Dodge and burn one portrait on a gray layer at 5 to 15% opacity.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Làm sáng và làm tối cục bộ một ảnh chân dung trên lớp xám ở độ mờ đục 5 đến 15%.</p>
           </div>
         </section>
         <section class="lesson" id="layers" data-read="lesson">
-          <h2>Layers, masks and effects</h2>
+          <h2>Lớp, mặt nạ lớp và hiệu ứng lớp</h2>
           <div class="callout callout--sentence">
-            <span class="callout-label">In one sentence</span>
-            <p>Layers, layer masks and layer effects keep every change editable.</p>
+            <span class="callout-label">Tóm tắt một câu</span>
+            <p>Lớp, mặt nạ lớp và hiệu ứng lớp giúp mọi thay đổi đều sửa lại được.</p>
           </div>
-          <p>A layer mask hides parts of a layer. White shows the layer and black hides it.</p>
-          <p>GIMP 3 adds filters as layer effects. They stay editable until you merge them.</p>
+          <p>Mặt nạ lớp (layer mask) che bớt một phần của lớp. Màu trắng cho hiện lớp, màu đen che lớp đi.</p>
+          <p>Bản GIMP 3 thêm bộ lọc dưới dạng hiệu ứng lớp (layer effect). Chúng vẫn sửa được cho đến khi bạn gộp chúng lại.</p>
           <div class="callout callout--picture">
-            <span class="callout-label">Picture it</span>
-            <p>Think of tracing paper over a drawing. You can change or remove each sheet without harming the drawing below.</p>
+            <span class="callout-label">Hình dung</span>
+            <p>Hãy nghĩ đến giấy can đặt trên một bức vẽ. Bạn có thể sửa hoặc bỏ từng tờ mà không làm hỏng bức vẽ bên dưới.</p>
           </div>
           <div class="callout callout--example">
-            <span class="callout-label">Example</span>
-            <p>You sharpen a whole portrait, but the skin gets too crisp. Add a layer mask and paint black over the skin to hide the sharpening there.</p>
+            <span class="callout-label">Ví dụ</span>
+            <p>Bạn làm nét cả bức chân dung, nhưng da trở nên quá sắc. Thêm mặt nạ lớp và tô đen lên vùng da để giấu phần làm nét ở đó.</p>
           </div>
           <div class="callout callout--camera">
-            <span class="callout-label">In GIMP</span>
-            <p>Add a mask with <b class="ui">Layer › Mask › Add Layer Masks</b>. Filters you apply show as <b class="ui">Layer Effects</b> with an <b class="ui">fx</b> icon next to the layer.</p>
+            <span class="callout-label">Trong GIMP</span>
+            <p>Thêm mặt nạ bằng <b class="ui">Layer › Mask › Add Layer Masks</b>. Các bộ lọc bạn áp dụng hiện thành <b class="ui">Layer Effects</b> với biểu tượng <b class="ui">fx</b> cạnh lớp.</p>
           </div>
           <div class="callout callout--try">
-            <span class="callout-label">Try it now</span>
-            <p>Apply one filter, then use a layer mask to limit it to part of the photo.</p>
+            <span class="callout-label">Thử ngay</span>
+            <p>Áp dụng một bộ lọc, rồi dùng mặt nạ lớp để giới hạn nó trong một phần của ảnh.</p>
           </div>
         </section>
         <section class="key-terms" id="key-terms" data-read="tech">
-          <h2>Key terms</h2>
+          <h2>Thuật ngữ chính</h2>
           <dl class="terms">
-            <dt><dfn>Mask</dfn></dt><dd>A selection that limits an edit to part of the photo.</dd>
-            <dt><dfn>Feather</dfn></dt><dd>A soft edge on a mask.</dd>
-            <dt><dfn>Dodge and burn</dfn></dt><dd>Brightening and darkening small areas by hand.</dd>
-            <dt><dfn>Curve</dfn></dt><dd>A graph that maps input tones to output tones.</dd>
-            <dt><dfn>Color grading</dfn></dt><dd>Giving shadows and highlights their own color.</dd>
-            <dt><dfn>Style</dfn></dt><dd>A saved set of darktable modules.</dd>
-            <dt><dfn>Preset</dfn></dt><dd>Saved settings for one module.</dd>
-            <dt><dfn>HDR</dfn></dt><dd>One photo merged from several exposures.</dd>
-            <dt><dfn>Frequency separation</dfn></dt><dd>Splitting detail from color and tone to retouch skin.</dd>
+            <dt><dfn>Mặt nạ (mask)</dfn></dt><dd>Vùng chọn giới hạn chỉnh sửa trong một phần của ảnh.</dd>
+            <dt><dfn>Làm mềm viền (feather)</dfn></dt><dd>Mép mềm của mặt nạ.</dd>
+            <dt><dfn>Làm sáng và làm tối cục bộ (dodge and burn)</dfn></dt><dd>Làm sáng và làm tối những vùng nhỏ bằng tay.</dd>
+            <dt><dfn>Đường cong (curve)</dfn></dt><dd>Biểu đồ chuyển tông đầu vào thành tông đầu ra.</dd>
+            <dt><dfn>Chỉnh màu theo vùng sáng tối (color grading)</dfn></dt><dd>Cho vùng tối và vùng sáng mỗi vùng một màu riêng.</dd>
+            <dt><dfn>Style</dfn></dt><dd>Một bộ module darktable đã được lưu lại.</dd>
+            <dt><dfn>Preset</dfn></dt><dd>Cài đặt đã lưu của một module.</dd>
+            <dt><dfn>HDR</dfn></dt><dd>Một ảnh được ghép từ nhiều lần phơi sáng.</dd>
+            <dt><dfn>Tách tần số (frequency separation)</dfn></dt><dd>Tách chi tiết khỏi màu và tông để chỉnh sửa da.</dd>
           </dl>
         </section>
         <section class="simulator wide" id="simulator-curve">
-          <h2>Shape a tone curve</h2>
-          <p>Try the presets, then drag one level at a time. Watch the curve and the photo change together.</p>
+          <h2>Uốn đường cong tông màu</h2>
+          <p>Thử các preset, rồi kéo từng mức một. Quan sát đường cong và bức ảnh cùng thay đổi.</p>
           <div data-widget="curve-sim"></div>
         </section>
         <section class="simulator wide" id="simulator-mask">
-          <h2>Mask the sky</h2>
-          <p>Show the mask, then darken the sky. Lower the feather to see why soft edges matter.</p>
+          <h2>Tạo mặt nạ cho bầu trời</h2>
+          <p>Hiện mặt nạ lên, rồi làm tối bầu trời. Giảm làm mềm viền để thấy vì sao mép mềm lại quan trọng.</p>
           <div data-widget="mask-sim"></div>
         </section>
         <section class="warmup" id="warm-up" data-read="lesson">
-          <h2>Warm-up</h2>
-          <p>Cull your last shoot to 5 photos. Edit them in the working order from stage 5.</p>
+          <h2>Khởi động</h2>
+          <p>Lọc ảnh từ buổi chụp gần nhất, giữ lại 5 ảnh. Chỉnh chúng theo thứ tự làm việc ở chặng 5.</p>
         </section>
 
         <section class="practice" id="practice">
-          <h2>Practice</h2>
+          <h2>Thực hành</h2>
           <div data-checklist></div>
         </section>
 
         <section class="mistakes" id="mistakes" data-read="lesson">
-          <h2>Common mistakes</h2>
+          <h2>Lỗi thường gặp</h2>
           <ul class="mistakes__list">
-            <li><p class="mistake">Pushing saturation as far as it goes.</p><p class="fix">Compare with a snapshot. Edit for the story, not for color alone.</p></li>
-            <li><p class="mistake">Smoothing skin until it looks like plastic.</p><p class="fix">Leave the finest detail scale alone so pores stay.</p></li>
-            <li><p class="mistake">Using masks with hard edges.</p><p class="fix">Feather the mask so the change blends in.</p></li>
-            <li><p class="mistake">Editing each photo of a set in a different way.</p><p class="fix">Build a style and apply it to the whole set.</p></li>
+            <li><p class="mistake">Đẩy độ bão hòa màu lên hết cỡ.</p><p class="fix">So sánh với ảnh lưu trạng thái. Chỉnh ảnh để kể câu chuyện, không chỉ vì màu sắc.</p></li>
+            <li><p class="mistake">Làm mịn da đến mức trông như nhựa.</p><p class="fix">Để nguyên scale chi tiết nhỏ nhất để giữ lỗ chân lông.</p></li>
+            <li><p class="mistake">Dùng mặt nạ có mép cứng.</p><p class="fix">Làm mềm viền mặt nạ để chỗ chỉnh hòa vào ảnh.</p></li>
+            <li><p class="mistake">Chỉnh mỗi ảnh trong một bộ theo một kiểu khác nhau.</p><p class="fix">Tạo một style và áp cho cả bộ.</p></li>
           </ul>
         </section>
         <section class="self-check" id="self-check" data-read="lesson">
-          <h2>Self-check</h2>
+          <h2>Tự kiểm tra</h2>
           <details class="quiz">
-            <summary>Which mask shape darkens a sky with a soft edge?</summary>
-            <p>The gradient.</p>
+            <summary>Hình mặt nạ nào làm tối bầu trời với mép mềm?</summary>
+            <p>Dải chuyển (gradient).</p>
           </details>
           <details class="quiz">
-            <summary>What is the difference between a preset and a style?</summary>
-            <p>A preset saves one module. A style saves several.</p>
+            <summary>Preset và style khác nhau thế nào?</summary>
+            <p>Preset lưu một module. Style lưu nhiều module.</p>
           </details>
           <details class="quiz">
-            <summary>Why export a 16-bit TIFF for GIMP?</summary>
-            <p>It keeps the most tonal detail for retouching.</p>
+            <summary>Vì sao nên xuất file TIFF 16-bit cho GIMP?</summary>
+            <p>Nó giữ nhiều chi tiết tông màu nhất để chỉnh sửa chi tiết.</p>
           </details>
           <details class="quiz">
-            <summary>How do you keep skin texture when you smooth skin?</summary>
-            <p>Smooth only the coarser Wavelet decompose scales and leave the finest scale alone.</p>
+            <summary>Làm sao giữ kết cấu da khi làm mịn da?</summary>
+            <p>Chỉ làm mịn các scale thô hơn của Wavelet decompose và để nguyên scale chi tiết nhỏ nhất.</p>
           </details>
           <details class="quiz">
-            <summary>Which darktable module adds contrast in the basic edit?</summary>
-            <p>sigmoid.</p>
+            <summary>Module darktable nào tăng tương phản trong bước chỉnh cơ bản?</summary>
+            <p>Module sigmoid.</p>
           </details>
         </section>
         <section class="learn-more" id="learn-more">
-          <h2>Learn more</h2>
+          <h2>Tìm hiểu thêm</h2>
           <ul>
-            <li><a href="https://docs.darktable.org/usermanual/5.6/en/darkroom/masking-and-blending/masks/drawn/">darktable 5.6 manual: Drawn masks</a></li>
-            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/processing-modules/color-balance-rgb/">darktable 5.6 manual: color balance rgb</a></li>
-            <li><a href="https://docs.gimp.org/3.2/en/">GIMP 3.2 manual</a></li>
-            <li><a href="https://hugin.sourceforge.io">Hugin panorama stitcher</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/darkroom/masking-and-blending/masks/drawn/">Hướng dẫn darktable 5.6: Mặt nạ vẽ (tiếng Anh)</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/processing-modules/color-balance-rgb/">Hướng dẫn darktable 5.6: color balance rgb (tiếng Anh)</a></li>
+            <li><a href="https://docs.gimp.org/3.2/en/">Hướng dẫn GIMP 3.2 (tiếng Anh)</a></li>
+            <li><a href="https://hugin.sourceforge.io">Hugin, phần mềm ghép ảnh toàn cảnh (tiếng Anh)</a></li>
           </ul>
         </section>
 
-        <nav id="stage-pager" class="pager wide" aria-label="Stages"></nav>
+        <nav id="stage-pager" class="pager wide" aria-label="Các chặng"></nav>
       </main>
     </div>
     <footer id="site-footer" class="site-footer"></footer>

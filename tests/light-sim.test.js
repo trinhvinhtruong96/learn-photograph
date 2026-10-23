@@ -3,9 +3,9 @@ import { CAMERA_KELVIN, lightPattern, whiteBalanceCast } from '../src/js/widgets
 
 describe('light direction', () => {
   test.each([
-    [0, 'Front light'], [20, 'Front light'], [45, '45° light'], [60, '45° light'], [90, 'Side light'],
-    [120, 'Side light'], [135, 'Rim light'], [160, 'Rim light'], [180, 'Backlight'], [315, '45° light'],
-  ])('light at %s° is %s', (angle, name) => expect(lightPattern(angle).name).toBe(name));
+    [0, 'front'], [20, 'front'], [45, 'forty-five'], [60, 'forty-five'], [90, 'side'],
+    [120, 'side'], [135, 'rim'], [160, 'rim'], [180, 'back'], [315, 'forty-five'],
+  ])('light at %s° is %s', (angle, id) => expect(lightPattern(angle).id).toBe(id));
   test('the lit side follows the angle', () => {
     expect(lightPattern(90).side).toBe('right');
     expect(lightPattern(270).side).toBe('left');

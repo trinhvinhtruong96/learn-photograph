@@ -97,7 +97,7 @@ function markup(id) {
   </g>`;
 }
 
-export function createScene({ label = 'Illustrated street at dusk with a person, a cyclist and city lights' } = {}) {
+export function createScene({ label = 'Minh họa đường phố lúc chạng vạng, có một người, một người đạp xe và đèn thành phố' } = {}) {
   const id = uid('scene');
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${SCENE_WIDTH} ${SCENE_HEIGHT}`);

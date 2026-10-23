@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="With the 35mm at f/8, focus at about 5.1 m and everything from about 2.6 m to the mountains is acceptably sharp.">
-  <title>With the 35mm at f/8, focus at about 5.1 m and everything from about 2.6 m to the mountains is acceptably sharp.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Với ống 35mm ở f/8, lấy nét ở khoảng 5,1 m thì mọi thứ từ khoảng 2,6 m đến dãy núi đều nét chấp nhận được.">
+  <title>Với ống 35mm ở f/8, lấy nét ở khoảng 5,1 m thì mọi thứ từ khoảng 2,6 m đến dãy núi đều nét chấp nhận được.</title>
   <path class="i-muted" d="M470 150 L540 70 L580 110 L610 80 L640 150 Z" opacity="0.6"/>
   <path class="i-line" d="M20 150 H630"/>
   <rect class="i-accent" x="237.9" y="40" width="392.1" height="110" opacity="0.18"/>
@@ -7,7 +7,7 @@
   <circle class="i-accent" cx="160.6" cy="138" r="8" opacity="0.5"/><path class="i-line" d="M160.6 146 V150"/>
   <path class="i-fill i-line" d="M380.0 150 V112 M360.0 112 a20 20 0 0 1 40 0 a20 20 0 0 1 -40 0"/>
   <path class="i-accent-line" d="M322.6 34 V156" stroke-dasharray="4 5"/>
-  <text class="i-text" x="322.6" y="26" text-anchor="middle">focus 5.1 m</text>
-  <text class="i-text-muted" x="237.9" y="176" text-anchor="middle">sharp from 2.6 m</text>
-  <text class="i-text-muted" x="600" y="176" text-anchor="middle">to infinity</text>
+  <text class="i-text" x="322.6" y="26" text-anchor="middle">lấy nét 5,1 m</text>
+  <text class="i-text-muted" x="237.9" y="176" text-anchor="middle">nét từ 2,6 m</text>
+  <text class="i-text-muted" x="632" y="176" text-anchor="end">đến vô cực</text>
 </svg>

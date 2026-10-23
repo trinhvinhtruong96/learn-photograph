@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Focus on the eye closest to the camera. At f/1.8 the sharp slab is only a few centimeters deep.">
-  <title>Focus on the eye closest to the camera. At f/1.8 the sharp slab is only a few centimeters deep.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Lấy nét vào mắt gần máy nhất. Ở f/1.8, tấm kính nét chỉ dày vài centimet.">
+  <title>Lấy nét vào mắt gần máy nhất. Ở f/1.8, tấm kính nét chỉ dày vài centimet.</title>
   <ellipse class="i-fill i-line" cx="170" cy="112" rx="62" ry="78"/>
   <ellipse class="i-line" cx="140" cy="100" rx="11" ry="7"/>
   <ellipse class="i-line" cx="192" cy="98" rx="8" ry="6"/>
   <path class="i-line" d="M168 104 L158 140 L170 140"/>
   <path class="i-line" d="M150 162 Q168 172 186 160"/>
   <rect class="i-accent-line" x="122" y="86" width="36" height="28" rx="3"/>
-  <text class="i-text" x="170" y="212" text-anchor="middle">nearest eye</text>
+  <text class="i-text" x="170" y="212" text-anchor="middle">mắt gần nhất</text>
   <rect class="i-muted i-line" x="330" y="96" width="34" height="26" rx="4"/>
   <path class="i-line" d="M364 109 H470"/>
   <rect class="i-accent" x="486" y="46" width="8" height="130" opacity="0.6"/>
   <circle class="i-fill i-line" cx="530" cy="110" r="42"/>
   <circle class="i-text" cx="490" cy="96" r="4"/>
   <circle class="i-text" cx="500" cy="140" r="4"/>
-  <text class="i-text-muted" x="490" y="30" text-anchor="middle">sharp slab, about 6 cm</text>
-  <text class="i-text" x="470" y="212" text-anchor="middle">seen from above</text>
+  <text class="i-text-muted" x="490" y="30" text-anchor="middle">tấm kính nét, khoảng 6 cm</text>
+  <text class="i-text" x="470" y="212" text-anchor="middle">nhìn từ trên xuống</text>
 </svg>

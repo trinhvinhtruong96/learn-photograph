@@ -33,9 +33,9 @@ function createScale() {
       focusMark.setAttribute('x1', String(fx));
       focusMark.setAttribute('x2', String(fx));
       focusLabel.setAttribute('x', String(fx));
-      focusLabel.textContent = `focus ${formatDistance(hyperfocal)}`;
+      focusLabel.textContent = `lấy nét ${formatDistance(hyperfocal)}`;
       nearLabel.setAttribute('x', String(left));
-      nearLabel.textContent = `sharp from ${formatDistance(near)}`;
+      nearLabel.textContent = `nét từ ${formatDistance(near)}`;
     },
   };
 }
@@ -45,9 +45,9 @@ export function mount(host) {
   const scale = createScale();
   const readout = readoutBox();
   const live = liveRegion();
-  const aperture = rangeControl({ label: 'Aperture', values: aperturesFor(LENSES[35]), value: 8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
+  const aperture = rangeControl({ label: 'Khẩu độ', values: aperturesFor(LENSES[35]), value: 8, format: formatAperture, onInput: (v) => update({ aperture: v }) });
   const lens = radioGroup({
-    legend: 'Lens',
+    legend: 'Ống kính',
     options: [{ value: 35, label: LENSES[35].label }, { value: 85, label: LENSES[85].label }],
     value: 35,
     onChange: (v) => {
@@ -62,8 +62,8 @@ export function mount(host) {
     const dof = depthOfField(state.focal, state.aperture, hyperfocal);
     scale.update(hyperfocal, dof.near);
     const lines = [
-      `Focus at ${formatDistance(hyperfocal)}. ${describeSharpZone(dof)}`,
-      'That means acceptably sharp, not perfectly sharp. If far detail matters most, focus a little farther.',
+      `Lấy nét ở ${formatDistance(hyperfocal)}. ${describeSharpZone(dof)}`,
+      'Đây là nét chấp nhận được, không phải nét hoàn hảo. Nếu chi tiết ở xa quan trọng nhất, hãy lấy nét xa hơn một chút.',
     ];
     setReadout(readout, lines);
     live.announce(lines.join(' '));

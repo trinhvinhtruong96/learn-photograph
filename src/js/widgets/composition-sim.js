@@ -1,5 +1,5 @@
 import { horizontalFovDeg, sameFramingDistanceMm } from '../photo-math.js';
-import { formatDistance } from '../format.js';
+import { formatDecimal, formatDistance } from '../format.js';
 import { el, svgEl, uid } from '../dom.js';
 import { checkbox, liveRegion, radioGroup, readoutBox, setReadout, simLayout } from './controls.js';
 
@@ -11,15 +11,15 @@ export function perspectiveCompare(behindMm = 50000, subject35Mm = 1200) {
 }
 
 const OVERLAYS = [
-  { id: 'thirds', label: 'Rule of thirds', checked: true, lines: [[213.3, 0, 213.3, 400], [426.7, 0, 426.7, 400], [0, 133.3, 640, 133.3], [0, 266.7, 640, 266.7]] },
-  { id: 'phi', label: 'Golden ratio grid', checked: false, lines: [[244.5, 0, 244.5, 400], [395.5, 0, 395.5, 400], [0, 152.8, 640, 152.8], [0, 247.2, 640, 247.2]] },
-  { id: 'diagonals', label: 'Diagonals', checked: false, lines: [[0, 0, 640, 400], [640, 0, 0, 400]] },
-  { id: 'center', label: 'Center lines', checked: false, lines: [[320, 0, 320, 400], [0, 200, 640, 200]] },
+  { id: 'thirds', label: 'Quy tắc một phần ba', checked: true, lines: [[213.3, 0, 213.3, 400], [426.7, 0, 426.7, 400], [0, 133.3, 640, 133.3], [0, 266.7, 640, 266.7]] },
+  { id: 'phi', label: 'Lưới tỷ lệ vàng', checked: false, lines: [[244.5, 0, 244.5, 400], [395.5, 0, 395.5, 400], [0, 152.8, 640, 152.8], [0, 247.2, 640, 247.2]] },
+  { id: 'diagonals', label: 'Đường chéo', checked: false, lines: [[0, 0, 640, 400], [640, 0, 0, 400]] },
+  { id: 'center', label: 'Đường giữa', checked: false, lines: [[320, 0, 320, 400], [0, 200, 640, 200]] },
 ];
 
 function createFrame() {
   const id = uid('frame');
-  const svg = svgEl('svg', { viewBox: '0 0 640 400', class: 'sim-diagram', role: 'img', 'aria-label': 'A person on the left third with a mountain behind' });
+  const svg = svgEl('svg', { viewBox: '0 0 640 400', class: 'sim-diagram', role: 'img', 'aria-label': 'Một người ở đường một phần ba bên trái, phía sau là ngọn núi' });
   svg.innerHTML = `
     <defs><linearGradient id="${id}-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb0dc"/><stop offset="1" stop-color="#dfe9ef"/></linearGradient></defs>
     <rect width="640" height="400" fill="url(#${id}-sky)"/>
@@ -44,12 +44,12 @@ function createTopView() {
   const subject = svgEl('circle', { class: 'd-accent', cx: 150, r: 7 });
   const label = svgEl('text', { x: 165 });
   svg.append(
-    svgEl('text', { x: 150, y: 16, 'text-anchor': 'middle', text: 'Mountain, 50 m behind' }),
+    svgEl('text', { x: 150, y: 16, 'text-anchor': 'middle', text: 'Núi, cách 50 m phía sau' }),
     cone,
     subject,
     label,
     svgEl('rect', { class: 'd-muted', x: 138, y: 200, width: 24, height: 14, rx: 3 }),
-    svgEl('text', { x: 172, y: 212, text: 'You' }),
+    svgEl('text', { x: 172, y: 212, text: 'Bạn' }),
   );
   return {
     svg,
@@ -62,7 +62,7 @@ function createTopView() {
       const y = 200 - (subjectMm / 3000) * 150;
       subject.setAttribute('cy', String(y));
       label.setAttribute('y', String(y + 5));
-      label.textContent = `Person, ${formatDistance(subjectMm)}`;
+      label.textContent = `Người, ${formatDistance(subjectMm)}`;
     },
   };
 }
@@ -76,7 +76,7 @@ export function mount(host) {
   const compare = perspectiveCompare();
 
   const lens = radioGroup({
-    legend: 'Lens (same framing of the person)',
+    legend: 'Ống kính (giữ cùng khung hình người)',
     options: [{ value: 35, label: '35mm' }, { value: 85, label: '85mm' }],
     value: 35,
     onChange: (v) => {
@@ -85,7 +85,7 @@ export function mount(host) {
     },
   });
   const toggles = el('fieldset', { class: 'sim-radios' }, [
-    el('legend', { text: 'Grid overlays' }),
+    el('legend', { text: 'Lưới hiển thị' }),
     ...OVERLAYS.map((o) => checkbox({
       label: o.label,
       checked: o.checked,
@@ -108,14 +108,14 @@ export function mount(host) {
     top.update(fov, is85 ? compare.s85 : compare.s35);
     const lines = is85
       ? [
-        `85mm: you step back to ${formatDistance(compare.s85)} for the same framing.`,
-        `You see ${fov.toFixed(1)}° across.`,
-        `The mountain looks ${compare.ratio.toFixed(1)} times bigger next to the person. Your distance changed the perspective, not the lens.`,
+        `Ống 85mm: bạn lùi ra ${formatDistance(compare.s85)} để giữ cùng khung hình.`,
+        `Bạn nhìn thấy góc ${formatDecimal(fov)}° theo chiều ngang.`,
+        `Ngọn núi trông lớn gấp ${formatDecimal(compare.ratio)} lần khi đặt cạnh người. Khoảng cách của bạn làm đổi phối cảnh, không phải ống kính.`,
       ]
       : [
-        `35mm: you stand ${formatDistance(compare.s35)} from the person.`,
-        `You see ${fov.toFixed(1)}° across.`,
-        'The mountain looks small and far away.',
+        `Ống 35mm: bạn đứng cách người ${formatDistance(compare.s35)}.`,
+        `Bạn nhìn thấy góc ${formatDecimal(fov)}° theo chiều ngang.`,
+        'Ngọn núi trông nhỏ và xa.',
       ];
     setReadout(readout, lines);
     live.announce(lines.join(' '));

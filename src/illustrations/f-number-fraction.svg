@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Four lens openings shrink from f/1.4 to f/4. Each step lets in half the light of the one before.">
-  <title>Four lens openings shrink from f/1.4 to f/4. Each step lets in half the light of the one before.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Bốn độ mở ống kính nhỏ dần từ f/1.4 đến f/4. Mỗi bước chỉ cho vào một nửa ánh sáng so với bước trước.">
+  <title>Bốn độ mở ống kính nhỏ dần từ f/1.4 đến f/4. Mỗi bước chỉ cho vào một nửa ánh sáng so với bước trước.</title>
   <g>
     <circle class="i-fill" cx="100" cy="110" r="60"/>
     <circle class="i-line" cx="100" cy="110" r="60"/>
@@ -23,5 +23,5 @@
   </g>
   <path class="i-accent-line" d="M160 30 H500"/>
   <path class="i-accent-line" d="M490 22 L505 30 L490 38"/>
-  <text class="i-text-muted" x="330" y="20" text-anchor="middle">half the light each step</text>
+  <text class="i-text-muted" x="330" y="20" text-anchor="middle">mỗi bước còn một nửa ánh sáng</text>
 </svg>

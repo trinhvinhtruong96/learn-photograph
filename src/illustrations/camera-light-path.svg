@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Light travels through the lens, the aperture and the open shutter to the sensor.">
-  <title>Light travels through the lens, the aperture and the open shutter to the sensor.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Ánh sáng đi qua ống kính, khẩu độ và màn trập đang mở để đến cảm biến.">
+  <title>Ánh sáng đi qua ống kính, khẩu độ và màn trập đang mở để đến cảm biến.</title>
   <path class="i-accent-line" d="M88 90 H500"/>
   <path class="i-accent-line" d="M488 80 L502 90 L488 100"/>
   <circle class="i-accent" cx="50" cy="90" r="22"/>
@@ -11,9 +11,9 @@
   <rect class="i-fill i-line" x="396" y="36" width="28" height="36" rx="3"/>
   <rect class="i-fill i-line" x="396" y="108" width="28" height="36" rx="3"/>
   <rect class="i-muted i-line" x="508" y="46" width="22" height="88" rx="3"/>
-  <text class="i-text" x="50" y="190" text-anchor="middle">light</text>
-  <text class="i-text" x="200" y="190" text-anchor="middle">lens</text>
-  <text class="i-text" x="300" y="190" text-anchor="middle">aperture</text>
-  <text class="i-text" x="410" y="190" text-anchor="middle">shutter</text>
-  <text class="i-text" x="519" y="190" text-anchor="middle">sensor</text>
+  <text class="i-text" x="50" y="190" text-anchor="middle">ánh sáng</text>
+  <text class="i-text" x="200" y="190" text-anchor="middle">ống kính</text>
+  <text class="i-text" x="300" y="190" text-anchor="middle">khẩu độ</text>
+  <text class="i-text" x="410" y="190" text-anchor="middle">màn trập</text>
+  <text class="i-text" x="519" y="190" text-anchor="middle">cảm biến</text>
 </svg>

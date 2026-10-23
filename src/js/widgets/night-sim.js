@@ -1,5 +1,5 @@
 import { LENSES, aperturesFor, handheldLimitSeconds, npfSeconds, rule500Seconds, slowestSafeShutter } from '../photo-math.js';
-import { formatAperture, formatSeconds, formatShutter } from '../format.js';
+import { formatAperture, formatDecimal, formatSeconds, formatShutter } from '../format.js';
 import { el, svgEl } from '../dom.js';
 import { liveRegion, radioGroup, rangeControl, readoutBox, setReadout, simLayout } from './controls.js';
 
@@ -27,34 +27,34 @@ function createSky(label) {
   };
 }
 
-const stopsText = (v) => (v === 0 ? 'Off' : `${v} ${v === 1 ? 'stop' : 'stops'}`);
+const stopsText = (v) => (v === 0 ? 'tắt' : `${v} stop`);
 // The 500 rule only causes trails when it allows a clearly longer time than NPF (true at wide apertures).
 const TRAIL_MARGIN = 1.05;
 
 export function starReadout(focal, aperture) {
   const npf = npfSeconds(focal, aperture);
   const rule = rule500Seconds(focal);
-  const npfLine = `Stars: the NPF rule says ${formatSeconds(npf)} at ${formatAperture(aperture)}.`;
+  const npfLine = `Sao: quy tắc NPF cho ${formatSeconds(npf)} ở ${formatAperture(aperture)}.`;
   if (rule > npf * TRAIL_MARGIN) {
-    return [npfLine, `The 500 rule says ${formatSeconds(rule)}, ${(rule / npf).toFixed(1)} times longer, so stars smear into short lines.`];
+    return [npfLine, `Quy tắc 500 cho ${formatSeconds(rule)}, dài hơn ${formatDecimal(rule / npf)} lần, nên sao bị kéo thành vệt ngắn.`];
   }
-  return [npfLine, `The 500 rule says ${formatSeconds(rule)}. At this aperture the NPF time is about the same or longer, so use the shorter one: ${formatSeconds(Math.min(npf, rule))}.`];
+  return [npfLine, `Quy tắc 500 cho ${formatSeconds(rule)}. Ở khẩu độ này, thời gian NPF bằng hoặc dài hơn, nên hãy dùng thời gian ngắn hơn: ${formatSeconds(Math.min(npf, rule))}.`];
 }
 
 export function mount(host) {
   const state = { focal: 35, aperture: 1.4, stops: 2 };
-  const npfSky = createSky('Stars at the NPF time: small dots');
-  const ruleSky = createSky('Stars at the 500 rule time');
+  const npfSky = createSky('Sao ở thời gian NPF: những chấm nhỏ');
+  const ruleSky = createSky('Sao ở thời gian theo quy tắc 500');
   const view = el('div', { class: 'sim-panels' }, [
-    el('figure', {}, [npfSky.svg, el('figcaption', { text: 'NPF time' })]),
-    el('figure', {}, [ruleSky.svg, el('figcaption', { text: '500 rule time' })]),
+    el('figure', {}, [npfSky.svg, el('figcaption', { text: 'Thời gian NPF' })]),
+    el('figure', {}, [ruleSky.svg, el('figcaption', { text: 'Thời gian quy tắc 500' })]),
   ]);
   const readout = readoutBox();
   const live = liveRegion();
-  const aperture = rangeControl({ label: 'Aperture', values: aperturesFor(LENSES[35]), value: 1.4, format: formatAperture, onInput: (v) => update({ aperture: v }) });
-  const stabilizer = rangeControl({ label: 'Stabilizer stops you count on', values: [0, 1, 2, 3, 4], value: 2, format: stopsText, onInput: (v) => update({ stops: v }) });
+  const aperture = rangeControl({ label: 'Khẩu độ', values: aperturesFor(LENSES[35]), value: 1.4, format: formatAperture, onInput: (v) => update({ aperture: v }) });
+  const stabilizer = rangeControl({ label: 'Số stop chống rung bạn tin cậy', values: [0, 1, 2, 3, 4], value: 2, format: stopsText, onInput: (v) => update({ stops: v }) });
   const lens = radioGroup({
-    legend: 'Lens',
+    legend: 'Ống kính',
     options: [{ value: 35, label: LENSES[35].label }, { value: 85, label: LENSES[85].label }],
     value: 35,
     onChange: (v) => {
@@ -72,8 +72,8 @@ export function mount(host) {
     const handheld = slowestSafeShutter(handheldLimitSeconds(state.focal, state.stops));
     const lines = [
       ...starReadout(state.focal, state.aperture),
-      `Handheld, still scene, stabilizer ${stopsText(state.stops)}: ${formatShutter(handheld)} or faster.`,
-      'People still need 1/60 s to 1/250 s, because the stabilizer cannot stop them moving.',
+      `Cầm tay, cảnh đứng yên, chống rung ${stopsText(state.stops)}: ${formatShutter(handheld)} hoặc nhanh hơn.`,
+      'Người vẫn cần 1/60 đến 1/250 giây, vì chống rung không giữ được người đang chuyển động.',
     ];
     setReadout(readout, lines);
     live.announce(lines.join(' '));
@@ -84,7 +84,7 @@ export function mount(host) {
     controls: [lens.el, aperture.el, stabilizer.el],
     readout,
     live: live.el,
-    extra: [el('p', { class: 'sim__credit', text: 'NPF rule © Frédéric Michaud, Société Astronomique du Havre.' })],
+    extra: [el('p', { class: 'sim__credit', text: 'Quy tắc NPF © Frédéric Michaud, Société Astronomique du Havre.' })],
   });
   update({});
 }
