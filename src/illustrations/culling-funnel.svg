@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Culling narrows 200 photos to 10 picks: reject the weak ones, then star the best.">
+  <title>Culling narrows 200 photos to 10 picks: reject the weak ones, then star the best.</title>
+  <path class="i-fill i-line" d="M120 30 H520 L400 150 V210 H240 V150 Z"/>
+  <path class="i-line" d="M180 90 H460 M240 150 H400"/>
+  <text class="i-text" x="320" y="66" text-anchor="middle">200 photos</text>
+  <text class="i-text" x="320" y="126" text-anchor="middle">reject with R</text>
+  <text class="i-text" x="320" y="186" text-anchor="middle">3 stars or more</text>
+  <text class="i-text" x="560" y="200">10 picks</text>
+  <path class="i-accent-line" d="M410 196 H550"/>
+</svg>

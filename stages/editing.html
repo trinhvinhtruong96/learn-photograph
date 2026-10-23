@@ -24,9 +24,296 @@
       <main id="main" class="stage" data-stage="editing" tabindex="-1">
         <div id="stage-header" class="stage-header"></div>
 
+        <section class="lesson" id="raw" data-read="lesson">
+          <h2>RAW files keep everything</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>A RAW file keeps all the light data, and darktable never changes it.</p>
+          </div>
+          <p>A <dfn>RAW</dfn> file holds everything the sensor recorded. It looks flat at first because nothing has been processed yet.</p>
+          <p>Your original file never changes in darktable. The app saves your edits in a small <dfn>sidecar</dfn> file next to it, such as DSC01234.ARW.xmp.</p>
+          <p>Back up the sidecar files together with the RAW files. Without them, your edits are gone.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a recipe card stored next to raw ingredients. The ingredients stay untouched. The card says how to cook them.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>You edit a sunset photo in three different ways. The RAW file stays the same, and you can go back to the original at any time.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Edits save automatically to the .xmp file. You never press a save button for edits.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Open one RAW file in darktable, change the exposure, and close it. Find the .xmp file next to the RAW in your folder.</p>
+          </div>
+        </section>
+        <section class="lesson" id="organize" data-read="lesson">
+          <h2>Organize and cull</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Put photos in dated folders, then keep only the best ones.</p>
+          </div>
+          <p>Copy each shoot into a folder named by date and event, such as 2026/2026-10-25_market. Then add the folder to darktable.</p>
+          <p><dfn>Culling</dfn> means picking the best photos and rejecting the rest. First reject the clear misses. Then give stars to the ones you like.</p>
+          <figure class="illus">
+            <div data-illus="culling-funnel"></div>
+            <figcaption>Reject first, then star the best.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of picking fruit at a market. First you drop the bruised ones. Then you choose the best of the rest.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>From 200 photos of a market, you reject 120 blurry or dull frames. You give 3 stars to 10 of the rest. Those 10 are your edit.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>In the lighttable, use <b class="ui">import › add to library</b>. Hover over a thumbnail and press <b class="ui">0</b> to <b class="ui">5</b> for stars and <b class="ui">R</b> to reject. <b class="ui">F1</b> to <b class="ui">F5</b> add color labels.</p><p>Culling mode is <b class="ui">X</b> (fixed) or <b class="ui">Ctrl+X</b> (dynamic). Hold <b class="ui">W</b> for a full preview.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Import your last shoot. Reject the misses with R, then star your top 10.</p>
+          </div>
+        </section>
+        <section class="lesson" id="setup" data-read="lesson">
+          <h2>Set up darktable once</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Check one setting so darktable starts every RAW file the modern way.</p>
+          </div>
+          <p>darktable 5.6 starts each RAW file with a few modules already on. The setting that controls this is called the pixel workflow.</p>
+          <p>Keep the default: "scene-referred (sigmoid)". The darktable manual's getting-started page still shows an older module called filmic rgb. This course uses sigmoid.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of setting up a new kitchen once. After that, every meal starts from the same tidy counter.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>You open a RAW file and it already looks brighter and has contrast. That is the default workflow doing its job.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Open preferences, then <b class="ui">processing</b>. Check that <b class="ui">auto-apply pixel workflow defaults</b> is set to "scene-referred (sigmoid)".</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Open darktable preferences and confirm the pixel workflow setting.</p>
+          </div>
+        </section>
+        <section class="lesson" id="basic-edit" data-read="lesson">
+          <h2>The basic edit, in order</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Work through the same nine modules, in the same order, on every photo.</p>
+          </div>
+          <p>A fixed order keeps you from going in circles. The order inside darktable is fixed anyway. This list is the order you work in.</p>
+          <ol>
+            <li><b class="ui">lens correction</b>: turn it on first. Fixing dark corners changes the brightness.</li>
+            <li><b class="ui">exposure</b>: set the overall brightness. The module already adds +0.7 EV, like a camera JPEG. Press <b class="ui">Ctrl+B</b> for color assessment mode while you judge it.</li>
+            <li><b class="ui">sigmoid</b>: sets the contrast and keeps the brightest and darkest parts under control.</li>
+            <li><b class="ui">color calibration</b>: fixes white balance, if needed.</li>
+            <li><b class="ui">color balance rgb</b>: start from the preset <b class="ui">basic colorfulness</b>, then adjust global vibrance.</li>
+            <li><b class="ui">denoise (profiled)</b>: removes noise with a profile made for the α7 II.</li>
+            <li><b class="ui">local contrast</b> or <b class="ui">diffuse or sharpen</b>: brings back crisp detail.</li>
+            <li><b class="ui">rotate and perspective</b> and <b class="ui">crop</b>: straighten the horizon and trim the edges.</li>
+            <li><b class="ui">retouch</b>: removes dust spots and small distractions.</li>
+          </ol>
+          <figure class="illus">
+            <div data-illus="edit-pipeline"></div>
+            <figcaption>The working order for a basic edit.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of getting dressed. Socks go on before shoes. Lens correction goes on before exposure for the same reason: each step depends on the one before.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>An underexposed sunset street. Lens correction lifts the dark corners, and exposure +1 EV brings back the street. Sigmoid adds punch.</p><p>Color calibration warms the light a little, and color balance rgb adds color. Denoise cleans the sky, local contrast adds crispness, and a small rotation fixes the tilted horizon.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Open a photo in the darkroom and work down the list from step 1 to step 9. Skip a step only when the photo does not need it.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Edit one photo using all nine steps in order. Take note of which step changed it most.</p>
+          </div>
+        </section>
+        <section class="lesson" id="compare" data-read="lesson">
+          <h2>Compare before and after</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>A snapshot lets you compare your edit with an earlier version.</p>
+          </div>
+          <p>After a while, your eyes get used to an edit. A side-by-side comparison shows if it really looks better.</p>
+          <p>A <dfn>snapshot</dfn> saves the current look. The <dfn>history stack</dfn> lists every edit in order, so you can step back.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a before and after photo in a magazine. Side by side, the change is obvious.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>You push the colors hard. In a split view next to the snapshot, the skin looks orange. You pull color balance rgb back a little.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>In the <b class="ui">snapshots</b> module, click <b class="ui">take snapshot</b>. Then click the snapshot for a split view. Click an older item in the <b class="ui">history stack</b> to see that step.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Take a snapshot before you edit. When you finish, compare the two in split view.</p>
+          </div>
+        </section>
+        <section class="lesson" id="edit-a-set" data-read="lesson">
+          <h2>Edit a whole set</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Copy the edit from one photo and paste it onto the others.</p>
+          </div>
+          <p>Photos from one shoot often share the same light. Edit one, then copy its edits to the rest.</p>
+          <p>Plain copy skips white balance and lens correction, because those can differ per photo. Selective copy lets you choose exactly which modules to paste.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a stamp. Carve it once, then press it on every page.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>Ten photos from one market at dusk: edit the best one, copy it, and paste onto the other nine. Then fine-tune exposure on each.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Use <b class="ui">Ctrl+C</b> and <b class="ui">Ctrl+V</b> to copy and paste all edits. Use <b class="ui">Ctrl+Shift+C</b> and <b class="ui">Ctrl+Shift+V</b> to pick modules.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Copy your best edit onto 5 photos from the same shoot.</p>
+          </div>
+        </section>
+        <section class="lesson" id="export" data-read="lesson">
+          <h2>Export for web and print</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Export makes a finished JPEG and leaves your RAW untouched.</p>
+          </div>
+          <p>The web needs small files in the sRGB color space. Print needs the full size.</p>
+          <p>A web size of 2048 pixels on the long side looks sharp on phones and laptops. Quality 90 keeps files small with no visible loss.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of printing a document as a PDF. The original stays editable. The PDF is the copy you share.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>You share 10 travel photos online: JPEG, sRGB, quality 90, 2048 pixels. For a big print, you export the same photos at full size.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>In the <b class="ui">export</b> module: <b class="ui">file format</b> JPEG, <b class="ui">quality</b> 90, <b class="ui">set size</b> in pixels with <b class="ui">max size</b> 2048 × 2048, <b class="ui">profile</b> sRGB. For full size, set max size to 0 × 0.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Export your 10 best photos for the web and open them on your phone.</p>
+          </div>
+        </section>
+        <section class="lesson" id="backup" data-read="lesson">
+          <h2>Back up with the 3-2-1 rule</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Keep 3 copies of your photos, on 2 kinds of storage, with 1 copy somewhere else.</p>
+          </div>
+          <p>Drives fail and laptops get stolen. A backup plan protects years of work.</p>
+          <p>The 3-2-1 rule: 3 copies, on 2 kinds of storage, with 1 copy off-site. Include the .xmp sidecar files.</p>
+          <figure class="illus">
+            <div data-illus="backup-321"></div>
+            <figcaption>Three copies, two kinds of storage, one off-site.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of spare house keys. You keep one in your pocket, one at home and one with a friend.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>Your photos live on the laptop, on an external drive, and in a cloud folder. If the laptop dies, you lose nothing.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Back up the whole photo folder, not only darktable. The library and the .xmp files hold your edits.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Copy your photo folder to an external drive today.</p>
+          </div>
+        </section>
+        <section class="key-terms" id="key-terms" data-read="tech">
+          <h2>Key terms</h2>
+          <dl class="terms">
+            <dt><dfn>RAW</dfn></dt><dd>The full data from the sensor, before processing.</dd>
+            <dt><dfn>Sidecar (XMP)</dfn></dt><dd>A small file next to the photo that stores your edits.</dd>
+            <dt><dfn>Module</dfn></dt><dd>One editing tool in darktable.</dd>
+            <dt><dfn>History stack</dfn></dt><dd>The list of edits you made, in order.</dd>
+            <dt><dfn>Snapshot</dfn></dt><dd>A saved state you can compare against.</dd>
+            <dt><dfn>Culling</dfn></dt><dd>Picking the best photos and rejecting the rest.</dd>
+            <dt><dfn>sRGB</dfn></dt><dd>The standard color space for screens and the web.</dd>
+          </dl>
+        </section>
+        <section class="simulator wide" id="simulator">
+          <h2>Step through a basic edit</h2>
+          <p>Press Next step to apply one darktable module at a time. Drag the divider to compare the RAW file with the edit.</p>
+          <div data-widget="edit-steps"></div>
+        </section>
+        <section class="warmup" id="warm-up" data-read="lesson">
+          <h2>Warm-up</h2>
+          <p>Shoot one portrait by a window at 45°. Check that the nearest eye is sharp at 100%.</p>
+        </section>
+
         <section class="practice" id="practice">
           <h2>Practice</h2>
           <div data-checklist></div>
+        </section>
+
+        <section class="mistakes" id="mistakes" data-read="lesson">
+          <h2>Common mistakes</h2>
+          <ul class="mistakes__list">
+            <li><p class="mistake">Thinking JPEG is better because RAW looks flat.</p><p class="fix">RAW is unprocessed. Editing gives it life and keeps all the data.</p></li>
+            <li><p class="mistake">Worrying that editing changes the original.</p><p class="fix">darktable keeps edits in the .xmp sidecar.</p></li>
+            <li><p class="mistake">Expecting RAW to rescue a pure white sky.</p><p class="fix">Fully white areas hold no detail. Protect highlights when you shoot.</p></li>
+            <li><p class="mistake">Sharpening to fix missed focus.</p><p class="fix">Sharpening cannot create detail that was never captured.</p></li>
+            <li><p class="mistake">Exporting Adobe RGB for the web.</p><p class="fix">Use sRGB for screens and the web.</p></li>
+          </ul>
+        </section>
+        <section class="self-check" id="self-check" data-read="lesson">
+          <h2>Self-check</h2>
+          <details class="quiz">
+            <summary>Which module do you turn on first, and why?</summary>
+            <p>lens correction, because fixing dark corners changes the brightness.</p>
+          </details>
+          <details class="quiz">
+            <summary>What does Ctrl+Shift+V do?</summary>
+            <p>It pastes only the modules you choose.</p>
+          </details>
+          <details class="quiz">
+            <summary>Where are your edits stored?</summary>
+            <p>In the .xmp sidecar next to the RAW file.</p>
+          </details>
+          <details class="quiz">
+            <summary>Which export settings suit the web?</summary>
+            <p>JPEG, sRGB, quality 90, max size 2048 × 2048.</p>
+          </details>
+          <details class="quiz">
+            <summary>Your camera was on Daylight under orange lamps. Can you still fix it?</summary>
+            <p>Yes. Set white balance in color calibration, because the RAW file keeps the data.</p>
+          </details>
+        </section>
+        <section class="learn-more" id="learn-more">
+          <h2>Learn more</h2>
+          <ul>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/workflow/process/">darktable 5.6 manual: Process</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/overview/sidecar-files/sidecar/">darktable 5.6 manual: Sidecar files</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/import/">darktable 5.6 manual: Import</a></li>
+          </ul>
         </section>
 
         <nav id="stage-pager" class="pager wide" aria-label="Stages"></nav>

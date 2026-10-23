@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="The 3-2-1 backup rule: three copies, on two kinds of storage, with one copy kept off-site.">
+  <title>The 3-2-1 backup rule: three copies, on two kinds of storage, with one copy kept off-site.</title>
+  <rect class="i-fill i-line" x="40" y="40" width="150" height="100" rx="8"/>
+  <rect class="i-line" x="60" y="56" width="110" height="64" rx="4"/>
+  <rect class="i-fill i-line" x="245" y="40" width="150" height="100" rx="8"/>
+  <circle class="i-line" cx="320" cy="90" r="30"/><circle class="i-accent" cx="320" cy="90" r="6"/>
+  <path class="i-fill i-line" d="M478 118 a28 28 0 0 1 4 -56 a36 36 0 0 1 68 6 a24 24 0 0 1 10 50 Z"/>
+  <text class="i-text" x="115" y="166" text-anchor="middle">computer</text>
+  <text class="i-text" x="320" y="166" text-anchor="middle">external drive</text>
+  <text class="i-text" x="520" y="166" text-anchor="middle">off-site copy</text>
+  <text class="i-text-muted" x="320" y="204" text-anchor="middle">3 copies · 2 kinds of storage · 1 off-site</text>
+</svg>
