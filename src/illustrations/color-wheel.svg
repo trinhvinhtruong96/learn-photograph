@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="A color wheel: opposite colors such as orange and blue are complementary, and neighbors are analogous.">
+  <title>A color wheel: opposite colors such as orange and blue are complementary, and neighbors are analogous.</title>
+  <path d="M200 130 L176.7 43.1 A90 90 0 0 1 223.3 43.1 Z" fill="hsl(0 75% 55%)"/><path d="M200 130 L223.3 43.1 A90 90 0 0 1 263.6 66.4 Z" fill="hsl(30 75% 55%)"/><path d="M200 130 L263.6 66.4 A90 90 0 0 1 286.9 106.7 Z" fill="hsl(60 75% 55%)"/><path d="M200 130 L286.9 106.7 A90 90 0 0 1 286.9 153.3 Z" fill="hsl(90 75% 55%)"/><path d="M200 130 L286.9 153.3 A90 90 0 0 1 263.6 193.6 Z" fill="hsl(120 75% 55%)"/><path d="M200 130 L263.6 193.6 A90 90 0 0 1 223.3 216.9 Z" fill="hsl(150 75% 55%)"/><path d="M200 130 L223.3 216.9 A90 90 0 0 1 176.7 216.9 Z" fill="hsl(180 75% 55%)"/><path d="M200 130 L176.7 216.9 A90 90 0 0 1 136.4 193.6 Z" fill="hsl(210 75% 55%)"/><path d="M200 130 L136.4 193.6 A90 90 0 0 1 113.1 153.3 Z" fill="hsl(240 75% 55%)"/><path d="M200 130 L113.1 153.3 A90 90 0 0 1 113.1 106.7 Z" fill="hsl(270 75% 55%)"/><path d="M200 130 L113.1 106.7 A90 90 0 0 1 136.4 66.4 Z" fill="hsl(300 75% 55%)"/><path d="M200 130 L136.4 66.4 A90 90 0 0 1 176.7 43.1 Z" fill="hsl(330 75% 55%)"/>
+  <circle class="i-line" cx="200" cy="130" r="90"/>
+  <path class="i-line" d="M235.0 69.4 L165.0 190.6" stroke-width="3"/>
+  <circle class="i-fill i-line" cx="235.0" cy="69.4" r="6"/><circle class="i-fill i-line" cx="165.0" cy="190.6" r="6"/>
+  <text class="i-text" x="330" y="96">complementary: opposite,</text>
+  <text class="i-text" x="330" y="118">like orange and blue</text>
+  <text class="i-text" x="330" y="162">analogous: neighbors,</text>
+  <text class="i-text" x="330" y="184">like yellow, orange and red</text>
+</svg>

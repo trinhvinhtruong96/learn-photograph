@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Golden hour runs from the sun 6° above the horizon to 4° below. Blue hour follows, to about 6° below.">
+  <title>Golden hour runs from the sun 6° above the horizon to 4° below. Blue hour follows, to about 6° below.</title>
+  <rect class="i-accent" x="0" y="102" width="640" height="80" opacity="0.18"/>
+  <rect class="i-cool" x="0" y="182" width="640" height="16" opacity="0.35"/>
+  <path class="i-line" d="M0 150 H640"/>
+  <path class="i-line" d="M80 40 Q300 60 560 222" stroke-dasharray="4 6"/>
+  <circle class="i-accent" cx="170" cy="102" r="12"/>
+  <circle class="i-accent" cx="300" cy="150" r="12" opacity="0.8"/>
+  <circle class="i-accent" cx="420" cy="182" r="12" opacity="0.5"/>
+  <circle class="i-cool" cx="500" cy="198" r="12" opacity="0.7"/>
+  <text class="i-text" x="190" y="96">6° above: golden hour starts</text>
+  <text class="i-text" x="318" y="144">sunset</text>
+  <text class="i-text-muted" x="10" y="176">golden hour</text>
+  <text class="i-text-muted" x="10" y="226">blue hour (4° to 6° below)</text>
+</svg>
