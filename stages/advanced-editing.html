@@ -24,9 +24,448 @@
       <main id="main" class="stage" data-stage="advanced-editing" tabindex="-1">
         <div id="stage-header" class="stage-header"></div>
 
+        <section class="lesson" id="masks" data-read="lesson">
+          <h2>Masks edit part of a photo</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>A mask limits an edit to one part of the photo.</p>
+          </div>
+          <p>Most edits change the whole photo. A <dfn>mask</dfn> limits an edit to one area, such as the sky or a face.</p>
+          <p>Drawn masks are shapes you draw: brush, circle, ellipse, path and gradient. Parametric masks pick pixels by brightness or color, such as everything bright.</p>
+          <p>Soft edges hide the change. A <dfn>feather</dfn> blends the mask edge into the rest of the photo.</p>
+          <figure class="illus">
+            <div data-illus="mask-types"></div>
+            <figcaption>Brush, shape, gradient and brightness masks.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of painter's tape. You tape off the window frame and paint only the wall.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A bright sky over a dark town: add a gradient mask on the sky in the exposure module and lower it by −0.7 EV. The town stays as it was.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>In a module, open the masks section and pick a drawn shape. Combine several with <b class="ui">combine masks</b>. Soften the edge with <b class="ui">feathering radius</b> and <b class="ui">blurring radius</b>.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Darken only the sky in one landscape photo with a gradient mask.</p>
+          </div>
+        </section>
+        <section class="lesson" id="ai-mask" data-read="lesson">
+          <h2>AI object mask (optional)</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>In darktable 5.6, an AI mask can select a person or object with a few clicks.</p>
+          </div>
+          <p>darktable 5.6 added an AI object mask. You click on a person or object, and it draws the mask for you.</p>
+          <p>It is off by default. You turn on the AI features in preferences and download a model first.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a helper who cuts out a shape for you. You point, and they trace the outline.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A person in front of a busy café: click on them, and the mask covers only the person. Lift them by +0.3 EV so they stand out.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Click to add an area, <b class="ui">Shift+click</b> to exclude an area, and right-click to apply. The result becomes path shapes you can still edit.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>If you want to try AI tools, turn them on in preferences and select one person in a photo.</p>
+          </div>
+        </section>
+        <section class="lesson" id="tone-equalizer" data-read="lesson">
+          <h2>Tone equalizer: dodge and burn by brightness</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>The tone equalizer lifts or lowers parts of the photo by how bright they are.</p>
+          </div>
+          <p><dfn>Dodge and burn</dfn> means brightening and darkening small areas. The tone equalizer does this by brightness zones.</p>
+          <p>Lift the darkest zone and the shadows open up. Lower the brightest zone and the sky calms down. Everything else stays the same.</p>
+          <figure class="illus">
+            <div data-illus="tone-zones"></div>
+            <figcaption>Each zone of brightness can be lifted or lowered on its own.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a mixing desk with one slider for each brightness level. You turn up the quiet parts without touching the loud ones.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A backlit face is too dark against a bright sky. Hover over the face and scroll up: the face lifts by +1 EV and the sky stays put.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>The module has the tabs <b class="ui">simple</b>, <b class="ui">advanced</b> and <b class="ui">masking</b>. Hover over the image and scroll the mouse wheel to lift or lower the zone under the cursor.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Open a photo with dark shadows. Lift them with the tone equalizer by hovering and scrolling.</p>
+          </div>
+        </section>
+        <section class="lesson" id="curves" data-read="lesson">
+          <h2>Curves shape contrast</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>A curve maps dark, middle and bright tones to new values.</p>
+          </div>
+          <p>A <dfn>curve</dfn> is a graph. Left is dark, right is bright. Moving a point up brightens those tones, and moving it down darkens them.</p>
+          <p>An S-shaped curve darkens shadows and brightens highlights, which adds contrast. Lifting the black end gives a faded, matte look.</p>
+          <figure class="illus">
+            <div data-illus="s-curve"></div>
+            <figcaption>Straight line, S-curve and matte curve.</figcaption>
+          </figure>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a dimmer for each kind of tone. The curve tells every tone how bright to become.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A flat landscape on a hazy day: a gentle S-curve gives it punch. A portrait for a soft mood: lift the black end a little for matte shadows.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Use the <b class="ui">rgb curve</b> module for creative curves. Click on the line to add a point, and drag it up or down.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Try an S-curve on one photo and a matte curve on another. Compare them with a snapshot.</p>
+          </div>
+        </section>
+        <section class="lesson" id="color-grading" data-read="lesson">
+          <h2>Grade color with color balance rgb</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Color grading gives shadows and highlights their own color.</p>
+          </div>
+          <p>First set overall color with global vibrance and chroma. The darktable manual suggests beginners start there.</p>
+          <p><dfn>Color grading</dfn> then gives the shadows and highlights their own tint. Warm highlights with cool shadows is a classic film look.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of lighting a stage with two colored lamps. One warms the bright parts, the other cools the dark parts.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A street at golden hour: add a little orange to the highlights and a little teal to the shadows. Check that skin still looks natural.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Open <b class="ui">color balance rgb</b>. Use global vibrance first. Then open the <b class="ui">4 ways</b> tab: <b class="ui">shadows lift</b>, <b class="ui">highlights gain</b>, <b class="ui">power</b> and <b class="ui">global offset</b>.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Grade one photo with warm highlights and cool shadows. Keep the change small.</p>
+          </div>
+        </section>
+        <section class="lesson" id="styles" data-read="lesson">
+          <h2>Styles give a set one look</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>A style saves your edit so a whole set can share one look.</p>
+          </div>
+          <p>A <dfn>preset</dfn> saves the settings of one module. A <dfn>style</dfn> saves several modules at once.</p>
+          <p>Make a style from your best edit. Apply it to a whole set, then fine-tune each photo.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a recipe you write down after a great meal. Next time, you cook the same dish in minutes.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>Six photos from a trip to Hội An: build a style from the best edit and apply it to all six. They now look like one series.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Create a style in the lighttable <b class="ui">styles</b> module or from the <b class="ui">history stack</b>. Apply a style by double-clicking its name.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Create one style from your favorite edit and apply it to 6 photos.</p>
+          </div>
+        </section>
+        <section class="lesson" id="noise-lens" data-read="lesson">
+          <h2>Clean noise and fix lines</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Clean high-ISO noise and straighten leaning lines.</p>
+          </div>
+          <p>For high-ISO photos, use <b class="ui">denoise (profiled)</b>. The program has a noise profile made for the α7 II.</p>
+          <p>Version 5.6 also has <b class="ui">neural restore</b>, an optional AI raw denoise. It writes a new DNG file and needs the AI features turned on.</p>
+          <p>Leaning buildings can be straightened with <b class="ui">rotate and perspective</b>.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of cleaning a window before you look through it. Remove the noise first, then judge the details.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A night street at ISO 6400 looks grainy. Denoise (profiled) smooths the sky and keeps the edges of signs crisp.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Look at the photo at 100% while you change noise settings. At small sizes you cannot judge noise.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Denoise one high-ISO photo and compare it at 100% with a snapshot.</p>
+          </div>
+        </section>
+        <section class="lesson" id="hdr-panorama" data-read="lesson">
+          <h2>HDR and panoramas</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Merge a bracket into one HDR photo, and use Hugin for panoramas.</p>
+          </div>
+          <p><dfn>HDR</dfn> merges several exposures of one scene into one photo with detail in both the sky and the shadows. Shoot the bracket in RAW, on a tripod.</p>
+          <p>Neither darktable nor GIMP can stitch a panorama. The free tool Hugin does that, if you want to try it.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of taking three notes from one lecture and combining them into one complete page.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A temple doorway with a bright sky outside: three frames at −2, 0 and +2 EV merge into one photo where both look right.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In darktable</span>
+            <p>Select the bracket in the lighttable. In the <b class="ui">selected image[s]</b> module, click <b class="ui">create HDR</b>. A new DNG file appears in a new DNG file to the library.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Shoot a 3-frame bracket on a tripod and merge it with create HDR.</p>
+          </div>
+        </section>
+        <section class="lesson" id="round-trip" data-read="lesson">
+          <h2>From darktable to GIMP and back</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Export a 16-bit TIFF from darktable, retouch it in GIMP, then export the result.</p>
+          </div>
+          <p>Use darktable for overall edits. Use GIMP for pixel work like removing spots. A 16-bit TIFF keeps the most detail between the two programs.</p>
+          <p>In GIMP, Save keeps an editable .xcf file with layers. Export makes the finished JPEG.</p>
+          <figure class="illus">
+            <div data-illus="round-trip"></div>
+            <figcaption>darktable, then GIMP, then the finished photo.</figcaption>
+          </figure>
+          <ol>
+            <li>In darktable, export with <b class="ui">file format</b> TIFF and bit depth 16 bit, at full size.</li>
+            <li>In GIMP, open the .tif file. If GIMP asks about the color profile, keep it.</li>
+            <li>Check <b class="ui">Image › Encoding</b>: it should show 16-bit integer.</li>
+            <li>Duplicate the layer and retouch the copy.</li>
+            <li>Use <b class="ui">File › Export As</b> (<b class="ui">Shift+Ctrl+E</b>) and save as JPEG with quality 90. GIMP starts at 85.</li>
+          </ol>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a car going from the paint shop to the detail shop. Each place does what it is best at.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A portrait edited in darktable still has two blemishes. Export a TIFF, fix them in GIMP, and export the final JPEG.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In GIMP</span>
+            <p><b class="ui">Save</b> writes .xcf only. Use <b class="ui">Export As</b> for JPEG or TIFF.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Send one photo through the full round trip and compare the final JPEG with the darktable export.</p>
+          </div>
+        </section>
+        <section class="lesson" id="heal-clone" data-read="lesson">
+          <h2>Heal and clone spots away</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Heal and Clone copy clean pixels over spots and dust.</p>
+          </div>
+          <p>Heal copies texture from a clean area and blends it into the spot. Clone copies pixels exactly, which works better on edges and lines.</p>
+          <p>GIMP has no automatic content-aware remove. You pick the source by hand.</p>
+          <ol>
+            <li>Duplicate the layer first.</li>
+            <li>Press <b class="ui">H</b> for Heal. Use a soft brush a little larger than the spot.</li>
+            <li><b class="ui">Ctrl+click</b> on clean skin or sky next to the spot, at the same brightness.</li>
+            <li>Click once on the spot. Take a new source often, and work at 100% zoom.</li>
+            <li>On an edge, such as a roofline, use Clone (<b class="ui">C</b>) with Alignment set to Aligned.</li>
+          </ol>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of patching a hole in a shirt with cloth from inside the hem. The patch matches because it is the same fabric.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A landscape at f/11 shows three dark dots in the sky. They are sensor dust. Heal each one with clean sky next to it.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In GIMP</span>
+            <p>Use <b class="ui">Heal</b> (<b class="ui">H</b>) for skin and sky, and <b class="ui">Clone</b> (<b class="ui">C</b>) for lines. Toggle the copy layer to compare before and after.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Remove 5 spots from one photo with Heal. Compare before and after.</p>
+          </div>
+        </section>
+        <section class="lesson" id="skin" data-read="lesson">
+          <h2>Retouch skin and keep the texture</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Smooth only the blotches and leave the fine pores alone.</p>
+          </div>
+          <p>Real skin has pores. If you blur everything, skin looks like plastic.</p>
+          <p>Wavelet decompose splits the photo into layers by detail size. The finest layer holds the pores. Middle layers hold blotches and uneven tone.</p>
+          <figure class="illus">
+            <div data-illus="frequency-separation"></div>
+            <figcaption>Keep the fine layer, smooth the middle layers.</figcaption>
+          </figure>
+          <ol>
+            <li>Remove blemishes first with Heal.</li>
+            <li>Run <b class="ui">Filters › Enhance › Wavelet decompose</b> with 5 scales and a layer group.</li>
+            <li>Leave scales 1 and 2 alone. They hold the skin texture.</li>
+            <li>On scale 3 or 4, heal or paint softly at 10 to 20% opacity. Avoid eyes, lips, brows and hair.</li>
+            <li>Lower the group opacity if the effect looks too strong.</li>
+          </ol>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a song with bass and treble. You turn down a boomy bass note but keep the crisp treble.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A close portrait shows red blotches on one cheek. Smooth them on scale 3, and the pores on scale 1 stay sharp.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In GIMP</span>
+            <p>Compare with the group visible and hidden. If you can no longer see pores at 100%, you went too far.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Retouch one portrait with Wavelet decompose. Check at 100% that pores are still visible.</p>
+          </div>
+        </section>
+        <section class="lesson" id="dodge-burn" data-read="lesson">
+          <h2>Dodge and burn in GIMP</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Paint light and shadow onto a gray layer to shape a face or a scene.</p>
+          </div>
+          <p>Dodge means lighten and burn means darken. In GIMP you can do both on a separate layer, so you never touch the photo itself.</p>
+          <p>Fill a new layer with 50% gray and set its mode to Soft light or Overlay. The gray disappears. Painting white lightens, and painting black darkens.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of a painter adding highlights and shadows to a portrait. You do the same with a soft brush.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>A portrait looks flat. Paint white at low opacity on the cheekbones and black under the jaw. The face gains shape.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In GIMP</span>
+            <p>For the layer method, use <b class="ui">Layer › New Layer</b>, fill it with 50% gray and set <b class="ui">Soft light</b> or <b class="ui">Overlay</b>. For the tool, press <b class="ui">Shift+D</b> for <b class="ui">Dodge / Burn</b> and hold <b class="ui">Ctrl</b> to switch.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Dodge and burn one portrait on a gray layer at 5 to 15% opacity.</p>
+          </div>
+        </section>
+        <section class="lesson" id="layers" data-read="lesson">
+          <h2>Layers, masks and effects</h2>
+          <div class="callout callout--sentence">
+            <span class="callout-label">In one sentence</span>
+            <p>Layers, layer masks and layer effects keep every change editable.</p>
+          </div>
+          <p>A layer mask hides parts of a layer. White shows the layer and black hides it.</p>
+          <p>GIMP 3 adds filters as layer effects. They stay editable until you merge them.</p>
+          <div class="callout callout--picture">
+            <span class="callout-label">Picture it</span>
+            <p>Think of tracing paper over a drawing. You can change or remove each sheet without harming the drawing below.</p>
+          </div>
+          <div class="callout callout--example">
+            <span class="callout-label">Example</span>
+            <p>You sharpen a whole portrait, but the skin gets too crisp. Add a layer mask and paint black over the skin to hide the sharpening there.</p>
+          </div>
+          <div class="callout callout--camera">
+            <span class="callout-label">In GIMP</span>
+            <p>Add a mask with <b class="ui">Layer › Mask › Add Layer Masks</b>. Filters you apply show as <b class="ui">Layer Effects</b> with an <b class="ui">fx</b> icon next to the layer.</p>
+          </div>
+          <div class="callout callout--try">
+            <span class="callout-label">Try it now</span>
+            <p>Apply one filter, then use a layer mask to limit it to part of the photo.</p>
+          </div>
+        </section>
+        <section class="key-terms" id="key-terms" data-read="tech">
+          <h2>Key terms</h2>
+          <dl class="terms">
+            <dt><dfn>Mask</dfn></dt><dd>A selection that limits an edit to part of the photo.</dd>
+            <dt><dfn>Feather</dfn></dt><dd>A soft edge on a mask.</dd>
+            <dt><dfn>Dodge and burn</dfn></dt><dd>Brightening and darkening small areas by hand.</dd>
+            <dt><dfn>Curve</dfn></dt><dd>A graph that maps input tones to output tones.</dd>
+            <dt><dfn>Color grading</dfn></dt><dd>Giving shadows and highlights their own color.</dd>
+            <dt><dfn>Style</dfn></dt><dd>A saved set of darktable modules.</dd>
+            <dt><dfn>Preset</dfn></dt><dd>Saved settings for one module.</dd>
+            <dt><dfn>HDR</dfn></dt><dd>One photo merged from several exposures.</dd>
+            <dt><dfn>Frequency separation</dfn></dt><dd>Splitting detail from color and tone to retouch skin.</dd>
+          </dl>
+        </section>
+        <section class="simulator wide" id="simulator-curve">
+          <h2>Shape a tone curve</h2>
+          <p>Try the presets, then drag one level at a time. Watch the curve and the photo change together.</p>
+          <div data-widget="curve-sim"></div>
+        </section>
+        <section class="simulator wide" id="simulator-mask">
+          <h2>Mask the sky</h2>
+          <p>Show the mask, then darken the sky. Lower the feather to see why soft edges matter.</p>
+          <div data-widget="mask-sim"></div>
+        </section>
+        <section class="warmup" id="warm-up" data-read="lesson">
+          <h2>Warm-up</h2>
+          <p>Cull your last shoot to 5 photos. Edit them in the working order from stage 5.</p>
+        </section>
+
         <section class="practice" id="practice">
           <h2>Practice</h2>
           <div data-checklist></div>
+        </section>
+
+        <section class="mistakes" id="mistakes" data-read="lesson">
+          <h2>Common mistakes</h2>
+          <ul class="mistakes__list">
+            <li><p class="mistake">Pushing saturation as far as it goes.</p><p class="fix">Compare with a snapshot. Edit for the story, not for color alone.</p></li>
+            <li><p class="mistake">Smoothing skin until it looks like plastic.</p><p class="fix">Leave the finest detail scale alone so pores stay.</p></li>
+            <li><p class="mistake">Using masks with hard edges.</p><p class="fix">Feather the mask so the change blends in.</p></li>
+            <li><p class="mistake">Editing each photo of a set in a different way.</p><p class="fix">Build a style and apply it to the whole set.</p></li>
+          </ul>
+        </section>
+        <section class="self-check" id="self-check" data-read="lesson">
+          <h2>Self-check</h2>
+          <details class="quiz">
+            <summary>Which mask shape darkens a sky with a soft edge?</summary>
+            <p>The gradient.</p>
+          </details>
+          <details class="quiz">
+            <summary>What is the difference between a preset and a style?</summary>
+            <p>A preset saves one module. A style saves several.</p>
+          </details>
+          <details class="quiz">
+            <summary>Why export a 16-bit TIFF for GIMP?</summary>
+            <p>It keeps the most tonal detail for retouching.</p>
+          </details>
+          <details class="quiz">
+            <summary>How do you keep skin texture when you smooth skin?</summary>
+            <p>Smooth only the coarser Wavelet decompose scales and leave the finest scale alone.</p>
+          </details>
+          <details class="quiz">
+            <summary>Which darktable module adds contrast in the basic edit?</summary>
+            <p>sigmoid.</p>
+          </details>
+        </section>
+        <section class="learn-more" id="learn-more">
+          <h2>Learn more</h2>
+          <ul>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/darkroom/masking-and-blending/masks/drawn/">darktable 5.6 manual: Drawn masks</a></li>
+            <li><a href="https://docs.darktable.org/usermanual/5.6/en/module-reference/processing-modules/color-balance-rgb/">darktable 5.6 manual: color balance rgb</a></li>
+            <li><a href="https://docs.gimp.org/3.2/en/">GIMP 3.2 manual</a></li>
+            <li><a href="https://hugin.sourceforge.io">Hugin panorama stitcher</a></li>
+          </ul>
         </section>
 
         <nav id="stage-pager" class="pager wide" aria-label="Stages"></nav>

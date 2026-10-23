@@ -75,6 +75,10 @@ Note: module order in the pixelpipe is fixed, so the order you edit in does not 
 - §11: tone mapper = sigmoid (default since 5.2). Warn that the manual's own getting-started page still uses filmic rgb.
 - The 5.6.1 release post says the "documentation is not currently complete for release 5.6" (https://www.darktable.org/2026/08/darktable-5.6.1-released). This explains the filmic leftovers.
 
+## E. Verified during implementation
+- **rgb curve** module exists in 5.6 (processing module; modes "RGB, linked channels" / "RGB, independent channels") — https://docs.darktable.org/usermanual/5.6/en/module-reference/processing-modules/rgb-curve/
+- **image information** utility module (shared) shows Exif data of the hovered image — https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/image-information/
+
 ## D. Not verified / limits
 - Exact *sigmoid* control names were not fetched (the manual's 3-module walkthrough describes filmic rgb only).
 - HSL-style module names (*color equalizer*, *color zones*) were not checked.

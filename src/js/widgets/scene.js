@@ -36,7 +36,7 @@ function markup(id) {
     </filter>
     <filter id="${id}-feather" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur data-feather stdDeviation="12"/></filter>
     <mask id="${id}-sky-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="400">
-      <rect x="-40" y="-40" width="720" height="262" fill="#fff" filter="url(#${id}-feather)"/>
+      <rect x="-40" y="-40" width="720" height="180" fill="#fff" filter="url(#${id}-feather)"/>
     </mask>
     <g id="${id}-content">
       <rect width="640" height="400" fill="url(#${id}-sky)"/>
@@ -93,7 +93,7 @@ function markup(id) {
       </g>
       <rect data-grain width="640" height="400" fill="#000" filter="url(#${id}-grain)" opacity="0" style="mix-blend-mode: overlay"/>
     </g>
-    <rect data-mask-overlay x="-40" y="-40" width="720" height="262" fill="#ff3b3b" opacity="0" filter="url(#${id}-feather)"/>
+    <rect data-mask-overlay x="-40" y="-40" width="720" height="180" fill="#ff3b3b" opacity="0" filter="url(#${id}-feather)"/>
   </g>`;
 }
 

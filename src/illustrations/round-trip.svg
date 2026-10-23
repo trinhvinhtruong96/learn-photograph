@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="From darktable, export a 16-bit TIFF, retouch it in GIMP, then export the finished photo.">
+  <title>From darktable, export a 16-bit TIFF, retouch it in GIMP, then export the finished photo.</title>
+  <rect class="i-fill i-line" x="20" y="60" width="140" height="70" rx="8"/>
+  <text class="i-text" x="90" y="100" text-anchor="middle">darktable</text>
+  <path class="i-accent-line" d="M162 95 H246 M236 87 L248 95 L236 103"/>
+  <text class="i-text-muted" x="204" y="80" text-anchor="middle">16-bit TIFF</text>
+  <rect class="i-fill i-line" x="250" y="60" width="140" height="70" rx="8"/>
+  <text class="i-text" x="320" y="100" text-anchor="middle">GIMP</text>
+  <path class="i-accent-line" d="M392 95 H476 M466 87 L478 95 L466 103"/>
+  <text class="i-text-muted" x="434" y="80" text-anchor="middle">Export As</text>
+  <rect class="i-fill i-line" x="480" y="50" width="130" height="90" rx="4"/>
+  <path class="i-accent" d="M490 130 L530 90 L555 112 L575 96 L600 130 Z"/>
+  <circle class="i-accent" cx="585" cy="70" r="9"/>
+  <text class="i-text" x="545" y="170" text-anchor="middle">finished photo</text>
+</svg>
