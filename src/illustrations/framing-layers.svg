@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="A doorway frames a person, with hills behind: three layers of depth.">
+  <title>A doorway frames a person, with hills behind: three layers of depth.</title>
+  <path class="i-muted" d="M140 240 Q260 140 360 220 Q460 150 520 240 Z" opacity="0.6"/>
+  <rect class="i-line" x="140" y="80" width="380" height="300"/>
+  <circle class="i-accent" cx="330" cy="236" r="16"/>
+  <rect class="i-accent" x="316" y="254" width="28" height="70" rx="8"/>
+  <path class="i-fill i-line" d="M0 0 H640 V400 H520 V80 H140 V400 H0 Z"/>
+  <text class="i-text" x="20" y="40">foreground: doorway</text>
+  <text class="i-text" x="360" y="300">middle: person</text>
+  <text class="i-text" x="400" y="130">background: hills</text>
+</svg>

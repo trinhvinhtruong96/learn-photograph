@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Two road edges lead the eye to a small figure in the distance.">
+  <title>Two road edges lead the eye to a small figure in the distance.</title>
+  <rect class="i-fill" x="0" y="0" width="640" height="160"/>
+  <path class="i-muted" d="M40 400 L300 170 L340 170 L600 400 Z" opacity="0.5"/>
+  <path class="i-line" d="M40 400 L300 170 M600 400 L340 170"/>
+  <path class="i-line" d="M320 400 V370 M320 340 V315 M320 290 V270 M320 250 V236 M320 222 V212" opacity="0.8"/>
+  <circle class="i-accent" cx="320" cy="140" r="7"/>
+  <rect class="i-accent" x="315" y="148" width="10" height="20" rx="3"/>
+  <text class="i-text" x="350" y="146">the subject</text>
+</svg>
