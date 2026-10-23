@@ -2,7 +2,7 @@
 
 Quy tắc chung
 - Toàn bộ nội dung viết bằng tiếng Việt, giọng thân thiện, gọi người học là "bạn".
-- Tên menu, nút, module của máy α7 II, darktable và GIMP giữ NGUYÊN tiếng Anh trong `<b class="ui">…</b>` (ví dụ `<b class="ui">MENU › Camera Settings › Quality › RAW</b>`). Giải thích bằng tiếng Việt xung quanh.
+- Tên menu, nút, module của máy Sony, darktable và GIMP giữ NGUYÊN tiếng Anh trong `<b class="ui">…</b>` (ví dụ `<b class="ui">MENU › Camera Settings › Quality › RAW</b>`). Giải thích bằng tiếng Việt xung quanh.
 - Lần đầu một thuật ngữ xuất hiện trên một trang: tiếng Việt trước, tiếng Anh trong ngoặc, ví dụ "độ sâu trường ảnh (depth of field)". Những lần sau chỉ dùng tiếng Việt.
 - Câu ngắn: trung bình ≤ 22 tiếng (âm tiết), không câu nào quá 35 tiếng; mỗi đoạn ≤ 3 câu và ≤ 90 tiếng.
 - Không bắt đầu một câu giữa đoạn bằng chữ thường (ví dụ "darktable…"); viết "Phần mềm darktable…" hoặc đảo câu.
@@ -29,7 +29,7 @@ Nhãn giao diện
 | In one sentence | Tóm tắt một câu |
 | Picture it | Hình dung |
 | Example | Ví dụ |
-| On your α7 II | Trên máy α7 II |
+| On your α7 II | Trên máy Sony (không ghi tên model) |
 | In darktable / In GIMP | Trong darktable / Trong GIMP |
 | How to practice | Cách luyện tập |
 | Try it now | Thử ngay |

@@ -21,7 +21,7 @@ export function renderHeader(header, { storage, withToc }) {
 export function renderFooter(footer) {
   footer.replaceChildren(
     el('div', { class: 'site-footer__inner' }, [
-      el('p', { text: 'Dành riêng cho một người học: Sony α7 II, ống 35mm f/1.4 và 85mm f/1.8, chỉnh ảnh bằng darktable và GIMP.' }),
+      el('p', { text: 'Dành riêng cho một người học: máy ảnh Sony, ống 35mm f/1.4 và 85mm f/1.8, chỉnh ảnh bằng darktable và GIMP.' }),
       el('p', { text: 'Các bước trên máy và phần mềm theo Sony Help Guide và hướng dẫn sử dụng darktable 5.6, GIMP 3.2.' }),
     ]),
   );

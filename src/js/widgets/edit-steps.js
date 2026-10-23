@@ -11,7 +11,7 @@ export const EDIT_STEPS = [
   { module: 'sigmoid', note: 'Thêm tương phản và giữ vùng sáng nhất, tối nhất trong tầm kiểm soát.', fixes: 'curve' },
   { module: 'color calibration', note: 'Sửa cân bằng trắng để màu trắng trông trắng.', fixes: 'tint' },
   { module: 'color balance rgb', note: 'Thêm màu bằng preset basic colorfulness.', fixes: 'saturation' },
-  { module: 'denoise (profiled)', note: 'Giảm nhiễu hạt bằng profile làm riêng cho α7 II.', fixes: 'grain' },
+  { module: 'denoise (profiled)', note: 'Giảm nhiễu hạt bằng profile làm riêng cho máy Sony của bạn.', fixes: 'grain' },
   { module: 'local contrast', note: 'Lấy lại chi tiết sắc nét.', fixes: 'softness' },
   { module: 'rotate and perspective', note: 'Làm thẳng đường chân trời. Sau đó crop cắt gọn mép ảnh.', fixes: 'rotation' },
   { module: 'retouch', note: 'Xóa một vết bụi trên bầu trời.', fixes: 'dust' },
