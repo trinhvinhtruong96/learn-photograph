@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="ND filters cut light in stops: ND8 is 3 stops, ND64 is 6 and ND1000 is 10. With ND1000, 1/125 s becomes about 8 s.">
+  <title>ND filters cut light in stops: ND8 is 3 stops, ND64 is 6 and ND1000 is 10. With ND1000, 1/125 s becomes about 8 s.</title>
+  <circle class="i-line" cx="120" cy="80" r="46"/><circle class="i-text" cx="120" cy="80" r="42" opacity="0.3"/><text class="i-text" x="120" y="150" text-anchor="middle">ND8 = 3 stops</text><circle class="i-line" cx="320" cy="80" r="46"/><circle class="i-text" cx="320" cy="80" r="42" opacity="0.55"/><text class="i-text" x="320" y="150" text-anchor="middle">ND64 = 6 stops</text><circle class="i-line" cx="520" cy="80" r="46"/><circle class="i-text" cx="520" cy="80" r="42" opacity="0.85"/><text class="i-text" x="520" y="150" text-anchor="middle">ND1000 = 10 stops</text>
+  <text class="i-text" x="320" y="196" text-anchor="middle">with ND1000: 1/125 s → about 8 s</text>
+</svg>
