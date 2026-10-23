@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { compareBackgroundBlur } from '../src/js/widgets/background-sim.js';
+import { blurComparisonText, compareBackgroundBlur } from '../src/js/widgets/background-sim.js';
 
 const base = { subjectMm: 2000, behindMm: 4000, aperture: 'wide' };
 
@@ -22,4 +22,11 @@ test('a background right behind the person gives no blur and a finite ratio', ()
   expect(r.pct85).toBe(0);
   expect(r.pct35).toBe(0);
   expect(r.ratio).toBe(1);
+});
+
+test('the comparison sentence names the lens that really blurs more', () => {
+  expect(blurComparisonText(4.7, 4000)).toBe('The 85mm blurs the background 4.7 times more.');
+  expect(blurComparisonText(0.88, 500)).toBe('The 35mm blurs the background 1.1 times more.');
+  expect(blurComparisonText(1.02, 500)).toBe('Both lenses blur the background about the same.');
+  expect(blurComparisonText(1, 0)).toBe('The person stands against the background, so nothing is blurred.');
 });

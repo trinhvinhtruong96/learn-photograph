@@ -23,6 +23,14 @@ export function compareBackgroundBlur({ subjectMm, behindMm, mode, aperture }) {
   };
 }
 
+// Ratios within 5% of 1 read as "about the same"; below that, the 35mm is the one that blurs more.
+export function blurComparisonText(ratio, behindMm) {
+  if (behindMm === 0) return 'The person stands against the background, so nothing is blurred.';
+  if (ratio > 1.05) return `The 85mm blurs the background ${ratio.toFixed(1)} times more.`;
+  if (ratio < 0.95) return `The 35mm blurs the background ${(1 / ratio).toFixed(1)} times more.`;
+  return 'Both lenses blur the background about the same.';
+}
+
 const PANEL_WIDTH = 320;
 const blurPx = (pct) => Math.min(20, ((pct / 100) * PANEL_WIDTH) / 2);
 const BEHIND_MM = [0, 500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 10000, 15000, 20000];
@@ -99,9 +107,7 @@ export function mount(host) {
     const lines = [
       `85mm at ${formatAperture(r.n85)}: background blur is ${formatPercent(r.pct85)} of the frame width.`,
       `35mm at ${formatAperture(r.n35)}, ${formatDistance(r.s35)} away: ${formatPercent(r.pct35)}.`,
-      state.behindMm === 0
-        ? 'The person stands against the background, so nothing is blurred.'
-        : `The 85mm blurs the background ${r.ratio.toFixed(1)} times more.`,
+      blurComparisonText(r.ratio, state.behindMm),
     ];
     setReadout(readout, lines);
     live.announce(lines.join(' '));
