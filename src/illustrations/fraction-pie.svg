@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="A pie cut in half next to a pie cut in eighths. f/2 is a half and f/8 is an eighth.">
+  <title>A pie cut in half next to a pie cut in eighths. f/2 is a half and f/8 is an eighth.</title>
+  <circle class="i-fill i-line" cx="180" cy="100" r="70"/>
+  <path class="i-accent" d="M180 100 L180 30 A70 70 0 0 1 180 170 Z"/>
+  <path class="i-line" d="M180 30 V170"/>
+  <circle class="i-fill i-line" cx="460" cy="100" r="70"/>
+  <path class="i-accent" d="M460 100 L460 30 A70 70 0 0 1 509.5 50.5 Z"/>
+  <path class="i-line" d="M390 100 H530 M460 30 V170 M410.5 50.5 L509.5 149.5 M509.5 50.5 L410.5 149.5"/>
+  <text class="i-text" x="180" y="204" text-anchor="middle">f/2 = 1/2</text>
+  <text class="i-text" x="460" y="204" text-anchor="middle">f/8 = 1/8</text>
+</svg>

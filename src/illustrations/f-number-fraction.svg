@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Four lens openings shrink from f/1.4 to f/4. Each step lets in half the light of the one before.">
+  <title>Four lens openings shrink from f/1.4 to f/4. Each step lets in half the light of the one before.</title>
+  <g>
+    <circle class="i-fill" cx="100" cy="110" r="60"/>
+    <circle class="i-line" cx="100" cy="110" r="60"/>
+    <circle class="i-accent" cx="100" cy="110" r="56"/>
+    <text class="i-text" x="100" y="205" text-anchor="middle">f/1.4</text>
+  </g>
+  <g>
+    <circle class="i-line" cx="250" cy="110" r="60"/>
+    <circle class="i-accent" cx="250" cy="110" r="40"/>
+    <text class="i-text" x="250" y="205" text-anchor="middle">f/2</text>
+  </g>
+  <g>
+    <circle class="i-line" cx="400" cy="110" r="60"/>
+    <circle class="i-accent" cx="400" cy="110" r="28"/>
+    <text class="i-text" x="400" y="205" text-anchor="middle">f/2.8</text>
+  </g>
+  <g>
+    <circle class="i-line" cx="550" cy="110" r="60"/>
+    <circle class="i-accent" cx="550" cy="110" r="20"/>
+    <text class="i-text" x="550" y="205" text-anchor="middle">f/4</text>
+  </g>
+  <path class="i-accent-line" d="M160 30 H500"/>
+  <path class="i-accent-line" d="M490 22 L505 30 L490 38"/>
+  <text class="i-text-muted" x="330" y="20" text-anchor="middle">half the light each step</text>
+</svg>

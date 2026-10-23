@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="A staircase: each step up doubles the light, and each step down halves it.">
+  <title>A staircase: each step up doubles the light, and each step down halves it.</title>
+  <path class="i-fill" d="M60 200 H160 V160 H260 V120 H360 V80 H460 V40 H580 V210 H60 Z"/>
+  <path class="i-accent-line" d="M60 200 H160 V160 H260 V120 H360 V80 H460 V40 H580"/>
+  <text class="i-text" x="168" y="186">×2</text>
+  <text class="i-text" x="268" y="146">×2</text>
+  <text class="i-text" x="368" y="106">×2</text>
+  <text class="i-text" x="468" y="66">×2</text>
+  <text class="i-text-muted" x="60" y="230">less light</text>
+  <text class="i-text-muted" x="580" y="28" text-anchor="end">more light</text>
+</svg>

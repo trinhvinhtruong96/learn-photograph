@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Light travels through the lens, the aperture and the open shutter to the sensor.">
+  <title>Light travels through the lens, the aperture and the open shutter to the sensor.</title>
+  <path class="i-accent-line" d="M88 90 H500"/>
+  <path class="i-accent-line" d="M488 80 L502 90 L488 100"/>
+  <circle class="i-accent" cx="50" cy="90" r="22"/>
+  <path class="i-accent-line" d="M80.0 90.0 L90.0 90.0"/><path class="i-accent-line" d="M71.2 111.2 L78.3 118.3"/><path class="i-accent-line" d="M50.0 120.0 L50.0 130.0"/><path class="i-accent-line" d="M28.8 111.2 L21.7 118.3"/><path class="i-accent-line" d="M20.0 90.0 L10.0 90.0"/><path class="i-accent-line" d="M28.8 68.8 L21.7 61.7"/><path class="i-accent-line" d="M50.0 60.0 L50.0 50.0"/><path class="i-accent-line" d="M71.2 68.8 L78.3 61.7"/>
+  <ellipse class="i-fill i-line" cx="200" cy="90" rx="16" ry="56"/>
+  <circle class="i-fill i-line" cx="300" cy="90" r="46"/>
+  <circle class="i-line" cx="300" cy="90" r="16"/>
+  <path class="i-line" d="M300 44 L312 76 M346 90 L314 98 M300 136 L290 104 M254 90 L286 82"/>
+  <rect class="i-fill i-line" x="396" y="36" width="28" height="36" rx="3"/>
+  <rect class="i-fill i-line" x="396" y="108" width="28" height="36" rx="3"/>
+  <rect class="i-muted i-line" x="508" y="46" width="22" height="88" rx="3"/>
+  <text class="i-text" x="50" y="190" text-anchor="middle">light</text>
+  <text class="i-text" x="200" y="190" text-anchor="middle">lens</text>
+  <text class="i-text" x="300" y="190" text-anchor="middle">aperture</text>
+  <text class="i-text" x="410" y="190" text-anchor="middle">shutter</text>
+  <text class="i-text" x="519" y="190" text-anchor="middle">sensor</text>
+</svg>
