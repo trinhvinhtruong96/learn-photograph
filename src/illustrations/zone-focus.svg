@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Zone focusing: with the 35mm at f/8 focused at 3 m, everyone from about 1.9 m to 7.2 m is sharp.">
+  <title>Zone focusing: with the 35mm at f/8 focused at 3 m, everyone from about 1.9 m to 7.2 m is sharp.</title>
+  <rect class="i-fill" x="40" y="60" width="580" height="100" rx="6"/>
+  <rect class="i-accent" x="162.6" y="60" width="286.2" height="100" opacity="0.25"/>
+  <rect class="i-muted i-line" x="10" y="96" width="30" height="24" rx="4"/>
+  <g opacity="0.35"><circle class="i-accent" cx="124.8" cy="94.0" r="8.8"/><rect class="i-accent" x="117.6" y="105.2" width="14.4" height="44.8" rx="4.0"/></g><g opacity="1"><circle class="i-accent" cx="195.0" cy="94.0" r="8.8"/><rect class="i-accent" x="187.8" y="105.2" width="14.4" height="44.8" rx="4.0"/></g><g opacity="1"><circle class="i-accent" cx="276.0" cy="94.0" r="8.8"/><rect class="i-accent" x="268.8" y="105.2" width="14.4" height="44.8" rx="4.0"/></g><g opacity="1"><circle class="i-accent" cx="384.0" cy="94.0" r="8.8"/><rect class="i-accent" x="376.8" y="105.2" width="14.4" height="44.8" rx="4.0"/></g><g opacity="0.35"><circle class="i-accent" cx="519.0" cy="94.0" r="8.8"/><rect class="i-accent" x="511.8" y="105.2" width="14.4" height="44.8" rx="4.0"/></g>
+  <path class="i-accent-line" d="M222.0 52 V168" stroke-dasharray="4 5"/>
+  <text class="i-text" x="222.0" y="44" text-anchor="middle">focus 3 m, f/8</text>
+  <text class="i-text-muted" x="162.6" y="188" text-anchor="middle">1.9 m</text>
+  <text class="i-text-muted" x="448.8" y="188" text-anchor="middle">7.2 m</text>
+</svg>
