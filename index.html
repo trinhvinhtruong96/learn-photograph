@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learn Photography from Zero</title>
+    <meta name="description" content="A 16-week roadmap to learn photography with a Sony α7 II, a 35mm and an 85mm lens, darktable and GIMP." />
+    <script>
+      try {
+        const saved = localStorage.getItem('lp:theme');
+        document.documentElement.dataset.theme = saved === 'light' || saved === 'dark'
+          ? saved
+          : matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header"></header>
+    <div class="layout">
+      <main id="main" class="home" data-page="home" tabindex="-1">
+        <section class="hero" id="intro" data-read="lesson">
+          <p class="hero__kicker">A 16-week roadmap</p>
+          <h1>From zero to photographer</h1>
+          <p class="hero__lead">Learn photography step by step with your own camera. Each stage explains one idea in plain words. Then you play with it and practice it outside.</p>
+          <p><a class="button" href="/stages/exposure.html">Start with stage 1: Exposure</a></p>
+        </section>
+
+        <section class="kit wide" id="kit">
+          <h2>Your kit</h2>
+          <ul class="kit__list">
+            <li><span class="kit__name">Sony α7 II</span><span class="kit__note">Full-frame camera with in-body stabilization</span></li>
+            <li><span class="kit__name">35mm f/1.4</span><span class="kit__note">Street, travel, night and environmental portraits</span></li>
+            <li><span class="kit__name">85mm f/1.8</span><span class="kit__note">Portraits with soft backgrounds</span></li>
+            <li><span class="kit__name">darktable 5.6 and GIMP 3.2</span><span class="kit__note">Free editing: RAW files in darktable, retouching in GIMP</span></li>
+          </ul>
+        </section>
+
+        <section class="how" id="how" data-read="lesson">
+          <h2>How to use this roadmap</h2>
+          <ol class="steps">
+            <li><span class="step-name">Read.</span> Each lesson starts with the idea in one sentence.</li>
+            <li><span class="step-name">Play.</span> Change one setting in the simulator and watch what happens.</li>
+            <li><span class="step-name">Practice.</span> Go out and do the tasks with your camera.</li>
+            <li><span class="step-name">Review.</span> Compare your photos side by side in darktable.</li>
+            <li><span class="step-name">Tick.</span> Mark a task done when you meet its check.</li>
+          </ol>
+          <p>Plan on 3 to 5 hours a week. Stages 1 to 6 build on each other, so take them in order. After that, pick the tracks in any order.</p>
+        </section>
+
+        <section class="plan-section" id="plan">
+          <h2>16-week plan</h2>
+          <div data-plan></div>
+        </section>
+
+        <section class="roadmap wide" id="roadmap">
+          <h2>Your roadmap</h2>
+          <div data-overall aria-live="polite"></div>
+          <div data-roadmap></div>
+          <p class="roadmap__reset"><button type="button" class="button button--ghost" data-reset>Reset progress</button></p>
+        </section>
+      </main>
+    </div>
+    <footer id="site-footer" class="site-footer"></footer>
+  </body>
+</html>
