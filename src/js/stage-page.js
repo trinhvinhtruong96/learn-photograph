@@ -1,5 +1,6 @@
 import { LEVEL_LABELS, PRACTICE_METHOD, stageNeighbors, weeksLabel } from '../data/roadmap.js';
 import { el, uid } from './dom.js';
+import { siteUrl } from './site-url.js';
 
 const DESKTOP = window.matchMedia('(min-width: 1080px)');
 
@@ -127,11 +128,11 @@ export function initDrawer(button, toc) {
 
 export function renderPager(nav, stage) {
   const { prev, next } = stageNeighbors(stage.id);
-  const link = (target, dir) => el('a', { class: `pager__link pager__link--${dir}`, href: target.path }, [
+  const link = (target, dir) => el('a', { class: `pager__link pager__link--${dir}`, href: siteUrl(target.path) }, [
     el('span', { class: 'pager__dir', text: dir === 'prev' ? 'Chặng trước' : 'Chặng sau' }),
     el('span', { class: 'pager__title', text: `${target.number}. ${target.title}` }),
   ]);
-  const finish = el('a', { class: 'pager__link pager__link--next', href: '/#roadmap' }, [
+  const finish = el('a', { class: 'pager__link pager__link--next', href: siteUrl('#roadmap') }, [
     el('span', { class: 'pager__dir', text: 'Bạn đã đi hết lộ trình' }),
     el('span', { class: 'pager__title', text: 'Quay lại lộ trình' }),
   ]);

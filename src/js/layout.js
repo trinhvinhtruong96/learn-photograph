@@ -1,4 +1,5 @@
 import { el } from './dom.js';
+import { siteUrl } from './site-url.js';
 import { createThemeToggle } from './theme.js';
 
 export function renderHeader(header, { storage, withToc }) {
@@ -7,11 +8,11 @@ export function renderHeader(header, { storage, withToc }) {
     : null;
   header.replaceChildren(
     el('div', { class: 'site-header__inner' }, [
-      el('a', { class: 'brand', href: '/' }, [
+      el('a', { class: 'brand', href: siteUrl() }, [
         el('span', { text: 'Học Nhiếp Ảnh' }),
         el('span', { class: 'brand__tag', text: 'từ con số 0' }),
       ]),
-      el('nav', { class: 'site-nav', 'aria-label': 'Điều hướng chính' }, [el('a', { href: '/#roadmap', text: 'Lộ trình' })]),
+      el('nav', { class: 'site-nav', 'aria-label': 'Điều hướng chính' }, [el('a', { href: siteUrl('#roadmap'), text: 'Lộ trình' })]),
       el('div', { class: 'site-header__actions' }, [tocButton, createThemeToggle(storage)]),
     ]),
   );

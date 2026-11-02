@@ -1,4 +1,5 @@
-const stage = (data) => ({ ...data, path: `/stages/${data.id}.html` });
+// Relative to the site root; pages prefix it with siteUrl() so it works under a base path.
+const stage = (data) => ({ ...data, path: `stages/${data.id}.html` });
 
 export const LEVEL_LABELS = { beginner: 'Cơ bản', intermediate: 'Trung cấp', advanced: 'Nâng cao' };
 

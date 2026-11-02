@@ -1,11 +1,12 @@
 import { LEVEL_LABELS, STAGES, weeksLabel } from '../data/roadmap.js';
 import { el } from './dom.js';
+import { siteUrl } from './site-url.js';
 import { progressBlock } from './stage-page.js';
 
 const STATUS_TEXT = { 'not-started': 'Chưa bắt đầu', 'in-progress': 'Đang học', done: 'Hoàn thành' };
 
 function stageCard(stage, stats) {
-  return el('a', { class: `stage-card stage-card--${stats.status}`, href: stage.path }, [
+  return el('a', { class: `stage-card stage-card--${stats.status}`, href: siteUrl(stage.path) }, [
     el('span', { class: 'stage-card__number', text: stage.number }),
     el('span', { class: 'stage-card__body' }, [
       el('span', { class: 'stage-card__title', text: stage.title }),
@@ -28,7 +29,7 @@ export function renderHome(main, progress) {
 
   plan.replaceChildren(el('ol', { class: 'plan' }, STAGES.map((s) => el('li', {}, [
     el('span', { class: 'plan__weeks', text: weeksLabel(s.weeks) }),
-    el('a', { href: s.path, text: `${s.number}. ${s.title}` }),
+    el('a', { href: siteUrl(s.path), text: `${s.number}. ${s.title}` }),
   ]))));
 
   const draw = () => {

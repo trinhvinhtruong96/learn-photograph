@@ -19,6 +19,10 @@ pnpm test                 # formulas, progress store, simulator logic, readabili
 pnpm check:readability    # Vietnamese plain-language targets (syllables per sentence, paragraph length) for every page
 ```
 
+## Deploy
+
+Every push to `main` runs `.github/workflows/pages.yml`: tests, a build with `BASE_PATH=/<repo>/`, then a GitHub Pages deploy to https://trinhvinhtruong96.github.io/learn-photograph/. Internal links go through `siteUrl()` (`src/js/site-url.js`) so they keep the base path.
+
 ## Where things are
 
 - Design: `docs/superpowers/specs/2026-10-22-photography-roadmap-design.md`
