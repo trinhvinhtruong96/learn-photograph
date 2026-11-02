@@ -26,6 +26,8 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
+      # The lockfile was written against a private npm mirror; fetch the same tarballs from npmjs (integrity hashes still apply).
+      - run: sed -i 's#https://artifacts.mgm-tp.com:443/artifactory/api/npm/npm-repos/#https://registry.npmjs.org/#g' pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
       - run: pnpm build
